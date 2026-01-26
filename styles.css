@@ -1,0 +1,1451 @@
+/* ===================================
+   La Lupa Wine List - Styles (Luxury Edition)
+   =================================== */
+
+/* CSS Variables */
+:root {
+    /* Colors - Luxury Dark Theme */
+    --color-bg: #121212;
+    --color-glass: rgba(20, 20, 20, 0.85);
+    --color-glass-light: rgba(40, 40, 40, 0.7);
+    --color-glass-border: rgba(255, 255, 255, 0.1);
+
+    --color-white: #FFFFFF;
+    --color-text: #EAEAEA;
+    --color-text-light: #B0B0B0;
+    --color-text-muted: #808080;
+
+    /* Luxury Accents */
+    --color-gold: #D4AF37;
+    --color-gold-light: #F3E5AB;
+    --color-gold-dark: #AA8C2C;
+    --color-gold-gradient: linear-gradient(135deg, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+
+    --color-wine-red: #722F37;
+    --color-wine-red-light: #9E424E;
+
+    /* Wine Type Colors (Dark Mode Adjusted) */
+    --color-red-wine: #5E2129;
+    --color-white-wine: #F7E7CE;
+    --color-sparkling: #F1D06E;
+    --color-rose: #EFA6B6;
+
+    /* Shadows & Glows */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 8px 16px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 16px 32px rgba(0, 0, 0, 0.5);
+    --glow-gold: 0 0 15px rgba(212, 175, 55, 0.3);
+
+    /* Border Radius */
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+
+    /* Typography */
+    --font-serif: 'Cormorant Garamond', 'Noto Serif JP', serif;
+    --font-sans: 'Noto Sans JP', sans-serif;
+
+    /* Spacing */
+    --header-height: 90px;
+    --footer-height: 70px;
+}
+
+/* Reset & Base */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    height: 100%;
+}
+
+body {
+    font-family: var(--font-sans);
+    background-color: var(--color-bg);
+    background-image: url('bg.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: var(--color-text);
+    line-height: 1.6;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Dark Overlay for Background */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    /* Darkening the background image */
+    backdrop-filter: blur(2px);
+    z-index: -1;
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ===================================
+   Header
+   =================================== */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--header-height);
+    background: rgba(10, 10, 10, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--color-glass-border);
+    z-index: 100;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s ease;
+}
+
+.header-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-image {
+    height: 64px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+/* Language Switcher - Luxury Style */
+.language-switcher {
+    display: flex;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 6px;
+    border-radius: 50px;
+    border: 1px solid var(--color-glass-border);
+}
+
+.lang-btn {
+    padding: 8px 18px;
+    border: 1px solid transparent;
+    background: transparent;
+    color: var(--color-text-light);
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+}
+
+.lang-btn:hover {
+    color: var(--color-gold);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.lang-btn.active {
+    background: linear-gradient(135deg, var(--color-gold-dark), var(--color-gold));
+    color: #1a1a1a;
+    font-weight: 600;
+    box-shadow: 0 2px 10px rgba(212, 175, 55, 0.3);
+    border-color: var(--color-gold);
+}
+
+/* ===================================
+   Main Content
+   =================================== */
+.main-content {
+    flex: 1;
+    margin-top: var(--header-height);
+    margin-bottom: var(--footer-height);
+    padding: 40px 32px;
+    max-width: 1400px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Filter Bar - Glassmorphism */
+.filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 40px;
+    padding: 24px;
+    background: var(--color-glass);
+    border: 1px solid var(--color-glass-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    backdrop-filter: blur(10px);
+}
+
+.search-box {
+    position: relative;
+    flex: 1;
+    min-width: 280px;
+}
+
+.search-icon {
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    color: var(--color-gold);
+}
+
+.search-input {
+    width: 100%;
+    padding: 16px 16px 16px 50px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--color-glass-border);
+    border-radius: var(--radius-md);
+    font-size: 1rem;
+    color: var(--color-white);
+    transition: all 0.3s ease;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: var(--color-gold);
+    box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.2);
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.search-input::placeholder {
+    color: var(--color-text-muted);
+}
+
+.filter-group {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.filter-select {
+    padding: 16px 44px 16px 20px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--color-glass-border);
+    border-radius: var(--radius-md);
+    font-size: 0.95rem;
+    color: var(--color-text);
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    /* Custom Arrow */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23D4AF37' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    background-size: 18px;
+    appearance: none;
+}
+
+.filter-select:focus {
+    outline: none;
+    border-color: var(--color-gold);
+    box-shadow: var(--glow-gold);
+}
+
+.filter-select option {
+    background: #1a1a1a;
+    color: var(--color-text);
+}
+
+/* ===================================
+   Wine Grid
+   =================================== */
+.wine-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+}
+
+/* Luxury Wine Card - New Design */
+/* Luxury Wine Card - Black Design with Sidebar */
+.wine-card {
+    background: #1a1a1a;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: row;
+    /* Sidebar layout */
+    min-height: 280px;
+    /* Reduced height as we don't need to stack everything vertically */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.wine-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Sidebar Styles */
+.wine-card-sidebar {
+    width: 60px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.wine-card-number {
+    font-family: var(--font-serif);
+    font-size: 2.2rem;
+    font-weight: 700;
+    line-height: 1;
+    z-index: 2;
+}
+
+/* === Color Themes for Sidebar & Accents === */
+
+/* Red Wine: Deep Red Sidebar */
+.wine-card[data-type="red"] .wine-card-sidebar {
+    background: linear-gradient(to bottom, #722f37, #4a0e16);
+    color: #ffd700;
+    /* Gold number */
+}
+
+.wine-card[data-type="red"] .wine-type-label {
+    color: #ff9999;
+}
+
+/* White Wine: Very Light Blue Sidebar */
+.wine-card[data-type="white"] .wine-card-sidebar {
+    background: linear-gradient(to bottom, #e0f2fe, #bae6fd);
+    color: #0c4a6e;
+    /* Dark Blue number */
+}
+
+.wine-card[data-type="white"] .wine-type-label {
+    color: #bae6fd;
+}
+
+/* Sparkling: Gold Sidebar */
+.wine-card[data-type="sparkling"] .wine-card-sidebar {
+    background: linear-gradient(to bottom, #fcd34d, #d97706);
+    color: #451a03;
+    /* Dark Brown number */
+}
+
+.wine-card[data-type="sparkling"] .wine-type-label {
+    color: #fcd34d;
+}
+
+/* Rosé: Salmon Pink Sidebar */
+.wine-card[data-type="rose"] .wine-card-sidebar {
+    background: linear-gradient(to bottom, #fda4af, #e11d48);
+    color: #881337;
+    /* Dark Red number */
+}
+
+.wine-card[data-type="rose"] .wine-type-label {
+    color: #fda4af;
+}
+
+/* Rose Sparkling: Same as Rosé for now, or mix */
+.wine-card[data-type="rose_sparkling"] .wine-card-sidebar {
+    background: linear-gradient(to bottom, #fda4af, #e11d48);
+    color: #881337;
+    /* Dark Red number */
+}
+
+.wine-card[data-type="rose_sparkling"] .wine-type-label {
+    color: #fda4af;
+}
+
+/* Orange Wine: Amber styling */
+.wine-card[data-type="orange"] .wine-card-sidebar {
+    background: linear-gradient(to bottom, #fbbf24, #d97706);
+    color: #78350f;
+    /* Amber/Brown number */
+}
+
+.wine-card[data-type="orange"] .wine-type-label {
+    color: #fbbf24;
+}
+
+
+/* Main Content Styles */
+.wine-card-content {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    color: #e5e5e5;
+}
+
+.wine-header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 8px;
+    gap: 12px;
+}
+
+.wine-header-main {
+    flex: 1;
+}
+
+.wine-name {
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+    line-height: 1.35;
+    color: #ffffff;
+    margin-bottom: 4px;
+    text-shadow: none;
+    overflow-wrap: break-word;
+    /* Prevent overflow */
+    word-break: auto-phrase;
+    /* Natural breaking for CJK if supported */
+}
+
+.wine-vintage-badge {
+    display: inline-block;
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-gold);
+    margin-top: 2px;
+}
+
+.hidden-badge {
+    background: #333;
+    color: #aaa;
+    font-size: 0.65rem;
+    padding: 4px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.wine-winery {
+    font-size: 0.85rem;
+    color: #aaa;
+    margin-bottom: 16px;
+    font-style: italic;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 12px;
+}
+
+.wine-details-block {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 16px;
+    font-size: 0.85rem;
+}
+
+.wine-detail-row {
+    display: flex;
+    gap: 8px;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.wine-detail-row .label {
+    color: #888;
+    min-width: 40px;
+}
+
+.wine-detail-row .value {
+    color: #ddd;
+    font-weight: 500;
+}
+
+.wine-tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: auto;
+    padding-bottom: 16px;
+}
+
+.wine-tag-pill {
+    font-size: 0.7rem;
+    padding: 3px 10px;
+    border-radius: 100px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #ccc;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.wine-footer-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    /* Very subtle */
+}
+
+.wine-price-container {
+    display: flex;
+    align-items: baseline;
+}
+
+.wine-price {
+    font-family: var(--font-serif);
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #fff;
+    background: none;
+    -webkit-text-fill-color: initial;
+}
+
+.wine-type-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    opacity: 0.9;
+}
+
+/* Admin Item Hidden Styles */
+.item-hidden {
+    opacity: 0.6;
+    background: rgba(40, 40, 40, 0.05);
+}
+
+
+
+.sold-out-badge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    padding: 6px 12px;
+    background: #000;
+    color: var(--color-white);
+    font-size: 0.75rem;
+    font-weight: 700;
+    border: 1px solid var(--color-white);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    z-index: 10;
+}
+
+/* ===================================
+   Footer
+   =================================== */
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: var(--footer-height);
+    background: rgba(10, 10, 10, 0.9);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid var(--color-glass-border);
+    z-index: 100;
+}
+
+.footer-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32px;
+}
+
+.footer-content span {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    font-family: var(--font-serif);
+    letter-spacing: 1px;
+}
+
+.admin-trigger {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid transparent;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--color-text-muted);
+    cursor: pointer;
+    border-radius: var(--radius-md);
+    transition: all 0.3s ease;
+}
+
+.admin-trigger:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--color-gold);
+    border-color: rgba(212, 175, 55, 0.3);
+}
+
+/* ===================================
+   Modals - Luxury Style
+   =================================== */
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    /* Reduced padding container */
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    /* Darker backdrop */
+    backdrop-filter: blur(8px);
+    z-index: -1;
+}
+
+.modal-content {
+    max-width: 600px;
+    /* Narrower width */
+    width: 85%;
+    max-height: 80vh;
+    overflow-y: auto;
+    background: #161616;
+    /* Slightly lighter than pure black */
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    box-shadow: 0 0 60px rgba(0, 0, 0, 0.9), 0 0 30px rgba(212, 175, 55, 0.05);
+    color: var(--color-text);
+    border-radius: var(--radius-lg);
+    animation: modalIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    padding: 0;
+    /* Remove global padding */
+}
+
+.wine-detail {
+    padding: 40px;
+    /* Internal content padding */
+    position: relative;
+}
+
+@keyframes modalIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95) translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.modal-close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--color-text-muted);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    z-index: 20;
+}
+
+.modal-close:hover {
+    background: var(--color-wine-red);
+    color: var(--color-white);
+    border-color: var(--color-wine-red);
+    transform: rotate(90deg);
+}
+
+/* Wine Detail Modal - Luxury Update */
+.wine-detail-header {
+    text-align: center;
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 32px;
+    position: relative;
+    z-index: 2;
+}
+
+.wine-detail-header.centered {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.wine-detail-content-wrapper {
+    position: relative;
+    z-index: 2;
+}
+
+/* Watermark Number - Relocated to Top Left */
+/* Watermark Number - Relocated to Top Left */
+.wine-detail-watermark {
+    position: absolute;
+    top: 12px;
+    left: 16px;
+    transform: none;
+    font-size: 2rem;
+    /* Much smaller */
+    font-family: var(--font-serif);
+    font-weight: 700;
+    color: var(--color-gold);
+    opacity: 0.8;
+    /* More opaque since it's smaller */
+    pointer-events: none;
+    z-index: 20;
+    /* Bring above content to be clearly visible as a badge */
+    line-height: 1;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.5);
+    padding-bottom: 2px;
+    padding-right: 8px;
+}
+
+.wine-detail-title h2 {
+    color: var(--color-gold);
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+    font-size: 2.8rem;
+    margin-bottom: 4px;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+    overflow-wrap: break-word;
+    word-break: auto-phrase;
+    /* Natural breaking */
+    max-width: 100%;
+}
+
+.wine-detail-title .winery {
+    color: var(--color-text-light);
+    font-size: 1.1rem;
+    font-style: italic;
+    font-family: var(--font-serif);
+    opacity: 0.8;
+}
+
+.wine-detail-price-badge {
+    background: rgba(212, 175, 55, 0.1);
+    color: var(--color-gold);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    padding: 6px 20px;
+    border-radius: 50px;
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 8px;
+    display: inline-block;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.wine-description-container {
+    text-align: left;
+    margin: 24px auto;
+    max-width: 90%;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.02), transparent);
+    padding: 16px;
+    border-radius: 12px;
+}
+
+.wine-description {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #e0e0e0;
+    font-weight: 300;
+}
+
+.wine-detail-divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(212, 175, 55, 0.3), transparent);
+    margin: 32px 0;
+    width: 100%;
+}
+
+.wine-detail-specs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.spec-item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 12px;
+    /* transition: transform 0.3s; */
+}
+
+/* .spec-item:hover { transform: translateY(-3px); } */
+
+.spec-item.full-width {
+    grid-column: 1 / -1;
+    margin-top: 8px;
+}
+
+.spec-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--color-text-muted);
+}
+
+.spec-value {
+    font-size: 1.1rem;
+    color: var(--color-white);
+    font-family: var(--font-serif);
+    font-weight: 500;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+/* Tags Section */
+.wine-detail-tags-section {
+    margin-top: 16px;
+    text-align: center;
+}
+
+.wine-detail-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.wine-detail-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 14px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 100px;
+    color: var(--color-white);
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.wine-detail-tag::before {
+    content: "#";
+    margin-right: 4px;
+    color: var(--color-gold);
+    font-weight: 700;
+    opacity: 0.8;
+}
+
+.wine-detail-tag:hover {
+    background: rgba(212, 175, 55, 0.1);
+    border-color: var(--color-gold);
+    transform: translateY(-1px);
+}
+
+/* Form Styles - Luxury Update */
+.form-section {
+    background: transparent;
+    border: none;
+    margin-bottom: 24px;
+}
+
+.form-section h3,
+.form-section h4 {
+    color: var(--color-gold);
+    font-family: var(--font-serif);
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 8px;
+    display: inline-block;
+}
+
+.form-row {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 20px;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 16px;
+    margin-top: 32px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 24px;
+}
+
+.col-half {
+    flex: 1;
+}
+
+.form-group {
+    margin-bottom: 24px;
+    position: relative;
+}
+
+/* Refined Labels */
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--color-text-muted);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.form-group:focus-within label {
+    color: var(--color-gold);
+}
+
+/* Luxury Inputs - Underline Style */
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px 0;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--color-white);
+    font-size: 1rem;
+    font-family: var(--font-sans);
+    border-radius: 0;
+    transition: all 0.3s ease;
+}
+
+.form-group textarea {
+    background: rgba(255, 255, 255, 0.02);
+    padding: 10px;
+    border-radius: 4px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-bottom-color: var(--color-gold);
+    background: rgba(212, 175, 55, 0.02);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: rgba(255, 255, 255, 0.15);
+}
+
+/* Tabs - Elegant Style - Improved Visibility */
+.tabs {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 32px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 16px;
+}
+
+.tab-btn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--color-text-muted);
+    padding: 10px 24px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s;
+    font-family: var(--font-serif);
+    letter-spacing: 0.5px;
+    border-radius: 4px;
+}
+
+.tab-btn::after {
+    display: none;
+}
+
+.tab-btn:hover {
+    color: var(--color-white);
+    border-color: rgba(212, 175, 55, 0.5);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.tab-btn.active {
+    color: var(--color-gold);
+    border-color: var(--color-gold);
+    background: rgba(212, 175, 55, 0.1);
+    font-weight: 600;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.1);
+}
+
+/* Wine Form Modal - Fixed Footer Layout */
+.wine-form-modal {
+    padding: 0 !important;
+    /* Remove global padding to let content hit edges */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    /* Prevent modal body scroll */
+}
+
+/* Header inside Modal */
+.wine-form-modal h3 {
+    margin: 0;
+    padding: 32px 32px 24px;
+    flex-shrink: 0;
+    background: #161616;
+    z-index: 10;
+}
+
+/* Scrollable Form Body */
+.wine-form {
+    flex: 1;
+    overflow-y: auto;
+    /* Scroll info inside here */
+    display: flex;
+    flex-direction: column;
+    padding: 0 32px;
+    /* Content padding */
+}
+
+/* Sections inside form */
+.form-section {
+    padding: 0;
+    /* Remove internal padding if any */
+    background: transparent;
+    border: none;
+    margin-bottom: 24px;
+}
+
+/* Fixed/Sticky Footer */
+.form-actions {
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #161616;
+    margin: 0 -32px;
+    /* Pull to edges (-padding of container) */
+    padding: 24px 32px;
+    /* Inner padding */
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: flex-end;
+    gap: 16px;
+    z-index: 50;
+    box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Buttons */
+.btn-primary {
+    background: linear-gradient(135deg, var(--color-gold-dark), var(--color-gold));
+    color: #1a1a1a;
+    font-weight: 700;
+    border: 1px solid var(--color-gold);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--color-text);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--color-text);
+}
+
+/* Admin View */
+.admin-view {
+    padding-top: calc(var(--header-height) + 40px);
+    /* Add padding for header */
+    min-height: 100vh;
+}
+
+.admin-wine-item {
+    background: rgba(30, 30, 30, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    color: var(--color-text);
+}
+
+.admin-wine-name {
+    color: var(--color-gold);
+}
+
+.empty-state h3 {
+    color: var(--color-gold);
+}
+
+.empty-state p {
+    color: var(--color-text-light);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-gold);
+}
+
+/* Utilities */
+.hidden {
+    display: none !important;
+}
+
+/* Footer Admin Trigger - Text Style */
+.admin-trigger {
+    width: auto;
+    /* Dynamic width */
+    height: 44px;
+    padding: 0 16px;
+    /* Add horizontal padding */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    /* Space between icon and text */
+    border: 1px solid transparent;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--color-text-muted);
+    cursor: pointer;
+    border-radius: var(--radius-md);
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    /* Text size */
+}
+
+.admin-trigger:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--color-gold);
+    border-color: rgba(212, 175, 55, 0.3);
+}
+
+/* PIN Modal Styles - Enhanced */
+.pin-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding: 20px;
+}
+
+.pin-modal h3 {
+    font-size: 1.5rem;
+    color: var(--color-gold);
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.pin-input {
+    width: 200px;
+    height: 60px;
+    font-size: 2rem;
+    text-align: center;
+    letter-spacing: 12px;
+    background: #000;
+    border: 2px solid var(--color-gold-dark);
+    color: var(--color-gold);
+    border-radius: var(--radius-md);
+    transition: all 0.3s ease;
+}
+
+.pin-input:focus {
+    outline: none;
+    border-color: var(--color-gold);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+}
+
+.pin-error {
+    color: #ff4d4d;
+    font-size: 0.9rem;
+    height: 20px;
+    /* Preserve space */
+}
+
+.pin-actions {
+    display: flex;
+    gap: 16px;
+    width: 100%;
+    justify-content: center;
+}
+
+/* Admin View - Scroll Fix */
+.admin-content {
+    /* Add padding to prevent content strictly being hidden behind footer */
+    padding-bottom: 100px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-left: 32px;
+    padding-right: 32px;
+}
+
+.admin-header {
+    max-width: 1400px;
+    margin: 0 auto 32px;
+    padding: 0 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin-header h2 {
+    color: var(--color-gold);
+    font-size: 2rem;
+    font-family: var(--font-serif);
+}
+
+.admin-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .header-content {
+        padding: 0 20px;
+    }
+
+    .main-content {
+        padding: 24px 16px;
+    }
+
+    .wine-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Toggle Switch - moved out of media query */
+.admin-wine-name-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 4px;
+}
+
+.toggle-switch {
+    display: inline-block;
+    height: 20px;
+    width: 36px;
+    position: relative;
+    vertical-align: middle;
+}
+
+.toggle-switch input {
+    display: none;
+}
+
+.slider {
+    background-color: #333;
+    border: 1px solid #555;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: 0.4s;
+}
+
+.slider:before {
+    background-color: #999;
+    bottom: 2px;
+    content: "";
+    height: 14px;
+    left: 2px;
+    position: absolute;
+    transition: 0.4s;
+    width: 14px;
+}
+
+input:checked+.slider {
+    background-color: var(--color-gold-dark);
+    border-color: var(--color-gold);
+}
+
+input:checked+.slider:before {
+    background-color: #fff;
+    transform: translateX(16px);
+}
+
+.slider.round {
+    border-radius: 20px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/* Luxury Admin Item */
+.admin-wine-item {
+    background: linear-gradient(135deg, rgba(30, 30, 30, 0.95), rgba(20, 20, 20, 0.98));
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-left: 4px solid var(--color-gold);
+    color: var(--color-text);
+    margin-bottom: 12px;
+    padding: 16px 24px;
+    border-radius: var(--radius-md);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.admin-wine-item:hover {
+    background: linear-gradient(135deg, rgba(40, 40, 40, 0.95), rgba(30, 30, 30, 0.98));
+    border-color: var(--color-gold);
+    transform: translateX(4px);
+}
+
+.admin-wine-number {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-gold);
+    opacity: 0.8;
+    margin-right: 24px;
+    width: 40px;
+    text-align: right;
+}
+
+/* Phase 6: Variety Pills */
+.variety-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 4px;
+}
+
+.variety-pill {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+}
+
+.variety-pill.detail-pill {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+    color: var(--color-text);
+    padding: 4px 10px;
+}
+
+.admin-wine-info {
+    flex: 1;
+}
+
+.admin-wine-name {
+    color: var(--color-gold);
+    font-size: 1.2rem;
+    font-family: var(--font-serif);
+    letter-spacing: 0.5px;
+}
+
+.admin-wine-meta {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    margin-top: 4px;
+    font-family: var(--font-sans);
+}
+
+.item-hidden {
+    opacity: 0.6;
+    border-left-color: #555;
+    background: rgba(20, 20, 20, 0.8);
+}
+
+.item-hidden .admin-wine-name {
+    color: #999;
+}
+
+
+
+.file-input-wrapper {
+    display: inline-block;
+}
+
+.animate-spin {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ===================================
+   Responsive Changes
+   =================================== */
+
+/* iPad Landscape & High-Res Tablets (1024px range) */
+@media screen and (min-width: 1024px) {
+    .wine-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Desktop Large (Default overrides if > 1400px or let auto-fill handle it) */
+@media screen and (min-width: 1400px) {
+    .wine-grid {
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    }
+}

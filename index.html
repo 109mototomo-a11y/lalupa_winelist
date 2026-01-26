@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Lupa Wine List</title>
+    <meta name="description" content="多言語対応ワインリスト - La Lupa Wine Cellar">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="app">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="logo.png" alt="La Lupa" class="logo-image">
+                </div>
+                <div class="language-switcher" id="languageSwitcher">
+                    <button class="lang-btn active" data-lang="ja">🇯🇵 日本語</button>
+                    <button class="lang-btn" data-lang="en">🇬🇧 EN</button>
+                    <button class="lang-btn" data-lang="zh-TW">🇹🇼 繁中</button>
+                    <button class="lang-btn" data-lang="ko">🇰🇷 한국어</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content" id="mainContent">
+            <!-- Filter Bar -->
+            <div class="filter-bar">
+                <div class="search-box">
+                    <i data-lucide="search" class="search-icon"></i>
+                    <input type="text" id="searchInput" class="search-input" data-i18n-placeholder="search.placeholder">
+                </div>
+                <div class="filter-group">
+                    <select id="typeFilter" class="filter-select">
+                        <option value="" data-i18n="filter.allTypes">すべての種類</option>
+                        <option value="red" data-i18n="wine.type.red">赤ワイン</option>
+                        <option value="white" data-i18n="wine.type.white">白ワイン</option>
+                        <option value="sparkling" data-i18n="wine.type.sparkling">スパークリング</option>
+                        <option value="rose" data-i18n="wine.type.rose">ロゼ</option>
+                        <option value="orange" data-i18n="wine.type.orange">オレンジワイン</option>
+                    </select>
+                    <select id="countryFilter" class="filter-select">
+                        <option value="" data-i18n="filter.allCountries">すべての国</option>
+                    </select>
+                    <select id="vintageFilter" class="filter-select">
+                        <option value="" data-i18n="filter.allVintages">すべての年</option>
+                    </select>
+                    <select id="bodyFilter" class="filter-select">
+                        <option value="" data-i18n="filter.allBody">すべてのボディ</option>
+                        <option value="light" data-i18n="wine.body.light">ライト</option>
+                        <option value="medium" data-i18n="wine.body.medium">ミディアム</option>
+                        <option value="full" data-i18n="wine.body.full">フルボディ</option>
+                        <option value="sweet" data-i18n="wine.body.sweet">スウィート</option>
+                        <option value="semidry" data-i18n="wine.body.semidry">セミドライ</option>
+                        <option value="dry" data-i18n="wine.body.dry">ドライ</option>
+                    </select>
+                    <select id="priceFilter" class="filter-select">
+                        <option value="" data-i18n="filter.allPrices">すべての価格</option>
+                        <option value="0-5000" data-i18n="filter.price.under5000">¥5,000以下</option>
+                        <option value="5000-10000" data-i18n="filter.price.5000to10000">¥5,000 - ¥10,000</option>
+                        <option value="10000-20000" data-i18n="filter.price.10000to20000">¥10,000 - ¥20,000</option>
+                        <option value="20000+" data-i18n="filter.price.over20000">¥20,000以上</option>
+                    </select>
+                    <select id="varietyFilter" class="filter-select">
+                        <option value="" data-i18n="filter.allVarieties">すべての品種</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Wine Grid -->
+            <div class="wine-grid" id="wineGrid">
+                <!-- Wine cards will be inserted here -->
+            </div>
+        </main>
+
+        <!-- Admin View (Hidden by default) -->
+        <div class="admin-view hidden" id="adminView">
+            <div class="admin-header">
+                <h2 data-i18n="admin.title">管理画面</h2>
+                <button class="btn btn-secondary" id="backToCustomer">
+                    <i data-lucide="arrow-left"></i>
+                    <span data-i18n="admin.backToList">一覧に戻る</span>
+                </button>
+            </div>
+            <div class="admin-content">
+                <div class="admin-actions">
+                    <div class="file-input-wrapper">
+                        <input type="file" id="csvInput" accept=".csv" hidden>
+                        <button class="btn btn-secondary" id="importCsvBtn">
+                            <i data-lucide="upload"></i>
+                            <span data-i18n="admin.importCSV">CSV Import</span>
+                        </button>
+                    </div>
+                    <button class="btn btn-primary" id="addWineBtn">
+                        <i data-lucide="plus"></i>
+                        <span data-i18n="admin.addWine">ワインを追加</span>
+                    </button>
+                </div>
+                <div class="admin-wine-list" id="adminWineList">
+                    <!-- Admin wine list will be inserted here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <span data-i18n="footer.copyright">© 2026 La Lupa Wine</span>
+                <button class="admin-trigger" id="adminTrigger" title="Admin">
+                    <i data-lucide="lock"></i>
+                    <span>管理画面</span>
+                </button>
+            </div>
+        </footer>
+
+        <!-- Wine Detail Modal -->
+        <div class="modal hidden" id="wineModal">
+            <div class="modal-backdrop"></div>
+            <div class="modal-content wine-detail-modal">
+                <button class="modal-close" id="closeWineModal">
+                    <i data-lucide="x"></i>
+                </button>
+                <div class="wine-detail" id="wineDetail">
+                    <!-- Wine detail will be inserted here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- PIN Modal -->
+        <div class="modal hidden" id="pinModal">
+            <div class="modal-backdrop"></div>
+            <div class="modal-content pin-modal">
+                <div class="pin-content">
+                    <h3 data-i18n="pin.title">PINコードを入力</h3>
+                    <div class="pin-input-group">
+                        <input type="password" id="pinInput" class="pin-input" maxlength="4" placeholder="••••">
+                    </div>
+                    <p class="pin-error hidden" id="pinError" data-i18n="pin.error">PINコードが正しくありません</p>
+                    <div class="pin-actions">
+                        <button class="btn btn-secondary" id="cancelPin" data-i18n="common.cancel">キャンセル</button>
+                        <button class="btn btn-primary" id="submitPin" data-i18n="common.confirm">確認</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Wine Form Modal -->
+        <div class="modal hidden" id="wineFormModal">
+            <div class="modal-backdrop"></div>
+            <div class="modal-content wine-form-modal">
+                <button class="modal-close" id="closeWineForm">
+                    <i data-lucide="x"></i>
+                </button>
+                <h3 id="wineFormTitle" data-i18n="admin.addWine">ワインを追加</h3>
+                <form id="wineForm" class="wine-form">
+                    <input type="hidden" id="wineId">
+
+
+
+                    <!-- Basic Info Section -->
+                    <div class="form-section form-section-basic">
+                        <h3 data-i18n="form.basicInfo">Basic Information</h3>
+
+                        <div class="form-row">
+                            <div class="form-group col-half">
+                                <label for="wineNumber" data-i18n="form.number">Number</label>
+                                <input type="number" id="wineNumber" required>
+                            </div>
+                            <div class="form-group col-half">
+                                <label for="wineVintage" data-i18n="form.vintage">Vintage</label>
+                                <input type="text" id="wineVintage" placeholder="e.g. 2015, NV">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="wineName" data-i18n="form.wineName">Wine Name</label>
+                            <input type="text" id="wineName" required>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-half">
+                                <label for="wineWinery" data-i18n="form.winery">Winery</label>
+                                <input type="text" id="wineWinery">
+                            </div>
+                            <div class="form-group col-half">
+                                <label for="wineCountry" data-i18n="form.country">Country</label>
+                                <input type="text" id="wineCountry">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-half">
+                                <label for="wineRegion" data-i18n="form.region">Region</label>
+                                <input type="text" id="wineRegion">
+                            </div>
+                            <div class="form-group col-half">
+                                <label for="wineVariety" data-i18n="form.variety">Variety</label>
+                                <input type="text" id="wineVariety" placeholder="e.g. Merlot, Cabernet">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="wineTags" data-i18n="wine.tags">Features (Tags)</label>
+                            <input type="text" id="wineTags" placeholder="カンマ区切りで入力 (例: フルーティー, 辛口)">
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-half">
+                                <label for="winePrice" data-i18n="form.price">Price</label>
+                                <input type="number" id="winePrice">
+                            </div>
+                            <div class="form-group col-half">
+                                <label for="wineType" data-i18n="form.type">Type</label>
+                                <select id="wineType">
+                                    <option value="red" data-i18n="wine.type.red">Red</option>
+                                    <option value="white" data-i18n="wine.type.white">White</option>
+                                    <option value="sparkling" data-i18n="wine.type.sparkling">Sparkling</option>
+                                    <option value="rose" data-i18n="wine.type.rose">Rose</option>
+                                    <option value="orange" data-i18n="wine.type.orange">Orange</option>
+                                    <option value="rose_sparkling" data-i18n="wine.type.rose_sparkling">Rose Sparkling
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-half">
+                                <label for="wineBody" data-i18n="form.body">Body</label>
+                                <select id="wineBody">
+                                    <option value="light" data-i18n="wine.body.light">Light</option>
+                                    <option value="medium" data-i18n="wine.body.medium">Medium</option>
+                                    <option value="full" data-i18n="wine.body.full">Full</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="wineDescription" data-i18n="form.description">特徴 (Description | JA)</label>
+                            <textarea id="wineDescription" rows="3" class="form-textarea"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Multi-language Info -->
+                    <div class="form-section">
+                        <h3 data-i18n="form.multiLangInfo">Multi-language Info (Optional)</h3>
+                        <div class="tabs">
+                            <button type="button" class="tab-btn active" data-tab="en">English</button>
+                        </div>
+
+                        <div class="tab-content active" id="tab-en">
+                            <div class="form-group"><label>Name (EN)</label><input type="text" id="wineName_en"></div>
+                            <div class="form-group"><label>Winery (EN)</label><input type="text" id="wineWinery_en">
+                            </div>
+                            <div class="form-group"><label>Country (EN)</label><input type="text" id="wineCountry_en">
+                            </div>
+                            <div class="form-group"><label>Region (EN)</label><input type="text" id="wineRegion_en">
+                            </div>
+                            <div class="form-group"><label>Variety (EN)</label><input type="text" id="wineVariety_en">
+                            </div>
+                            <div class="form-group"><label>Description (EN)</label><textarea id="wineDescription_en"
+                                    rows="3" class="form-textarea"></textarea></div>
+                            <div class="form-group"><label>Tags (EN)</label><input type="text" id="wineTags_en"></div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary" id="cancelWineForm"
+                            data-i18n="common.cancel">キャンセル</button>
+                        <button type="submit" class="btn btn-primary" data-i18n="common.save">保存</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="translations.js"></script>
+    <script src="wines.js"></script>
+    <script src="csvParser.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
