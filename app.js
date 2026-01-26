@@ -1066,6 +1066,11 @@ function setupEventListeners() {
         }
     });
 
+    // Search input (Debounced)
+    elements.searchInput.addEventListener('input', debounce(() => {
+        renderWineGrid();
+    }, 300));
+
     elements.typeFilter.addEventListener('change', renderWineGrid);
     elements.bodyFilter.addEventListener('change', renderWineGrid);
     elements.priceFilter.addEventListener('change', renderWineGrid);
