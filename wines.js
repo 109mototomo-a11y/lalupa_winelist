@@ -2534,7 +2534,7 @@ const initialWines = [
             "en": "Italy"
         },
         "region": {
-            "ja": "エミリア=ロマーニャ",
+            "ja": "エミリア・ロマーニャ",
             "en": "Emilia-Romagna"
         },
         "vintage": "NV",
@@ -2770,7 +2770,7 @@ const initialWines = [
         "vintage": "2022",
         "variety": {
             "ja": "ガリオッポ",
-            "en": "ガリオッポ"
+            "en": "Gaglioppo"
         },
         "body": "medium",
         "winery": {
@@ -2902,7 +2902,7 @@ const initialWines = [
             "en": "Italy"
         },
         "region": {
-            "ja": "エミリア=ロマーニャ",
+            "ja": "エミリア・ロマーニャ",
             "en": "Emilia-Romagna"
         },
         "vintage": "2022",
