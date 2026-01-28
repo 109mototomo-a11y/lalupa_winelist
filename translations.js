@@ -454,7 +454,21 @@ const termDictionary = {
     "マルヴァジア": { en: "Malvasia", "zh-TW": "馬爾瓦西亞", ko: "말바시아" },
     "ピノ・ドニス": { en: "Pineau d'Aunis", "zh-TW": "皮諾多尼斯", ko: "피노 도니스" },
     "カベルネ・フラン": { en: "Cabernet Franc", "zh-TW": "卡本內弗朗", ko: "카베르네 프랑" },
-    "カナイオーロ": { en: "Canaiolo", "zh-TW": "卡奈奧洛", ko: "카나이올로" }
+    "カナイオーロ": { en: "Canaiolo", "zh-TW": "卡奈奧洛", ko: "카나이올로" },
+    "ジンファンデル": { en: "Zinfandel", "zh-TW": "金粉黛", ko: "진판델" },
+    "ピノ・ムニエ": { en: "Pinot Meunier", "zh-TW": "皮諾莫尼耶", ko: "피노 뫼니에" },
+    "プティ・ヴェルド": { en: "Petit Verdot", "zh-TW": "小維多", ko: "프티 베르도" },
+    "カベルネ・ドリオ": { en: "Cabernet Drio", "zh-TW": "卡本內多利奧", ko: "카베르네 드리오" },
+    "ボナルダ": { en: "Bonarda", "zh-TW": "波納達", ko: "보나르다" },
+    "ガリオッポ": { en: "Gaglioppo", "zh-TW": "佳廖波", ko: "갈리오포" },
+    "グロロー・ノワール": { en: "Grolleau Noir", "zh-TW": "黑格羅洛", ko: "그롤로 누아르" },
+    "グロロー・グリ": { en: "Grolleau Gris", "zh-TW": "灰格羅洛", ko: "그롤로 그리" },
+    "コー": { en: "Côt", "zh-TW": "科特", ko: "코트" },
+    "ヴィンヤードブレンド": { en: "Vineyard Blend", "zh-TW": "葡萄園混釀", ko: "빈야드 블렌드" },
+    "水": { en: "Water", "zh-TW": "水", ko: "물" },
+    "ミラベル": { en: "Mirabelle", "zh-TW": "米拉貝爾李", ko: "미라벨" },
+    "洋梨": { en: "Pear", "zh-TW": "梨", ko: "배" },
+    "ホップの花": { en: "Hops", "zh-TW": "啤酒花", ko: "홉" }
 };
 
 // Translation helper function

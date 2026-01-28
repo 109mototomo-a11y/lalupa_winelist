@@ -204,7 +204,7 @@ const initialWines = [
         },
         "vintage": "2023",
         "variety": {
-            "ja": "トラミネールアロマティコ",
+            "ja": "トラミネール・アロマティコ",
             "en": "Traminer Aromatico"
         },
         "body": "dry",
@@ -388,7 +388,7 @@ const initialWines = [
         },
         "vintage": "2023",
         "variety": {
-            "ja": "ボンビーノビアンコ、トレッビアーノ、マルヴァジア",
+            "ja": "ボンビーノ・ビアンコ、トレッビアーノ、マルヴァジア",
             "en": "Bonino Bianco, Trebbiano, Malvasia"
         },
         "body": "dry",
@@ -479,7 +479,7 @@ const initialWines = [
         },
         "vintage": "2024",
         "variety": {
-            "ja": "ソーヴィニヨンブラン",
+            "ja": "ソーヴィニヨン・ブラン",
             "en": "Sauvignon Blanc"
         },
         "body": "dry",
@@ -1398,7 +1398,7 @@ const initialWines = [
         },
         "vintage": "2024",
         "variety": {
-            "ja": "ソーヴィニヨンブラン、シャルドネ",
+            "ja": "ソーヴィニヨン・ブラン、シャルドネ",
             "en": "Sauvignon Blanc, Chardonnay"
         },
         "body": "dry",
@@ -1628,7 +1628,7 @@ const initialWines = [
         },
         "vintage": "2019",
         "variety": {
-            "ja": "ピノノワール",
+            "ja": "ピノ・ノワール",
             "en": "Pinot Noir"
         },
         "body": "medium",
@@ -1764,7 +1764,7 @@ const initialWines = [
         },
         "vintage": "2024",
         "variety": {
-            "ja": "グリューナーヴェルトリーナー、ヴェルシュリースリング",
+            "ja": "グリューナー・ヴェルトリーナー、ヴェルシュリースリング",
             "en": "Gruner Veltliner, Veruschriesling"
         },
         "body": "dry",
@@ -2815,7 +2815,7 @@ const initialWines = [
         },
         "vintage": "2023",
         "variety": {
-            "ja": "メルロー、カベルネソーヴィニョン、カベルネフラン",
+            "ja": "メルロー、カベルネ・ソーヴィニヨン、カベルネ・フラン",
             "en": "Merlot, Cabernet Sauvignon, Cabernet Franc"
         },
         "body": "medium",
@@ -2953,7 +2953,7 @@ const initialWines = [
         },
         "vintage": "2022",
         "variety": {
-            "ja": "グロロー黒、グロローグリ、コー、カベルネフラン、シュナン",
+            "ja": "グロロー・ノワール、グロロー・グリ、コー、カベルネ・フラン、シュナン・ブラン",
             "en": "Grolleau Noir, Grolleau Gris, Coe, Cabernet Franc, Chenin"
         },
         "body": "light",
