@@ -352,6 +352,8 @@ const termDictionary = {
     "ポルトガル": { en: "Portugal", "zh-TW": "葡萄牙", ko: "포르투갈" },
 
     // Regions (Major examples, expand as needed)
+    "クリコ": { en: "Curicó Valley", "zh-TW": "庫里科山谷", ko: "쿠리코 밸리" },
+    "ザダル": { en: "Zadar", "zh-TW": "扎達爾", ko: "자다르" },
     "トスカーナ": { en: "Tuscany", "zh-TW": "托斯卡納", ko: "토스카나" },
     "ピエモンテ": { en: "Piedmont", "zh-TW": "皮埃蒙特", ko: "피에몬테" },
     "ボルドー": { en: "Bordeaux", "zh-TW": "波爾多", ko: "보르도" },

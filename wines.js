@@ -2524,7 +2524,8 @@ const initialWines = [
             "en": "Italy"
         },
         "region": {
-            "ja": "エミリアロマーニャ"
+            "ja": "エミリア=ロマーニャ",
+            "en": "Emilia-Romagna"
         },
         "vintage": "NV",
         "variety": {
@@ -2891,7 +2892,8 @@ const initialWines = [
             "en": "Italy"
         },
         "region": {
-            "ja": "エミリアロマーニャ"
+            "ja": "エミリア=ロマーニャ",
+            "en": "Emilia-Romagna"
         },
         "vintage": "2022",
         "variety": {

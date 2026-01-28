@@ -1257,15 +1257,153 @@ body::before {
 /* Responsiveness */
 @media (max-width: 768px) {
     .header-content {
-        padding: 0 20px;
+        padding: 0 16px;
     }
 
     .main-content {
-        padding: 24px 16px;
+        padding: 20px 16px;
     }
 
     .wine-grid {
         grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    /* Mobile Typography Adjustments for Wine Card */
+    .wine-card {
+        min-height: auto;
+        /* Allow flexible height */
+    }
+
+    .wine-card-sidebar {
+        width: 48px;
+        /* Reduce sidebar width */
+    }
+
+    .wine-card-number {
+        font-size: 1.6rem;
+        /* Reduced from 2.2rem */
+    }
+
+    .wine-card-content {
+        padding: 16px;
+        /* Compact padding */
+    }
+
+    .wine-name {
+        font-size: 1.15rem;
+        /* Reduced from 1.4rem to prevent overflow */
+        margin-bottom: 6px;
+    }
+
+    .wine-vintage-badge {
+        font-size: 1rem;
+    }
+
+    .wine-price {
+        font-size: 1.35rem;
+        /* Reduced from 1.6rem */
+    }
+
+    .wine-type-label {
+        font-size: 0.65rem;
+    }
+
+    /* Modal Mobile Adjustments */
+    .modal {
+        padding: 16px;
+        align-items: flex-end;
+        /* Bottom sheet style feel on mobile */
+    }
+
+    .modal-content {
+        width: 100%;
+        max-height: 90vh;
+        border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+        /* Rounded top only */
+    }
+
+    .wine-detail {
+        padding: 24px 20px;
+    }
+
+    .wine-detail-title h2 {
+        font-size: 1.75rem;
+        /* Reduced from 2.8rem */
+        line-height: 1.25;
+    }
+
+    .wine-detail-title .winery {
+        font-size: 0.95rem;
+    }
+
+    .wine-detail-watermark {
+        font-size: 1.5rem;
+        left: 12px;
+        top: 10px;
+    }
+
+    .wine-detail-price-badge {
+        font-size: 1.2rem;
+        padding: 5px 16px;
+    }
+
+    .wine-detail-specs {
+        grid-template-columns: 1fr 1fr;
+        /* 2 columns instead of 3 */
+    }
+
+    .spec-item.full-width {
+        grid-column: 1 / -1;
+    }
+
+    /* Form Mobile Adjustments */
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .form-actions {
+        padding: 16px 24px;
+        /* Smaller padding */
+        flex-direction: column-reverse;
+        /* Stack buttons, cancel at bottom */
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        justify-content: center;
+        padding: 12px;
+    }
+
+    /* Admin View Mobile */
+    .admin-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .admin-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-box {
+        width: 100%;
+        min-width: auto;
+    }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 400px) {
+    .wine-name {
+        font-size: 1.05rem;
+        /* Further reduction */
+    }
+
+    .wine-detail-title h2 {
+        font-size: 1.5rem;
     }
 }
 
