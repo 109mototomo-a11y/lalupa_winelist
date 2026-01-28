@@ -30,7 +30,7 @@ const initialWines = [
         },
         "price": 13860,
         "description": {
-            "ja": "「ワインの王」。芳醇さと緊張感があり、しっかりとした構造の中にエレガンスがある。",
+            "ja": "「ワインの王」。芳醇さと緊張感があり, しっかりとした構造の中にエレガンスがある。",
             "en": "The 'King of Wines'. Rich and tense, with elegance within a solid structure."
         },
         "tags": [
@@ -76,7 +76,7 @@ const initialWines = [
         },
         "price": 5390,
         "description": {
-            "ja": "アプリコットのような果実の香り、フレッシュな口当たりながら凝縮感がある。",
+            "ja": "アプリコットのような果実の香り, フレッシュな口当たりながら凝縮感がある。",
             "en": "Aromas of apricot-like fruit, fresh on the palate yet concentrated."
         },
         "tags": [
@@ -112,7 +112,7 @@ const initialWines = [
         },
         "vintage": "2022",
         "variety": {
-            "ja": "ガルガネガ、トレッビアーノ",
+            "ja": "ガルガネガ, トレッビアーノ",
             "en": "Galanga, Trebbiano"
         },
         "body": "dry",
@@ -122,7 +122,7 @@ const initialWines = [
         },
         "price": 4620,
         "description": {
-            "ja": "バニラの香りとまろやかな味わい。ハチミツやドライフルーツの風味、リッチで滑らか。",
+            "ja": "バニラの香りとまろやかな味わい。ハチミツやドライフルーツの風味, リッチで滑らか。",
             "en": "Vanilla aromas and mellow taste. Flavors of honey and dried fruit, rich and smooth."
         },
         "tags": [
@@ -158,7 +158,7 @@ const initialWines = [
         },
         "vintage": "2022",
         "variety": {
-            "ja": "コルヴィーナ、ロンディネッラ、モリナーラ",
+            "ja": "コルヴィーナ, ロンディネッラ, モリナーラ",
             "en": "Corvina, Rondinella, Morina"
         },
         "body": "medium",
@@ -168,7 +168,7 @@ const initialWines = [
         },
         "price": 5080,
         "description": {
-            "ja": "濃いルビー色。イチゴやサクランボの香り、ミネラルのニュアンス。ドライで程よいタンニン。",
+            "ja": "濃いルビー色。イチゴやサクランボの香り, ミネラルのニュアンス。ドライで程よいタンニン。",
             "en": "Deep ruby color. Aromas of strawberry and cherry, with mineral nuances. Dry with moderate tannins."
         },
         "tags": [
@@ -214,7 +214,7 @@ const initialWines = [
         },
         "price": 4470,
         "description": {
-            "ja": "ライチやバラ、スパイスのアロマティックな香り。滑らかでミネラル感がある。",
+            "ja": "ライチやバラ, スパイスのアロマティックな香り。滑らかでミネラル感がある。",
             "en": "Aromatic scents of lychee, rose, and spice. Smooth with a mineral feel."
         },
         "tags": [
@@ -250,7 +250,7 @@ const initialWines = [
         },
         "vintage": "2019",
         "variety": {
-            "ja": "サンジョヴェーゼグロッソ",
+            "ja": "サンジョヴェーゼ・グロッソ",
             "en": "Sangiovese Grosso"
         },
         "body": "full",
@@ -260,7 +260,7 @@ const initialWines = [
         },
         "price": 11550,
         "description": {
-            "ja": "トスカーナの偉大な赤。複雑なプラムやチェリーの香り、滑らかなタンニンと深い余韻。",
+            "ja": "トスカーナの偉大な赤。複雑なプラムやチェリーの香り, 滑らかなタンニンと深い余韻。",
             "en": "A great Tuscan red. Complex aromas of plum and cherry, smooth tannins and a deep finish."
         },
         "tags": [
@@ -296,7 +296,7 @@ const initialWines = [
         },
         "vintage": "2021",
         "variety": {
-            "ja": "サンジョヴェーゼグロッソ",
+            "ja": "サンジョヴェーゼ・グロッソ",
             "en": "Sangiovese Grosso"
         },
         "body": "medium",
@@ -306,7 +306,7 @@ const initialWines = [
         },
         "price": 4520,
         "description": {
-            "ja": "シンプルな赤身肉やキノコ料理、ハードチーズとよく合う。",
+            "ja": "シンプルな赤身肉やキノコ料理, ハードチーズとよく合う。",
             "en": "Pairs well with simple red meats, mushroom dishes, and hard cheeses."
         },
         "tags": [
@@ -352,7 +352,7 @@ const initialWines = [
         },
         "price": 2780,
         "description": {
-            "ja": "ルビーレッド色。ワインらしい豊かな果実味と、ドライでバランスの取れた味わい。",
+            "ja": "ルビーレッド色。ワインらしい豊かな果実味と, ドライでバランスの取れた味わい。",
             "en": "Ruby red color. Rich fruitiness typical of wine, with a dry and balanced taste."
         },
         "tags": [
@@ -388,7 +388,7 @@ const initialWines = [
         },
         "vintage": "2023",
         "variety": {
-            "ja": "ボンビーノ・ビアンコ、トレッビアーノ、マルヴァジア",
+            "ja": "ボンビーノ・ビアンコ, トレッビアーノ, マルヴァジア",
             "en": "Bonino Bianco, Trebbiano, Malvasia"
         },
         "body": "dry",
@@ -535,7 +535,7 @@ const initialWines = [
         },
         "price": 4400,
         "description": {
-            "ja": "スミレのような花の香りと、チェリーやラズベリーなど赤いベリー系の風味。非常にフルーティでジューシー。",
+            "ja": "スミレのような花の香りと, チェリーやラズベリーなど赤いベリー系の風味。非常にフルーティでジューシー。",
             "en": "Floral scents like violets, and flavors of red berries like cherry and raspberry. Very fruity and juicy."
         },
         "tags": [
@@ -580,7 +580,7 @@ const initialWines = [
         },
         "price": 3300,
         "description": {
-            "ja": "チェリーや熟したプラムの甘さを感じる香り。スパイスのニュアンス、熟した甘いタンニン。",
+            "ja": "チェリーや熟したプラムの甘さを感じる香り。スパイスのニュアンス, 熟した甘いタンニン。",
             "en": "Sweet aromas of cherry and ripe plum. Nuances of spice, ripe sweet tannins."
         },
         "tags": [
@@ -626,7 +626,7 @@ const initialWines = [
         },
         "price": 3740,
         "description": {
-            "ja": "EUオーガニック認証。個性的で優美な香り、ドライで滑らか。柔らかいタンニン。",
+            "ja": "EUオーガニック認証。個性的で優美な香り, ドライで滑らか。柔らかいタンニン。",
             "en": "EU Organic Certified. Distinctive and graceful aroma, dry and smooth. Soft tannins."
         },
         "tags": [
@@ -672,7 +672,7 @@ const initialWines = [
         },
         "price": 4360,
         "description": {
-            "ja": "青リンゴ、シトラス、バニラの香り。フレッシュなミネラル感と樽熟成の爽やかな後味。",
+            "ja": "青リンゴ, シトラス, バニラの香り。フレッシュなミネラル感と樽熟成の爽やかな後味。",
             "en": "Aromas of green apple, citrus, and vanilla. Fresh minerality and a crisp barrel-aged finish."
         },
         "tags": [
@@ -718,7 +718,7 @@ const initialWines = [
         },
         "price": 4360,
         "description": {
-            "ja": "複雑で力強く、濃厚でありながら飲みやすい。豪華で長い余韻。",
+            "ja": "複雑で力強く, 濃厚でありながら飲みやすい。豪華で長い余韻。",
             "en": "Complex and powerful, rich yet easy to drink. Luxurious and long finish."
         },
         "tags": [
@@ -764,7 +764,7 @@ const initialWines = [
         },
         "price": 2640,
         "description": {
-            "ja": "エールフランス採用。繊細な泡立ちと果樹園果実のアロマ、滑らかでフルーティー。",
+            "ja": "エールフランス採用。繊細な泡立ちと果樹園果実のアロマ, 滑らかでフルーティー。",
             "en": "Selected by Air France. Delicate bubbles and orchard fruit aromas, smooth and fruity."
         },
         "tags": [
@@ -800,7 +800,7 @@ const initialWines = [
         },
         "vintage": "NV",
         "variety": {
-            "ja": "ピノ・ノワール、シャルドネ、ピノ・ムニエ",
+            "ja": "ピノ・ノワール, シャルドネ, ピノ・ムニエ",
             "en": "Pinot Noir, Chardonnay, Pinot Meunier"
         },
         "body": "dry",
@@ -810,7 +810,7 @@ const initialWines = [
         },
         "price": 13640,
         "description": {
-            "ja": "36ヶ月長期熟成。白い花や桃、ペイストリーのニュアンス。フレッシュでエレガント。",
+            "ja": "36ヶ月長期熟成。白い花や桃, ペイストリーのニュアンス。フレッシュでエレガント。",
             "en": "Aged for 36 months. Nuances of white flowers, peach, and pastry. Fresh and elegant."
         },
         "tags": [
@@ -856,7 +856,7 @@ const initialWines = [
         },
         "price": 2970,
         "description": {
-            "ja": "典型的な南仏シャルドネ。ピーチとパイナップルの香り、まろやかで滑らか。",
+            "ja": "典型的な南仏シャルドネ。ピーチとパイナップルの香り, まろやかで滑らか。",
             "en": "Typical Southern French Chardonnay. Aromas of peach and pineapple, mellow and smooth."
         },
         "tags": [
@@ -902,7 +902,7 @@ const initialWines = [
         },
         "price": 5440,
         "description": {
-            "ja": "ドライでエレガント。火打石のようなミネラル感、柑橘類や松脂の特徴。",
+            "ja": "ドライでエレガント。火打石のようなミネラル感, 柑橘類や松脂の特徴。",
             "en": "Dry and elegant. Flinty minerality, with characteristics of citrus and pine resin."
         },
         "tags": [
@@ -938,7 +938,7 @@ const initialWines = [
         },
         "vintage": "2024",
         "variety": {
-            "ja": "シュナンブラン",
+            "ja": "シュナン・ブラン",
             "en": "Chenin Blanc"
         },
         "body": "dry",
@@ -948,7 +948,7 @@ const initialWines = [
         },
         "price": 3610,
         "description": {
-            "ja": "すっきりとした辛口。グアバやパッションフルーツの香り、ライムの皮の風味。",
+            "ja": "すっきりとした辛口。グアバやパッションフルーツの香り, ライムの皮の風味。",
             "en": "Crisp and dry. Aromas of guava and passion fruit, flavor of lime zest."
         },
         "tags": [
@@ -1030,7 +1030,7 @@ const initialWines = [
         },
         "vintage": "2022",
         "variety": {
-            "ja": "カベルネ・ソーヴィニヨン,プティ・ヴェルド,カベルネ・フラン,メルロー,マルベック",
+            "ja": "カベルネ・ソーヴィニヨン, プティ・ヴェルド, カベルネ・フラン, メルロー, マルベック",
             "en": "Cabernet Sauvignon, Petit Verdot, Cabernet Franc, Merlot, Malbec"
         },
         "body": "full",
@@ -1040,7 +1040,7 @@ const initialWines = [
         },
         "price": 98000,
         "description": {
-            "ja": "カリフォルニアの最高峰。カベルネ主体。圧倒的な凝縮感とエレガンス、長期熟成能力を持つ。",
+            "ja": "カリフォルニアの最高峰。カベルネ主体。圧倒的な凝縮感とエレガンス, 長期熟成能力を持つ。",
             "en": "The pinnacle of California. Cabernet dominant. Overwhelming concentration and elegance, with long-term aging potential."
         },
         "tags": [
@@ -1076,7 +1076,7 @@ const initialWines = [
         },
         "vintage": "2021",
         "variety": {
-            "ja": "メルロー、サンジョヴェーゼ",
+            "ja": "メルロー, サンジョヴェーゼ",
             "en": "Merlot, Sangiovese"
         },
         "body": "full",
@@ -1122,7 +1122,7 @@ const initialWines = [
         },
         "vintage": "2024",
         "variety": {
-            "ja": "ポシップ、ジラフカ、シャルドネ",
+            "ja": "ポシップ, ジラフカ, シャルドネ",
             "en": "Posip, Zilavka, Chardonnay"
         },
         "body": "dry",
@@ -1132,7 +1132,7 @@ const initialWines = [
         },
         "price": 4620,
         "description": {
-            "ja": "クロアチア産。熟した果実味とスパイス、しっかりとした骨格を持つプレミアム赤ワイン。",
+            "ja": "クロアチア産。熟した果実味とスパイス, しっかりとした骨格を持つプレミアム赤ワイン。",
             "en": "From Croatia. Premium red wine with ripe fruit, spice, and solid structure."
         },
         "tags": [
@@ -1203,7 +1203,7 @@ const initialWines = [
             "ja": "ヴィーナプンタスカラ アンティークロゼ エクストラブリュット",
             "en": "Vina Punta Skala Antique Rose Extra Brut"
         },
-        "type": "red",
+        "type": "rose",
         "country": {
             "ja": "クロアチア",
             "en": "Croatia"
@@ -1224,7 +1224,7 @@ const initialWines = [
         },
         "price": 5060,
         "description": {
-            "ja": "珍しいクロアチアのロゼスパークリング。ベリー系の香り、キリッとした辛口。",
+            "ja": "珍しいクロアチアのロゼスパークリング。ベリー系の香り, キリッとした辛口。",
             "en": "Rare Croatian Rose Sparkling. Berry aromas, crisp and dry."
         },
         "tags": [
@@ -1260,7 +1260,7 @@ const initialWines = [
         },
         "vintage": "2019",
         "variety": {
-            "ja": "プラヴァツ・マリ、クルリェナク、メルロー、シラー",
+            "ja": "プラヴァツ・マリ, クルリェナク, メルロー, シラー",
             "en": "Plavac Mali, Kulašenak, Merlot, Shiraz"
         },
         "body": "full",
@@ -1270,7 +1270,7 @@ const initialWines = [
         },
         "price": 9900,
         "description": {
-            "ja": "力強い名前の通り、濃厚でパワフルな赤ワイン。凝縮した果実味。",
+            "ja": "力強い名前の通り, 濃厚でパワフルな赤ワイン。凝縮した果実味。",
             "en": "True to its powerful name, a rich and powerful red wine. Concentrated fruitiness."
         },
         "tags": [
@@ -1362,7 +1362,7 @@ const initialWines = [
         },
         "price": 10300,
         "description": {
-            "ja": "ガメイ種。透明感あるルビー色。ジューシーな果実味が広がり、染み入るような柔らかさ。",
+            "ja": "ガメイ種。透明感あるルビー色。ジューシーな果実味が広がり, 染み入るような柔らかさ。",
             "en": "Gamay. Transparent ruby color. Juicy fruit flavors spread, with a soaking softness."
         },
         "tags": [
@@ -1398,7 +1398,7 @@ const initialWines = [
         },
         "vintage": "2024",
         "variety": {
-            "ja": "ソーヴィニヨン・ブラン、シャルドネ",
+            "ja": "ソーヴィニヨン・ブラン, シャルドネ",
             "en": "Sauvignon Blanc, Chardonnay"
         },
         "body": "dry",
@@ -1444,7 +1444,7 @@ const initialWines = [
         },
         "vintage": "2024",
         "variety": {
-            "ja": "ガメイ、ピノ・ドニス、カベルネ・フラン、カベルネ・ソーヴィニヨン",
+            "ja": "ガメイ, ピノ・ドニス, カベルネ・フラン, カベルネ・ソーヴィニヨン",
             "en": "Gamay, Pineau d'Aunis, Cabernet Franc, Sauvignon Blanc"
         },
         "body": "dry",
@@ -1536,7 +1536,7 @@ const initialWines = [
         },
         "vintage": "2018",
         "variety": {
-            "ja": "シャルドネ、サヴァニャン",
+            "ja": "シャルドネ, サヴァニャン",
             "en": "Chardonnay, Savagnin"
         },
         "body": "dry",
@@ -1592,7 +1592,7 @@ const initialWines = [
         },
         "price": 10890,
         "description": {
-            "ja": "淡い色調。アニスや白胡椒、真夏のスイカのようなジューシーな果実味。",
+            "ja": "淡い色調。アニスや白胡椒, 真夏のスイカのようなジューシーな果実味。",
             "en": "Pale color. Juicy fruit flavor like anise, white pepper, and midsummer watermelon."
         },
         "tags": [
@@ -1638,7 +1638,7 @@ const initialWines = [
         },
         "price": 13270,
         "description": {
-            "ja": "濃い紫の色調。ジューシーで密度のある黒果実、清涼感と陰影のある果実味。",
+            "ja": "濃い紫の色調。ジューシーで密度のある黒果実, 清涼感と陰影のある果実味。",
             "en": "Deep purple color. Juicy, dense black fruits, cool and shadowy fruit flavors."
         },
         "tags": [
@@ -1674,7 +1674,7 @@ const initialWines = [
         },
         "vintage": "2021",
         "variety": {
-            "ja": "水、ミラベル、洋梨、ホップの花、ゲヴュルツトラミネール",
+            "ja": "水, ミラベル, 洋梨, ホップの花, ゲヴュルツトラミネール",
             "en": "Water, Mirabelle, Pear, Hops, Gewurztraminer"
         },
         "body": "dry",
@@ -1684,7 +1684,7 @@ const initialWines = [
         },
         "price": 5050,
         "description": {
-            "ja": "「S'esch Sur」。水、ミラベル、洋梨、ホップ等を使用したペティアン。濁りのある文旦のような色、ドライで喉越しが良い。",
+            "ja": "「S'esch Sur」。水, ミラベル, 洋梨, ホップ等を使用したペティアン。濁りのある文旦のような色, ドライで喉越しが良い。",
             "en": "'S'esch Sur'. Pet-Nat using water, mirabelle, pear, hops etc. Cloudy pomelo-like color, dry and refreshing."
         },
         "tags": [
@@ -1729,7 +1729,7 @@ const initialWines = [
         },
         "price": 11440,
         "description": {
-            "ja": "1リットル瓶。フィールドブレンド。フレッシュでガブガブ飲める、エネルギッシュな自然派。",
+            "ja": "1リットル瓶。フィールドブレンド。フレッシュでガブガブ飲める, エネルギッシュな自然派。",
             "en": "1 Liter bottle. Field blend. Fresh, chuggable, energetic natural wine."
         },
         "tags": [
@@ -1764,7 +1764,7 @@ const initialWines = [
         },
         "vintage": "2024",
         "variety": {
-            "ja": "グリューナー・ヴェルトリーナー、ヴェルシュリースリング",
+            "ja": "グリューナー・ヴェルトリーナー, ヴェルシュリースリング",
             "en": "Gruner Veltliner, Veruschriesling"
         },
         "body": "dry",
@@ -1774,7 +1774,7 @@ const initialWines = [
         },
         "price": 14520,
         "description": {
-            "ja": "「第3世代」。無濾過で濁りのある白。フレッシュでジューシー、生き生きとした味わい。",
+            "ja": "「第3世代」。無濾過で濁りのある白。フレッシュでジューシー, 生き生きとした味わい。",
             "en": "'Third Generation'. Unfiltered cloudy white. Fresh, juicy, and lively taste."
         },
         "tags": [
@@ -1809,7 +1809,7 @@ const initialWines = [
         },
         "vintage": "2024",
         "variety": {
-            "ja": "ブラウフレンキッシュ、ツヴァイゲルト",
+            "ja": "ブラウフレンキッシュ, ツヴァイゲルト",
             "en": "Blaufränkisch, Zweigelt"
         },
         "body": "dry",
@@ -1819,7 +1819,7 @@ const initialWines = [
         },
         "price": 14520,
         "description": {
-            "ja": "「第3世代」のロゼ。ブラウフレンキッシュ/ツヴァイゲルト。フレッシュでフルーティ、魅力的な愛らしさ。",
+            "ja": "「第3世代」のロゼ。ブラウフレンキッシュ/ツヴァイゲルト。フレッシュでフルーティ, 魅力的な愛らしさ。",
             "en": "'Third Generation' Rose. Blaufränkisch/Zweigelt. Fresh, fruity, charming loveliness."
         },
         "tags": [
@@ -1854,7 +1854,7 @@ const initialWines = [
         },
         "vintage": "2023",
         "variety": {
-            "ja": "ロースラー、ブラウフレンキッシュ",
+            "ja": "ロースラー, ブラウフレンキッシュ",
             "en": "Roussillon, Blaufränkisch"
         },
         "body": "medium",
@@ -1864,7 +1864,7 @@ const initialWines = [
         },
         "price": 20240,
         "description": {
-            "ja": "「第2世代」。赤。シリアスでストラクチャーがありながら、飲み心地の良さも備える。",
+            "ja": "「第2世代」。赤。シリアスでストラクチャーがありながら, 飲み心地の良さも備える。",
             "en": "'Second Generation'. Red. Serious and structured, yet drinkable."
         },
         "tags": [
@@ -1945,7 +1945,7 @@ const initialWines = [
         },
         "vintage": "2022",
         "variety": {
-            "ja": "マレスコ、ミヌートロ、ヴェルデカ",
+            "ja": "マレスコ, ミヌートロ, ヴェルデカ",
             "en": "Maresco, Minutolo, Verdeca"
         },
         "body": "dry",
@@ -1955,7 +1955,7 @@ const initialWines = [
         },
         "price": 11690,
         "description": {
-            "ja": "緑ボトル。熟れた果実の豊潤な質感、心地よい酸味と塩気、乳酸的なまろやかな旨味。",
+            "ja": "緑ボトル。熟れた果実の豊潤な質感, 心地よい酸味と塩気, 乳酸的なまろやかな旨味。",
             "en": "Green bottle. Rich texture of ripe fruit, pleasant acidity and salinity, mellow lactic umami."
         },
         "tags": [
@@ -1991,7 +1991,7 @@ const initialWines = [
         },
         "vintage": "2022",
         "variety": {
-            "ja": "モンテプルチャーノ、ミヌートロ",
+            "ja": "モンテプルチャーノ, ミヌートロ",
             "en": "Montepulciano, Minutolo"
         },
         "body": "dry",
@@ -2037,7 +2037,7 @@ const initialWines = [
         },
         "vintage": "2022",
         "variety": {
-            "ja": "ネロ・ディ・トロイア、ボンビーノ・ビアンコ",
+            "ja": "ネロ・ディ・トロイア, ボンビーノ・ビアンコ",
             "en": "Nero di Troia, Bonino Bianco"
         },
         "body": "medium",
@@ -2083,7 +2083,7 @@ const initialWines = [
         },
         "vintage": "2022",
         "variety": {
-            "ja": "マレスコ、オッタヴィア・ネッロ、ミヌートロ",
+            "ja": "マレスコ, オッタヴィア・ネッロ, ミヌートロ",
             "en": "Maresco, Ottavia Nero, Minutolo"
         },
         "body": "dry",
@@ -2093,7 +2093,7 @@ const initialWines = [
         },
         "price": 17030,
         "description": {
-            "ja": "淡紫ボトル（ロゼ）。ミントやハーブの香り、塩気。フレッシュで飲み心地最高クラス。",
+            "ja": "淡紫ボトル（ロゼ）。ミントやハーブの香り, 塩気。フレッシュで飲み心地最高クラス。",
             "en": "Pale purple bottle (Rose). Mint and herb aromas, salinity. Fresh and top-class drinkability."
         },
         "tags": [
@@ -2129,7 +2129,7 @@ const initialWines = [
         },
         "vintage": "2022",
         "variety": {
-            "ja": "ボンビーノ・ネーロ、ネロ・ディ・トロイア、ボンビーノ・ビアンコ",
+            "ja": "ボンビーノ・ネーロ, ネロ・ディ・トロイア, ボンビーノ・ビアンコ",
             "en": "Bonino Nero, Nero di Troia, Bonino Bianco"
         },
         "body": "medium",
@@ -2181,7 +2181,7 @@ const initialWines = [
         },
         "price": 12180,
         "description": {
-            "ja": "フリウリの巨匠。長期マセラシオン（オレンジ）。枯れたニュアンス、複雑味、圧倒的な余韻。",
+            "ja": "フリウリの巨匠。長期マセラシオン（オレンジ）。枯れたニュアンス, 複雑味, 圧倒的な余韻。",
             "en": "Friuli master. Long maceration (Orange). Withered nuances, complexity, overwhelming finish."
         },
         "tags": [
@@ -2217,7 +2217,7 @@ const initialWines = [
         },
         "vintage": "2023",
         "variety": {
-            "ja": "カタラット、カリカンテ",
+            "ja": "カタラット, カリカンテ",
             "en": "Catarratto, Carignante"
         },
         "body": "dry",
@@ -2227,7 +2227,7 @@ const initialWines = [
         },
         "price": 9110,
         "description": {
-            "ja": "シチリアの自然派。柑橘やハーブの香り、ピュアな果実味。",
+            "ja": "シチリアの自然派。柑橘やハーブの香り, ピュアな果実味。",
             "en": "Sicilian natural wine. Citrus and herb aromas, pure fruitiness."
         },
         "tags": [
@@ -2263,7 +2263,7 @@ const initialWines = [
         },
         "vintage": "2023",
         "variety": {
-            "ja": "ネロ・ダーヴォラ、ネレッロ・マスカレーゼ、ペッリコ―ネ",
+            "ja": "ネロ・ダーヴォラ, ネレッロ・マスカレーゼ, ペッリコ―ネ",
             "en": "Nero D'Avola, Nerello Mascalese, Perricone"
         },
         "body": "medium",
@@ -2273,7 +2273,7 @@ const initialWines = [
         },
         "price": 9110,
         "description": {
-            "ja": "ネレッロ・マスカレーゼ主体。赤い果実の明るい香り、軽やかで滋味深い味わい。",
+            "ja": "ネレッロ・マスカレーゼ主体。赤い果実の明るい香り, 軽やかで滋味深い味わい。",
             "en": "Nerello Mascalese dominant. Bright red fruit aroma, light and deeply flavorful."
         },
         "tags": [
@@ -2457,7 +2457,7 @@ const initialWines = [
         },
         "price": 5370,
         "description": {
-            "ja": "プリミティーヴォ。ルビー色、木苺やプラムの香り。ジューシーな果実味と柔らかいタンニン。",
+            "ja": "プリミティーヴォ。ルビー色, 木苺やプラムの香り。ジューシーな果実味と柔らかいタンニン。",
             "en": "Primitivo. Ruby color, raspberry and plum aromas. Juicy fruit and soft tannins."
         },
         "tags": [
@@ -2493,7 +2493,7 @@ const initialWines = [
         },
         "vintage": "2024",
         "variety": {
-            "ja": "シャルドネ、フィアーノ",
+            "ja": "シャルドネ, フィアーノ",
             "en": "Chardonnay, Fiano"
         },
         "body": "dry",
@@ -2539,7 +2539,7 @@ const initialWines = [
         },
         "vintage": "NV",
         "variety": {
-            "ja": "シャルドネ、オルトルーゴ",
+            "ja": "シャルドネ, オルトルーゴ",
             "en": "Chardonnay, Oltorgo"
         },
         "body": "dry",
@@ -2631,7 +2631,7 @@ const initialWines = [
         },
         "vintage": "2023",
         "variety": {
-            "ja": "コルヴィーナ、ロンディネッラ、モリナーラ",
+            "ja": "コルヴィーナ, ロンディネッラ, モリナーラ",
             "en": "Corvina, Rondinella, Morina"
         },
         "body": "medium",
@@ -2677,7 +2677,7 @@ const initialWines = [
         },
         "vintage": "2022",
         "variety": {
-            "ja": "サンジョヴェーゼグロッソ、カナイオーロ",
+            "ja": "サンジョヴェーゼ・グロッソ, カナイオーロ",
             "en": "San Giovanni Grosso, Canaiolo"
         },
         "body": "medium",
@@ -2723,7 +2723,7 @@ const initialWines = [
         },
         "vintage": "2020",
         "variety": {
-            "ja": "カベルネ、メルロー",
+            "ja": "カベルネ, メルロー",
             "en": "Cabernet, Merlot"
         },
         "body": "full",
@@ -2815,7 +2815,7 @@ const initialWines = [
         },
         "vintage": "2023",
         "variety": {
-            "ja": "メルロー、カベルネ・ソーヴィニヨン、カベルネ・フラン",
+            "ja": "メルロー, カベルネ・ソーヴィニヨン, カベルネ・フラン",
             "en": "Merlot, Cabernet Sauvignon, Cabernet Franc"
         },
         "body": "medium",
@@ -2871,7 +2871,7 @@ const initialWines = [
         },
         "price": 7200,
         "description": {
-            "ja": "樽熟成由来の深みのあるアロマ。ラズベリーやカシスの香り、しなやかな口当たりと長い余韻。",
+            "ja": "樽熟成由来の深みのあるアロマ。ラズベリーやカシスの香り, しなやかな口当たりと長い余韻。",
             "en": "Deep aroma from barrel aging. Raspberry and cassis scents, supple mouthfeel and long finish."
         },
         "tags": [
@@ -2953,7 +2953,7 @@ const initialWines = [
         },
         "vintage": "2022",
         "variety": {
-            "ja": "グロロー・ノワール、グロロー・グリ、コー、カベルネ・フラン、シュナン・ブラン",
+            "ja": "グロロー・ノワール, グロロー・グリ, コー, カベルネ・フラン, シュナン・ブラン",
             "en": "Grolleau Noir, Grolleau Gris, Coe, Cabernet Franc, Chenin"
         },
         "body": "light",
@@ -2963,7 +2963,7 @@ const initialWines = [
         },
         "price": 7300,
         "description": {
-            "ja": "「Bisou(キス)」の名を持つヴァン・ド・ソワフ。クランベリーやバラの香り、フレッシュでみずみずしい果実味。",
+            "ja": "「Bisou(キス)」の名を持つヴァン・ド・ソワフ。クランベリーやバラの香り, フレッシュでみずみずしい果実味。",
             "en": "Vin de Soif named 'Bisou' (Kiss). Cranberry and rose aromas, fresh and juicy fruitiness."
         },
         "tags": [
@@ -2984,4 +2984,4 @@ const initialWines = [
     }
 ];
 
-const WINE_STORAGE_KEY = 'lalupa_wines_v4';
+const WINE_STORAGE_KEY = 'lalupa_wines_v5';

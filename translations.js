@@ -395,7 +395,7 @@ const termDictionary = {
     "シラーズ": { en: "Shiraz", "zh-TW": "希哈", ko: "쉬라즈" },
     "ネッビオーロ": { en: "Nebbiolo", "zh-TW": "內比奧羅", ko: "네비올로" },
     "サンジョヴェーゼ": { en: "Sangiovese", "zh-TW": "桑嬌維塞", ko: "산지오베제" },
-    "サンジョヴェーゼグロッソ": { en: "Sangiovese Grosso", "zh-TW": "大桑嬌維塞", ko: "산지오베제 그로소" },
+    "サンジョヴェーゼ・グロッソ": { en: "Sangiovese Grosso", "zh-TW": "大桑嬌維塞", ko: "산지오베제 그로소" },
     "バルベーラ": { en: "Barbera", "zh-TW": "巴貝拉", ko: "바르베라" },
     "モンテプルチャーノ": { en: "Montepulciano", "zh-TW": "蒙特普恰諾", ko: "몬테풀치아노" },
     "プリミティーヴォ": { en: "Primitivo", "zh-TW": "普里米蒂沃", ko: "프리미티보" },
@@ -416,7 +416,6 @@ const termDictionary = {
     "ゲヴュルツトラミネール": { en: "Gewürztraminer", "zh-TW": "格烏茲塔明那", ko: "게뷔르츠트라미너" },
     "トラミネール・アロマティコ": { en: "Traminer Aromatico", "zh-TW": "芳香塔明那", ko: "트라미너 아로마티코" },
     "グリューナー・ヴェルトリーナー": { en: "Grüner Veltliner", "zh-TW": "綠維特利納", ko: "그뤼너 벨트리너" },
-    "グリューナーヴェルトリーナー": { en: "Grüner Veltliner", "zh-TW": "綠維特利納", ko: "그뤼너 벨트리너" },
     "ヴェルシュリースリング": { en: "Welschriesling", "zh-TW": "威爾施雷司令", ko: "벨슈리슬링" },
     "ブラウフレンキッシュ": { en: "Blaufränkisch", "zh-TW": "藍佛朗克", ko: "블라우프랭키쉬" },
     "ツヴァイゲルト": { en: "Zweigelt", "zh-TW": "茨威格", ko: "츠바이겔트" },
@@ -468,7 +467,8 @@ const termDictionary = {
     "水": { en: "Water", "zh-TW": "水", ko: "물" },
     "ミラベル": { en: "Mirabelle", "zh-TW": "米拉貝爾李", ko: "미라벨" },
     "洋梨": { en: "Pear", "zh-TW": "梨", ko: "배" },
-    "ホップの花": { en: "Hops", "zh-TW": "啤酒花", ko: "홉" }
+    "ホップの花": { en: "Hops", "zh-TW": "啤酒花", ko: "홉" },
+    "カベルネ": { en: "Cabernet", "zh-TW": "卡本內", ko: "카베르네" }
 };
 
 // Translation helper function
