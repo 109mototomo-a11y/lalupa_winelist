@@ -1113,10 +1113,12 @@ const initialWines = [
         },
         "type": "white",
         "country": {
-            "ja": "クロアチア"
+            "ja": "クロアチア",
+            "en": "Croatia"
         },
         "region": {
-            "ja": "ザダル"
+            "ja": "ザダル",
+            "en": "Zadar"
         },
         "vintage": "2024",
         "variety": {
@@ -1157,10 +1159,12 @@ const initialWines = [
         },
         "type": "white",
         "country": {
-            "ja": "クロアチア"
+            "ja": "クロアチア",
+            "en": "Croatia"
         },
         "region": {
-            "ja": "ザダル"
+            "ja": "ザダル",
+            "en": "Zadar"
         },
         "vintage": "2022",
         "variety": {
@@ -1201,10 +1205,12 @@ const initialWines = [
         },
         "type": "red",
         "country": {
-            "ja": "クロアチア"
+            "ja": "クロアチア",
+            "en": "Croatia"
         },
         "region": {
-            "ja": "ザダル"
+            "ja": "ザダル",
+            "en": "Zadar"
         },
         "vintage": "2023",
         "variety": {
@@ -1245,10 +1251,12 @@ const initialWines = [
         },
         "type": "red",
         "country": {
-            "ja": "クロアチア"
+            "ja": "クロアチア",
+            "en": "Croatia"
         },
         "region": {
-            "ja": "ザダル"
+            "ja": "ザダル",
+            "en": "Zadar"
         },
         "vintage": "2019",
         "variety": {
@@ -1289,10 +1297,12 @@ const initialWines = [
         },
         "type": "red",
         "country": {
-            "ja": "クロアチア"
+            "ja": "クロアチア",
+            "en": "Croatia"
         },
         "region": {
-            "ja": "ザダル"
+            "ja": "ザダル",
+            "en": "Zadar"
         },
         "vintage": "2015",
         "variety": {
