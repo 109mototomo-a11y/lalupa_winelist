@@ -1674,8 +1674,8 @@ const initialWines = [
         },
         "vintage": "2021",
         "variety": {
-            "ja": "水、ミラベル、洋梨、ホップの花ゲヴュルツトラミネール",
-            "en": "Water, Mirabelle, Pear, Gewurztraminer"
+            "ja": "水、ミラベル、洋梨、ホップの花、ゲヴュルツトラミネール",
+            "en": "Water, Mirabelle, Pear, Hops, Gewurztraminer"
         },
         "body": "dry",
         "winery": {
