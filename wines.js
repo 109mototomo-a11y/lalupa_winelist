@@ -2983,51 +2983,291 @@ const initialWines = [
         "isVisible": true
     },
     {
-        "id": 66,
-        "name": {
-            "ja": "コート・デ・ローズ ピノ・ノワール",
-            "en": "Cote des Roses Pinot Noir"
-        },
-        "type": "red",
-        "country": {
-            "ja": "フランス",
-            "en": "France"
-        },
-        "region": {
-            "ja": "ラングドック",
-            "en": "Languedoc"
-        },
-        "vintage": "2022",
-        "variety": {
-            "ja": "ピノ・ノワール",
-            "en": "Pinot Noir"
-        },
-        "body": "medium",
-        "winery": {
-            "ja": "ジェラール・ベルトラン",
-            "en": "Gerard Bertrand"
-        },
-        "price": 4300,
+        "id": 67,
+        "name": { "ja": "ヴァインライヒ ヴァイス", "en": "Weinreich Weiss" },
+        "type": "white",
+        "country": { "ja": "ドイツ", "en": "Germany" },
+        "region": { "ja": "ラインヘッセン", "en": "Rheinhessen" },
+        "vintage": "NV",
+        "variety": { "ja": "シルヴァーナー、バッカス", "en": "Silvaner, Bacchus" },
+        "body": "dry",
+        "winery": { "ja": "ヴァインライヒ", "en": "Weinreich" },
+        "price": 6230,
         "description": {
-            "ja": "瓶底がバラの形のボトル。サクランボや野イチゴの果実味とスパイスの香り。ビロードのような口当たりとシルキーなタンニン。",
-            "en": "Bottle with a rose-shaped base. Aromas of cherry and wild strawberry with hints of spice. Velvety texture and silky tannins."
+            "ja": "ライムや白桃の香り、ハーブのニュアンス。フレッシュで軽快、ゴクゴク飲める辛口白ワイン。",
+            "en": "Aromas of lime and white peach with nuances of herbs. Fresh, light, and easy-drinking dry white wine."
         },
         "tags": [
-            {
-                "ja": "バラのボトル",
-                "en": "Rose Bottle"
-            },
-            {
-                "ja": "南仏",
-                "en": "South France"
-            },
-            {
-                "ja": "エレガント",
-                "en": "Elegant"
-            }
+            { "ja": "ドイツ", "en": "Germany" },
+            { "ja": "自然派", "en": "Natural" },
+            { "ja": "フレッシュ", "en": "Fresh" }
+        ],
+        "isVisible": true
+    },
+    {
+        "id": 68,
+        "name": { "ja": "ヴァインライヒ グラウ", "en": "Weinreich Grau" },
+        "type": "white",
+        "country": { "ja": "ドイツ", "en": "Germany" },
+        "region": { "ja": "ラインヘッセン", "en": "Rheinhessen" },
+        "vintage": "NV",
+        "variety": { "ja": "グラウブルグンダー", "en": "Grauburgunder" },
+        "body": "dry",
+        "winery": { "ja": "ヴァインライヒ", "en": "Weinreich" },
+        "price": 6230,
+        "description": {
+            "ja": "オレンジがかった色調、ナッツやスパイスの香り。厚みのある果実味が特徴の飲み応えのある辛口。",
+            "en": "Orange-tinged hue, aromas of nuts and spices. A dry wine with substantial fruitiness."
+        },
+        "tags": [
+            { "ja": "ピノ・グリ", "en": "Pinot Gris" },
+            { "ja": "自然派", "en": "Natural" },
+            { "ja": "複雑味", "en": "Complex" }
+        ],
+        "isVisible": true
+    },
+    {
+        "id": 69,
+        "name": { "ja": "ヴァインライヒ ロット", "en": "Weinreich Rot" },
+        "type": "red",
+        "country": { "ja": "ドイツ", "en": "Germany" },
+        "region": { "ja": "ラインヘッセン", "en": "Rheinhessen" },
+        "vintage": "NV",
+        "variety": { "ja": "ドルンフェルダー、メルロー", "en": "Dornfelder, Merlot" },
+        "body": "medium",
+        "winery": { "ja": "ヴァインライヒ", "en": "Weinreich" },
+        "price": 6230,
+        "description": {
+            "ja": "ベリー系の果実味と土っぽいニュアンス。渋みは穏やかでスルッと飲める自然派赤ワイン。",
+            "en": "Berry fruit flavors with earthy nuances. Mild tannins and easy to drink natural red wine."
+        },
+        "tags": [
+            { "ja": "ドイツ", "en": "Germany" },
+            { "ja": "自然派", "en": "Natural" },
+            { "ja": "飲みやすい", "en": "Easy to drink" }
+        ],
+        "isVisible": true
+    },
+    {
+        "id": 70,
+        "name": { "ja": "ヴァインライヒ ロゼ", "en": "Weinreich Rose" },
+        "type": "rose",
+        "country": { "ja": "ドイツ", "en": "Germany" },
+        "region": { "ja": "ラインヘッセン", "en": "Rheinhessen" },
+        "vintage": "NV",
+        "variety": { "ja": "ピノ・ノワール、ポルトギーザー", "en": "Pinot Noir, Portugieser" },
+        "body": "dry",
+        "winery": { "ja": "ヴァインライヒ", "en": "Weinreich" },
+        "price": 6230,
+        "description": {
+            "ja": "チャーミングなイチゴやチェリーの香り。甘ったるさはなく、しっかりとした酸とミネラルがある。",
+            "en": "Charming aromas of strawberry and cherry. Not overly sweet, with firm acidity and minerality."
+        },
+        "tags": [
+            { "ja": "ドイツ", "en": "Germany" },
+            { "ja": "自然派", "en": "Natural" },
+            { "ja": "辛口ロゼ", "en": "Dry Rose" }
+        ],
+        "isVisible": true
+    },
+    {
+        "id": 71,
+        "name": { "ja": "タケダワイナリー サン・スフル", "en": "Takeda Winery Sans Soufre" },
+        "type": "sparkling",
+        "country": { "ja": "日本", "en": "Japan" },
+        "region": { "ja": "山形", "en": "Yamagata" },
+        "vintage": "NV",
+        "variety": { "ja": "デラウェア", "en": "Delaware" },
+        "body": "dry",
+        "winery": { "ja": "タケダワイナリー", "en": "Takeda Winery" },
+        "price": 6160,
+        "description": {
+            "ja": "酸化防止剤無添加（サン・スフル）。デラウェアのフレッシュな香りと、酵母由来の濁りが生む旨味が特徴。",
+            "en": "No added antioxidants (Sans Soufre). Features fresh Delaware aroma and umami from yeast lees."
+        },
+        "tags": [
+            { "ja": "日本ワイン", "en": "Japanese Wine" },
+            { "ja": "自然派", "en": "Natural" },
+            { "ja": "濁り泡", "en": "Cloudy Sparkling" }
+        ],
+        "isVisible": true
+    },
+    {
+        "id": 72,
+        "name": { "ja": "トソ スパークリング ブリュット", "en": "Toso Sparkling Brut" },
+        "type": "sparkling",
+        "country": { "ja": "アルゼンチン", "en": "Argentina" },
+        "region": { "ja": "マイプ", "en": "Maipu" },
+        "vintage": "NV",
+        "variety": { "ja": "シャルドネ", "en": "Chardonnay" },
+        "body": "dry",
+        "winery": { "ja": "トソ", "en": "Toso" },
+        "price": 3300,
+        "description": {
+            "ja": "レモンやトースト、柑橘の香り。クリーミーでフレッシュな口当たりを持つ、バランスの良い辛口。",
+            "en": "Aromas of lemon, toast, and citrus. Creamy and fresh palate, a well-balanced dry sparkling."
+        },
+        "tags": [
+            { "ja": "アルゼンチン", "en": "Argentina" },
+            { "ja": "シャルドネ", "en": "Chardonnay" },
+            { "ja": "クリーミー", "en": "Creamy" }
+        ],
+        "isVisible": true
+    },
+    {
+        "id": 73,
+        "name": { "ja": "シン キュヴェ ブラン", "en": "Syn Cuvée Blanc" },
+        "type": "sparkling",
+        "country": { "ja": "オーストラリア", "en": "Australia" },
+        "region": { "ja": "クナワラ", "en": "Coonawarra" },
+        "vintage": "NV",
+        "variety": { "ja": "シャルドネ、ピノ・ノワール", "en": "Chardonnay, Pinot Noir" },
+        "body": "dry",
+        "winery": { "ja": "シン", "en": "Syn" },
+        "price": 3500,
+        "description": {
+            "ja": "ドライでエレガントな味わい。桃や柑橘の香りに、長期熟成による複雑味も感じられる。",
+            "en": "Dry and elegant taste. Aromas of peach and citrus, with complexity from long aging."
+        },
+        "tags": [
+            { "ja": "オーストラリア", "en": "Australia" },
+            { "ja": "スタイリッシュ", "en": "Stylish" },
+            { "ja": "エレガント", "en": "Elegant" }
+        ],
+        "isVisible": true
+    },
+    {
+        "id": 74,
+        "name": { "ja": "テバルド ビアンコ", "en": "Tebaldo Bianco" },
+        "type": "white",
+        "country": { "ja": "イタリア", "en": "Italy" },
+        "region": { "ja": "プーリア", "en": "Puglia" },
+        "vintage": "NV",
+        "variety": { "ja": "トレッビアーノ、シャルドネ", "en": "Trebbiano, Chardonnay" },
+        "body": "dry",
+        "winery": { "ja": "テバルド", "en": "Tebaldo" },
+        "price": 2000,
+        "description": {
+            "ja": "フレッシュでフルーティな辛口。柑橘や青リンゴの爽やかな香りがあり、前菜やパスタと合わせやすい。",
+            "en": "Fresh and fruity dry white. Crisp aromas of citrus and green apple, pairs well with appetizers and pasta."
+        },
+        "tags": [
+            { "ja": "イタリア", "en": "Italy" },
+            { "ja": "プーリア", "en": "Puglia" },
+            { "ja": "爽やか", "en": "Crisp" }
+        ],
+        "isVisible": true
+    },
+    {
+        "id": 75,
+        "name": { "ja": "ペルラ・デル・マーレ", "en": "Perla del Mar" },
+        "type": "white",
+        "country": { "ja": "スペイン", "en": "Spain" },
+        "region": { "ja": "アリカンテ", "en": "Alicante" },
+        "vintage": "NV",
+        "variety": { "ja": "シャルドネ、ソーヴィニヨン・ブラン", "en": "Chardonnay, Sauvignon Blanc" },
+        "body": "dry",
+        "winery": { "ja": "ペルラ・デル・マーレ", "en": "Perla del Mar" },
+        "price": 2900,
+        "description": {
+            "ja": "「海の真珠」。ライチやマスカットの華やかな香りと、フルーティでドライな味わいが特徴。",
+            "en": "'Pearl of the Sea'. Gorgeous aromas of lychee and muscat, featuring a fruity and dry taste."
+        },
+        "tags": [
+            { "ja": "スペイン", "en": "Spain" },
+            { "ja": "華やか", "en": "Gorgeous" },
+            { "ja": "フルーティ", "en": "Fruity" }
+        ],
+        "isVisible": true
+    },
+    {
+        "id": 76,
+        "name": { "ja": "ドメーヌ・サルヴァ ドュレイユ シュベルニー", "en": "Domaine Salvard Delaille Cheverny" },
+        "type": "white",
+        "country": { "ja": "フランス", "en": "France" },
+        "region": { "ja": "ロワール", "en": "Loire" },
+        "vintage": "NV",
+        "variety": { "ja": "ソーヴィニヨン・ブラン、シャルドネ", "en": "Sauvignon Blanc, Chardonnay" },
+        "body": "dry",
+        "winery": { "ja": "ドメーヌ・サルヴァ", "en": "Domaine Salvard" },
+        "price": 4500,
+        "description": {
+            "ja": "ロワール地方の爽やかな辛口。グレープフルーツやハーブの清涼感ある香りと、キリッとした酸味。",
+            "en": "Crisp dry white from Loire. Refreshing aromas of grapefruit and herbs, with sharp acidity."
+        },
+        "tags": [
+            { "ja": "ロワール", "en": "Loire" },
+            { "ja": "ソーヴィニヨン・ブラン", "en": "Sauvignon Blanc" },
+            { "ja": "清涼感", "en": "Refreshing" }
+        ],
+        "isVisible": true
+    },
+    {
+        "id": 77,
+        "name": { "ja": "パナメラ シャルドネ", "en": "Panamera Chardonnay" },
+        "type": "white",
+        "country": { "ja": "アメリカ", "en": "USA" },
+        "region": { "ja": "カリフォルニア", "en": "California" },
+        "vintage": "NV",
+        "variety": { "ja": "シャルドネ", "en": "Chardonnay" },
+        "body": "dry",
+        "winery": { "ja": "パナメラ", "en": "Panamera" },
+        "price": 4400,
+        "description": {
+            "ja": "完熟したパイナップルの果実味に、バニラや樽の香りが溶け込んだ、濃厚でクリーミーな味わい。",
+            "en": "Rich and creamy taste with ripe pineapple fruitiness blended with vanilla and oak aromas."
+        },
+        "tags": [
+            { "ja": "カリフォルニア", "en": "California" },
+            { "ja": "樽香", "en": "Oaky" },
+            { "ja": "濃厚", "en": "Rich" }
+        ],
+        "isVisible": true
+    },
+    {
+        "id": 78,
+        "name": { "ja": "オッチ ロッソ", "en": "Occhi Rosso" },
+        "type": "red",
+        "country": { "ja": "イタリア", "en": "Italy" },
+        "region": { "ja": "シチリア", "en": "Sicily" },
+        "vintage": "NV",
+        "variety": { "ja": "ネロ・ダヴォラ", "en": "Nero d'Avola" },
+        "body": "full",
+        "winery": { "ja": "オッチ", "en": "Occhi" },
+        "price": 3550,
+        "description": {
+            "ja": "シチリアの太陽を浴びた完熟果実の香りと、スパイシーで凝縮感のある味わいが特徴。",
+            "en": "Features aromas of sun-ripened Sicilian fruit and a spicy, concentrated taste."
+        },
+        "tags": [
+            { "ja": "シチリア", "en": "Sicily" },
+            { "ja": "ネロ・ダヴォラ", "en": "Nero d'Avola" },
+            { "ja": "スパイシー", "en": "Spicy" }
+        ],
+        "isVisible": true
+    },
+    {
+        "id": 79,
+        "name": { "ja": "タオバ サペラヴィ", "en": "Taoba Saperavi" },
+        "type": "red",
+        "country": { "ja": "ジョージア", "en": "Georgia" },
+        "region": { "ja": "カヘティ", "en": "Kakheti" },
+        "vintage": "NV",
+        "variety": { "ja": "サペラヴィ", "en": "Saperavi" },
+        "body": "full",
+        "winery": { "ja": "タオバ", "en": "Taoba" },
+        "price": 5050,
+        "description": {
+            "ja": "ワイン発祥の地ジョージア。非常に濃い色調で、ブラックベリーやスパイスの香り。力強いタンニン。",
+            "en": "Georgia, the birthplace of wine. Deep color, aromas of blackberry and spice. Powerful tannins."
+        },
+        "tags": [
+            { "ja": "ジョージア", "en": "Georgia" },
+            { "ja": "サペラヴィ", "en": "Saperavi" },
+            { "ja": "濃厚", "en": "Rich" }
         ],
         "isVisible": true
     }
 ];
 
-const WINE_STORAGE_KEY = 'lalupa_wines_v6';
+const WINE_STORAGE_KEY = 'lalupa_wines_v8';
