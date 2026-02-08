@@ -2981,7 +2981,53 @@ const initialWines = [
             }
         ],
         "isVisible": true
+    },
+    {
+        "id": 66,
+        "name": {
+            "ja": "コート・デ・ローズ ピノ・ノワール",
+            "en": "Cote des Roses Pinot Noir"
+        },
+        "type": "red",
+        "country": {
+            "ja": "フランス",
+            "en": "France"
+        },
+        "region": {
+            "ja": "ラングドック",
+            "en": "Languedoc"
+        },
+        "vintage": "2022",
+        "variety": {
+            "ja": "ピノ・ノワール",
+            "en": "Pinot Noir"
+        },
+        "body": "medium",
+        "winery": {
+            "ja": "ジェラール・ベルトラン",
+            "en": "Gerard Bertrand"
+        },
+        "price": 4300,
+        "description": {
+            "ja": "瓶底がバラの形のボトル。サクランボや野イチゴの果実味とスパイスの香り。ビロードのような口当たりとシルキーなタンニン。",
+            "en": "Bottle with a rose-shaped base. Aromas of cherry and wild strawberry with hints of spice. Velvety texture and silky tannins."
+        },
+        "tags": [
+            {
+                "ja": "バラのボトル",
+                "en": "Rose Bottle"
+            },
+            {
+                "ja": "南仏",
+                "en": "South France"
+            },
+            {
+                "ja": "エレガント",
+                "en": "Elegant"
+            }
+        ],
+        "isVisible": true
     }
 ];
 
-const WINE_STORAGE_KEY = 'lalupa_wines_v5';
+const WINE_STORAGE_KEY = 'lalupa_wines_v6';

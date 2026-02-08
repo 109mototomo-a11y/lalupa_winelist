@@ -124,6 +124,7 @@ body::before {
     align-items: center;
     justify-content: space-between;
     padding: 0 32px;
+    position: relative;
 }
 
 .logo {
@@ -136,6 +137,29 @@ body::before {
     width: auto;
     object-fit: contain;
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+.header-title {
+    position: absolute;
+    left: 42%;
+    transform: translateX(-50%);
+    font-family: 'Cinzel', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #E31C25;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(to right, #E31C25, #800000);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 1;
+    white-space: nowrap;
+    z-index: 1;
+    width: 100%;
+    text-align: center;
+    pointer-events: none;
 }
 
 /* Language Switcher - Luxury Style */
