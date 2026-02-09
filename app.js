@@ -233,7 +233,7 @@ function setLanguage(lang) {
     currentLanguage = lang;
 
     // Update language buttons
-    document.querySelectorAll('.lang-btn').forEach(btn => {
+    document.querySelectorAll('.lang-option').forEach(btn => {
         btn.classList.toggle('active', btn.dataset.lang === lang);
     });
 
@@ -1090,11 +1090,36 @@ function setupTabListeners() {
 
 function setupEventListeners() {
     // Language switcher
-    elements.languageSwitcher.addEventListener('click', (e) => {
-        if (e.target.classList.contains('lang-btn')) {
-            setLanguage(e.target.dataset.lang);
-        }
-    });
+    // Language Switcher (Globe + Dropdown)
+    const langToggle = document.getElementById('langToggle');
+    const langDropdown = document.getElementById('langDropdown');
+
+    if (langToggle && langDropdown) {
+        // Toggle Dropdown
+        langToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            langDropdown.classList.toggle('hidden');
+            langToggle.classList.toggle('active');
+        });
+
+        // Close when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!langToggle.contains(e.target) && !langDropdown.contains(e.target)) {
+                langDropdown.classList.add('hidden');
+                langToggle.classList.remove('active');
+            }
+        });
+
+        // Language Selection
+        langDropdown.addEventListener('click', (e) => {
+            const btn = e.target.closest('.lang-option');
+            if (btn) {
+                setLanguage(btn.dataset.lang);
+                langDropdown.classList.add('hidden');
+                langToggle.classList.remove('active');
+            }
+        });
+    }
 
     // Search input (Debounced)
     elements.searchInput.addEventListener('input', debounce(() => {
