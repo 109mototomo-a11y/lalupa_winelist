@@ -538,31 +538,52 @@ function populateVarietyFilter() {
         });
     });
 
-    // Sort varieties
-    const sortedVarieties = Array.from(allVarieties).sort();
+    // Create options with translation FIRST
+    const options = Array.from(allVarieties).map(normV => {
+        const displayKey = normToDisplay[normV];
+        let translated = displayKey;
+
+        // Try exact match in dictionary first
+        if (termDictionary[displayKey]) {
+            if (termDictionary[displayKey][currentLanguage]) {
+                translated = termDictionary[displayKey][currentLanguage];
+            } else if (currentLanguage !== 'ja' && termDictionary[displayKey]['en']) {
+                translated = termDictionary[displayKey]['en'];
+            }
+        }
+
+        // If still not translated, try normalized match
+        if (translated === displayKey && termDictionary[normV]) {
+            if (termDictionary[normV][currentLanguage]) {
+                translated = termDictionary[normV][currentLanguage];
+            } else if (currentLanguage !== 'ja' && termDictionary[normV]['en']) {
+                translated = termDictionary[normV]['en'];
+            }
+        }
+
+        return { value: displayKey, text: translated, norm: normV };
+    });
+
+    // Sort options
+    // If JA: Sort by the original Japanese key (roughly 50-on jun) or by text (also 50-on jun)
+    // If non-JA: Sort alphabetically by translated text
+    options.sort((a, b) => {
+        if (currentLanguage === 'ja') {
+            return a.norm.localeCompare(b.norm, 'ja');
+        } else {
+            return a.text.localeCompare(b.text, 'en');
+        }
+    });
 
     // Clear existing options (except first "All")
     while (elements.varietyFilter.options.length > 1) {
         elements.varietyFilter.remove(1);
     }
 
-    sortedVarieties.forEach(normV => {
+    options.forEach(opt => {
         const option = document.createElement('option');
-        // Value is the representative display text 
-        const displayKey = normToDisplay[normV];
-        option.value = displayKey;
-
-        let translated = displayKey;
-        // Try exact match in dictionary first
-        if (termDictionary[displayKey] && termDictionary[displayKey][currentLanguage]) {
-            translated = termDictionary[displayKey][currentLanguage];
-        }
-        // Try normalized match
-        else if (termDictionary[normV] && termDictionary[normV][currentLanguage]) {
-            translated = termDictionary[normV][currentLanguage];
-        }
-
-        option.textContent = translated;
+        option.value = opt.value;
+        option.textContent = opt.text;
         elements.varietyFilter.appendChild(option);
     });
 
@@ -591,21 +612,30 @@ function populateCountryFilter() {
         }
     });
 
-    const sorted = Array.from(countries).sort();
-
-    while (countrySelect.options.length > 1) countrySelect.remove(1);
-
-    sorted.forEach(cJa => {
-        const opt = document.createElement('option');
-        opt.value = cJa; // Canonical JA value
-
-        // Display Translation
+    // Create options with translation FIRST
+    const options = Array.from(countries).map(cJa => {
         let label = cJa;
         if (termDictionary[cJa] && termDictionary[cJa][currentLanguage]) {
             label = termDictionary[cJa][currentLanguage];
         }
+        return { value: cJa, label: label };
+    });
 
-        opt.textContent = label;
+    // Sort options
+    options.sort((a, b) => {
+        if (currentLanguage === 'ja') {
+            return a.value.localeCompare(b.value, 'ja');
+        } else {
+            return a.label.localeCompare(b.label, 'en');
+        }
+    });
+
+    while (countrySelect.options.length > 1) countrySelect.remove(1);
+
+    options.forEach(optData => {
+        const opt = document.createElement('option');
+        opt.value = optData.value; // Canonical JA value
+        opt.textContent = optData.label;
         countrySelect.appendChild(opt);
     });
 
