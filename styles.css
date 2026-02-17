@@ -1043,6 +1043,12 @@ body::before {
     color: rgba(255, 255, 255, 0.15);
 }
 
+/* Fix for Select Options Visibility */
+.form-group select option {
+    background-color: #161616;
+    color: var(--color-text);
+}
+
 /* Tabs - Elegant Style - Improved Visibility */
 .tabs {
     display: flex;

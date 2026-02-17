@@ -454,10 +454,13 @@ function getFilteredWines() {
         // Type filter
         if (type) {
             if (type === 'sparkling') {
-                if (wine.type !== 'sparkling' && wine.type !== 'rose_sparkling') return false;
+                // Exclude rose_sparkling when just 'sparkling' is selected
+                if (wine.type !== 'sparkling') return false;
             } else if (type === 'rose') {
-                if (wine.type !== 'rose' && wine.type !== 'rose_sparkling') return false;
+                // Exclude rose_sparkling when just 'rose' is selected
+                if (wine.type !== 'rose') return false;
             } else if (wine.type !== type) {
+                // Standard check for other types (including 'rose_sparkling' matching itself)
                 return false;
             }
         }

@@ -984,8 +984,8 @@ const initialWines = [
         },
         "vintage": "2011",
         "variety": {
-            "ja": "カベルネ・ソーヴィニヨン, カベルネ・フラン, メルロー, カベルネ・ソーヴィニヨン, プティ・ヴェルド",
-            "en": "Cabernet Sauvignon, Cabernet Franc, Merlot, Cabernet Sauvignon, Petit Verdot"
+            "ja": "カベルネ・ソーヴィニヨン, カベルネ・フラン, メルロー, プティ・ヴェルド",
+            "en": "Cabernet Sauvignon, Cabernet Franc, Merlot, Petit Verdot"
         },
         "body": "medium",
         "winery": {
@@ -1117,8 +1117,8 @@ const initialWines = [
             "en": "Croatia"
         },
         "region": {
-            "ja": "ザダル",
-            "en": "Zadar"
+            "ja": "ダルマチア",
+            "en": "Dalmatia"
         },
         "vintage": "2024",
         "variety": {
@@ -1163,8 +1163,8 @@ const initialWines = [
             "en": "Croatia"
         },
         "region": {
-            "ja": "ザダル",
-            "en": "Zadar"
+            "ja": "ダルマチア",
+            "en": "Dalmatia"
         },
         "vintage": "2022",
         "variety": {
@@ -1203,14 +1203,14 @@ const initialWines = [
             "ja": "アンティーク・ロゼ",
             "en": "Antique Rose"
         },
-        "type": "rose",
+        "type": "rose_sparkling",
         "country": {
             "ja": "クロアチア",
             "en": "Croatia"
         },
         "region": {
-            "ja": "ザダル",
-            "en": "Zadar"
+            "ja": "ダルマチア",
+            "en": "Dalmatia"
         },
         "vintage": "2023",
         "variety": {
@@ -1255,8 +1255,8 @@ const initialWines = [
             "en": "Croatia"
         },
         "region": {
-            "ja": "ザダル",
-            "en": "Zadar"
+            "ja": "ダルマチア",
+            "en": "Dalmatia"
         },
         "vintage": "2019",
         "variety": {
@@ -1301,8 +1301,8 @@ const initialWines = [
             "en": "Croatia"
         },
         "region": {
-            "ja": "ザダル",
-            "en": "Zadar"
+            "ja": "ダルマチア",
+            "en": "Dalmatia"
         },
         "vintage": "2015",
         "variety": {
@@ -1674,8 +1674,8 @@ const initialWines = [
         },
         "vintage": "2021",
         "variety": {
-            "ja": "ミラベル, 洋梨, ホップの花, ゲヴュルツトラミネール",
-            "en": "Mirabelle, Pear, Hops, Gewurztraminer"
+            "ja": "ゲヴュルツトラミネール",
+            "en": "Gewurztraminer"
         },
         "body": "dry",
         "winery": {
@@ -1697,8 +1697,8 @@ const initialWines = [
                 "en": "Unique/Unusual"
             },
             {
-                "ja": "ドライ",
-                "en": "Dry"
+                "ja": "ピケット",
+                "en": "Piquette"
             }
         ],
         "isVisible": true
@@ -1934,7 +1934,7 @@ const initialWines = [
             "ja": "ヴェルデ",
             "en": "Verde"
         },
-        "type": "white",
+        "type": "orange",
         "country": {
             "ja": "イタリア",
             "en": "Italy"
@@ -1951,7 +1951,7 @@ const initialWines = [
         "body": "dry",
         "winery": {
             "ja": "ロコ",
-            "en": "Roco"
+            "en": "Loco"
         },
         "price": 11690,
         "description": {
@@ -1997,7 +1997,7 @@ const initialWines = [
         "body": "dry",
         "winery": {
             "ja": "ロコ",
-            "en": "Roco"
+            "en": "Loco"
         },
         "price": 11690,
         "description": {
@@ -2043,7 +2043,7 @@ const initialWines = [
         "body": "medium",
         "winery": {
             "ja": "ロコ",
-            "en": "Roco"
+            "en": "Loco"
         },
         "price": 13070,
         "description": {
@@ -2089,7 +2089,7 @@ const initialWines = [
         "body": "dry",
         "winery": {
             "ja": "ロコ",
-            "en": "Roco"
+            "en": "Loco"
         },
         "price": 17030,
         "description": {
@@ -2135,7 +2135,7 @@ const initialWines = [
         "body": "medium",
         "winery": {
             "ja": "ロコ",
-            "en": "Roco"
+            "en": "Loco"
         },
         "price": 11690,
         "description": {
@@ -2344,7 +2344,7 @@ const initialWines = [
             "ja": "シンフォニア・ディ・ビアンコ",
             "en": "Sinfonia di Bianco"
         },
-        "type": "white",
+        "type": "orange",
         "country": {
             "ja": "イタリア",
             "en": "Italy"
@@ -2390,7 +2390,7 @@ const initialWines = [
             "ja": "レ・ミエ・オリジニ",
             "en": "Le Mie Origini"
         },
-        "type": "white",
+        "type": "orange",
         "country": {
             "ja": "イタリア",
             "en": "Italy"
@@ -2950,7 +2950,7 @@ const initialWines = [
         "vintage": "2022",
         "variety": {
             "ja": "グロロー・ノワール, グロロー・グリ, コー, カベルネ・フラン, シュナン・ブラン",
-            "en": "Grolleau Noir, Grolleau Gris, Coe, Cabernet Franc, Chenin"
+            "en": "Grolleau Noir, Grolleau Gris, Côt, Cabernet Franc, Chenin Blanc"
         },
         "body": "light",
         "winery": {
@@ -3003,7 +3003,7 @@ const initialWines = [
     {
         "id": 68,
         "name": { "ja": "グラウ", "en": "Grau" },
-        "type": "white",
+        "type": "orange",
         "country": { "ja": "ドイツ", "en": "Germany" },
         "region": { "ja": "ラインヘッセン", "en": "Rheinhessen" },
         "vintage": "NV",
@@ -3093,7 +3093,7 @@ const initialWines = [
         "name": { "ja": "スパークリング ブリュット", "en": "Sparkling Brut" },
         "type": "sparkling",
         "country": { "ja": "アルゼンチン", "en": "Argentina" },
-        "region": { "ja": "マイプ", "en": "Maipu" },
+        "region": { "ja": "メンドーサ", "en": "Mendoza" },
         "vintage": "NV",
         "variety": { "ja": "シャルドネ", "en": "Chardonnay" },
         "body": "dry",
@@ -3312,4 +3312,4 @@ const initialWines = [
     }
 ];
 
-const WINE_STORAGE_KEY = 'lalupa_wines_v12';
+const WINE_STORAGE_KEY = 'lalupa_wines_v17';

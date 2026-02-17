@@ -468,6 +468,7 @@ const termDictionary = {
     "カオヤイ": { en: "Khao Yai", "zh-TW": "考艾", ko: "카오 야이" },
     "フアヒン": { en: "Hua Hin", "zh-TW": "華欣", ko: "후아힌" },
     "ヴァレ・デ・グアダルーペ": { en: "Valle de Guadalupe", "zh-TW": "瓜達盧佩谷", ko: "발레 데 과달루페" },
+    "ダルマチア": { en: "Dalmatia", "zh-TW": "達爾馬提亞", ko: "달마티아" },
 
     // Varieties
     "ピノ・ノワール": { en: "Pinot Noir" },
