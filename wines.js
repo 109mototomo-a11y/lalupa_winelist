@@ -52,8 +52,8 @@ const initialWines = [
     {
         "id": 2,
         "name": {
-            "ja": "カステッラ ランゲソーヴィニヨン",
-            "en": "Castella Langhe Sauvignon"
+            "ja": "ランゲ・ソーヴィニヨン",
+            "en": "Langhe Sauvignon"
         },
         "type": "white",
         "country": {
@@ -98,8 +98,8 @@ const initialWines = [
     {
         "id": 3,
         "name": {
-            "ja": "カゼッテフォスカリーノ ソアーヴェクラシコ",
-            "en": "Casette Foscarino Soave Classico"
+            "ja": "ソアーヴェ・クラシコ \"カゼッテ・フォスカリーノ\"",
+            "en": "Soave Classico \"Casette Foscarino\""
         },
         "type": "white",
         "country": {
@@ -113,7 +113,7 @@ const initialWines = [
         "vintage": "2022",
         "variety": {
             "ja": "ガルガネガ, トレッビアーノ",
-            "en": "Galanga, Trebbiano"
+            "en": "Garganega, Trebbiano di Soave"
         },
         "body": "dry",
         "winery": {
@@ -144,8 +144,8 @@ const initialWines = [
     {
         "id": 4,
         "name": {
-            "ja": "ステファノ ヴァルポリチェッラ スペリオーレ",
-            "en": "Stefano Valpolicella Superiore"
+            "ja": "ヴァルポリチェッラ・スペリオーレ",
+            "en": "Valpolicella Superiore"
         },
         "type": "red",
         "country": {
@@ -159,7 +159,7 @@ const initialWines = [
         "vintage": "2022",
         "variety": {
             "ja": "コルヴィーナ, ロンディネッラ, モリナーラ",
-            "en": "Corvina, Rondinella, Morina"
+            "en": "Corvina, Rondinella, Molinara"
         },
         "body": "medium",
         "winery": {
@@ -282,8 +282,8 @@ const initialWines = [
     {
         "id": 7,
         "name": {
-            "ja": "レ マッセ ディ グレーヴェ キャンティ クラシコ",
-            "en": "Le Masse di Greve Chianti Classico"
+            "ja": "キャンティ・クラシコ \"レ・マッセ・ディ・グレーヴェ\"",
+            "en": "Chianti Classico \"Le Masse di Greve\""
         },
         "type": "red",
         "country": {
@@ -328,8 +328,8 @@ const initialWines = [
     {
         "id": 8,
         "name": {
-            "ja": "ポスタアリニャーノ サン セヴェーロ ロッソ",
-            "en": "Posta Arignano San Severo Rosso"
+            "ja": "サン・セヴェーロ ロッソ",
+            "en": "San Severo Rosso"
         },
         "type": "red",
         "country": {
@@ -374,8 +374,8 @@ const initialWines = [
     {
         "id": 9,
         "name": {
-            "ja": "ポスタアリニャーノ サン セヴェーロ ビアンコ",
-            "en": "Posta Arignano San Severo Bianco"
+            "ja": "サン・セヴェーロ ビアンコ",
+            "en": "San Severo Bianco"
         },
         "type": "white",
         "country": {
@@ -389,7 +389,7 @@ const initialWines = [
         "vintage": "2023",
         "variety": {
             "ja": "ボンビーノ・ビアンコ, トレッビアーノ, マルヴァジア",
-            "en": "Bonino Bianco, Trebbiano, Malvasia"
+            "en": "Bombino Bianco, Trebbiano, Malvasia"
         },
         "body": "dry",
         "winery": {
@@ -420,8 +420,8 @@ const initialWines = [
     {
         "id": 10,
         "name": {
-            "ja": "マイティ ヴァレー シャルドネ",
-            "en": "Mighty Valley Chardonnay"
+            "ja": "カリフォルニア シャルドネ",
+            "en": "California Chardonnay"
         },
         "type": "white",
         "country": {
@@ -466,8 +466,8 @@ const initialWines = [
     {
         "id": 11,
         "name": {
-            "ja": "ミラマン エステート リザーヴ ソーヴィニヨンブラン",
-            "en": "Millaman Estate Reserve Sauvignon Blanc"
+            "ja": "エステート・リザーヴ ソーヴィニヨン・ブラン",
+            "en": "Estate Reserve Sauvignon Blanc"
         },
         "type": "white",
         "country": {
@@ -490,7 +490,7 @@ const initialWines = [
         "price": 3300,
         "description": {
             "ja": "グレープフルーツや桃などの果実味あふれる香り。ジューシーで非常にフレッシュ。",
-            "en": "bursting with aromas of grapefruit and peach. Juicy and very fresh."
+            "en": "Bursting with aromas of grapefruit and peach. Juicy and very fresh."
         },
         "tags": [
             {
@@ -557,8 +557,8 @@ const initialWines = [
     {
         "id": 13,
         "name": {
-            "ja": "ミラマン エステート リザーヴ カベルネソーヴィニヨン",
-            "en": "Millaman Estate Reserve Cabernet Sauvignon"
+            "ja": "エステート・リザーヴ カベルネ・ソーヴィニヨン",
+            "en": "Estate Reserve Cabernet Sauvignon"
         },
         "type": "red",
         "country": {
@@ -602,8 +602,8 @@ const initialWines = [
     {
         "id": 14,
         "name": {
-            "ja": "ジンファンデル プーリア オーガニック",
-            "en": "Zinfandel Puglia Organic"
+            "ja": "ジンファンデル オーガニック",
+            "en": "Zinfandel Organic"
         },
         "type": "red",
         "country": {
@@ -740,10 +740,10 @@ const initialWines = [
     {
         "id": 17,
         "name": {
-            "ja": "ジョワ・ド・フランス ブリュット・レゼルヴ",
-            "en": "Joie de France Brut Reserve"
+            "ja": "ブリュット・レゼルヴ",
+            "en": "Brut Reserve"
         },
-        "type": "red",
+        "type": "sparkling",
         "country": {
             "ja": "フランス",
             "en": "France"
@@ -786,10 +786,10 @@ const initialWines = [
     {
         "id": 18,
         "name": {
-            "ja": "シャンパーニュ ボワゼル ブリュット レゼルブ",
-            "en": "Champagne Boizel Brut Reserve"
+            "ja": "ブリュット・レゼルヴ",
+            "en": "Brut Reserve"
         },
-        "type": "red",
+        "type": "sparkling",
         "country": {
             "ja": "フランス",
             "en": "France"
@@ -832,8 +832,8 @@ const initialWines = [
     {
         "id": 19,
         "name": {
-            "ja": "キュヴェ・ド・ラ・メゾン ブラン",
-            "en": "Cuvée de la Maison Blanc"
+            "ja": "キュヴェ・ド・ラ・メゾン",
+            "en": "Cuvée de la Maison"
         },
         "type": "white",
         "country": {
@@ -878,8 +878,8 @@ const initialWines = [
     {
         "id": 20,
         "name": {
-            "ja": "ファッフ キュヴェ・ジュピター リースリング",
-            "en": "Pfaff Cuvée Jupiter Riesling"
+            "ja": "リースリング \"キュヴェ・ジュピター\"",
+            "en": "Riesling \"Cuvée Jupiter\""
         },
         "type": "white",
         "country": {
@@ -924,8 +924,8 @@ const initialWines = [
     {
         "id": 21,
         "name": {
-            "ja": "ファウンダーズ シュナンブラン",
-            "en": "Founders Chenin Blanc"
+            "ja": "シュナン・ブラン",
+            "en": "Chenin Blanc"
         },
         "type": "white",
         "country": {
@@ -984,8 +984,8 @@ const initialWines = [
         },
         "vintage": "2011",
         "variety": {
-            "ja": "カベルネ・ソーヴィニヨン, カベルネ・フラン, メルロー, カベルネ・ドリオ, プティ・ヴェルド",
-            "en": "Cabernet Sauvignon, Cabernet Franc, Merlot, Cabernet DIO, Petit Verdot"
+            "ja": "カベルネ・ソーヴィニヨン, カベルネ・フラン, メルロー, カベルネ・ソーヴィニヨン, プティ・ヴェルド",
+            "en": "Cabernet Sauvignon, Cabernet Franc, Merlot, Cabernet Sauvignon, Petit Verdot"
         },
         "body": "medium",
         "winery": {
@@ -1108,8 +1108,8 @@ const initialWines = [
     {
         "id": 25,
         "name": {
-            "ja": "ヴィーナプンタスカラ 1066キュベ",
-            "en": "Vina Punta Skala 1066 Cuvée"
+            "ja": "1066 キュヴェ",
+            "en": "1066 Cuvée"
         },
         "type": "white",
         "country": {
@@ -1154,8 +1154,8 @@ const initialWines = [
     {
         "id": 26,
         "name": {
-            "ja": "ヴィーナプンタスカラ マスカット",
-            "en": "Vina Punta Skala Muscat"
+            "ja": "マスカット",
+            "en": "Muscat"
         },
         "type": "white",
         "country": {
@@ -1200,8 +1200,8 @@ const initialWines = [
     {
         "id": 27,
         "name": {
-            "ja": "ヴィーナプンタスカラ アンティークロゼ エクストラブリュット",
-            "en": "Vina Punta Skala Antique Rose Extra Brut"
+            "ja": "アンティーク・ロゼ",
+            "en": "Antique Rose"
         },
         "type": "rose",
         "country": {
@@ -1246,8 +1246,8 @@ const initialWines = [
     {
         "id": 28,
         "name": {
-            "ja": "ヴィーナプンタスカラ グラディアートル リミテッドエディション",
-            "en": "Vina Punta Skala Gladiator Limited Edition"
+            "ja": "グラディアートル",
+            "en": "Gladiator"
         },
         "type": "red",
         "country": {
@@ -1261,7 +1261,7 @@ const initialWines = [
         "vintage": "2019",
         "variety": {
             "ja": "プラヴァツ・マリ, クルリェナク, メルロー, シラー",
-            "en": "Plavac Mali, Kulašenak, Merlot, Shiraz"
+            "en": "Plavac Mali, Crljenak, Merlot, Syrah"
         },
         "body": "full",
         "winery": {
@@ -1292,8 +1292,8 @@ const initialWines = [
     {
         "id": 29,
         "name": {
-            "ja": "グルグルヴィンスキ プラヴァッツマリ",
-            "en": "Gurgurvinski Plavac Mali"
+            "ja": "プラヴァツ・マリ \"グルグル\"",
+            "en": "Plavac Mali \"Gurgur\""
         },
         "type": "red",
         "country": {
@@ -1338,8 +1338,8 @@ const initialWines = [
     {
         "id": 30,
         "name": {
-            "ja": "ローラン・サイヤール ラ・ポーズ",
-            "en": "Laurent Saillard La Pause"
+            "ja": "ラ・ポーズ",
+            "en": "La Pause"
         },
         "type": "red",
         "country": {
@@ -1384,8 +1384,8 @@ const initialWines = [
     {
         "id": 31,
         "name": {
-            "ja": "ローラン・サイヤール ラッキーユー",
-            "en": "Laurent Saillard Lucky You"
+            "ja": "ラッキー・ユー",
+            "en": "Lucky You"
         },
         "type": "white",
         "country": {
@@ -1430,8 +1430,8 @@ const initialWines = [
     {
         "id": 32,
         "name": {
-            "ja": "ローラン・サイヤール ラ・ヴァルス ロゼ",
-            "en": "Laurent Saillard La Valse Rosé"
+            "ja": "ラ・ヴァルス",
+            "en": "La Valse"
         },
         "type": "rose",
         "country": {
@@ -1476,8 +1476,8 @@ const initialWines = [
     {
         "id": 33,
         "name": {
-            "ja": "アルボワ・シャルドネ・イニシアル",
-            "en": "Arbois Chardonnay Initial"
+            "ja": "アルボワ シャルドネ \"イニシアル\"",
+            "en": "Arbois Chardonnay \"Initial\""
         },
         "type": "white",
         "country": {
@@ -1522,8 +1522,8 @@ const initialWines = [
     {
         "id": 34,
         "name": {
-            "ja": "アルボワ シャルドネ・サヴァニャン ニュアンス",
-            "en": "Arbois Chardonnay Savagnin Nuance"
+            "ja": "アルボワ \"ニュアンス\"",
+            "en": "Arbois \"Nuance\""
         },
         "type": "white",
         "country": {
@@ -1568,8 +1568,8 @@ const initialWines = [
     {
         "id": 35,
         "name": {
-            "ja": "アルボワ トゥルソー・エクセプシオン",
-            "en": "Arbois Trousseau Exception"
+            "ja": "アルボワ トゥルソー \"エクセプシオン\"",
+            "en": "Arbois Trousseau \"Exception\""
         },
         "type": "red",
         "country": {
@@ -1614,8 +1614,8 @@ const initialWines = [
     {
         "id": 36,
         "name": {
-            "ja": "アルボワ ピノノワール・レヴェラシオン",
-            "en": "Arbois Pinot Noir Révélation"
+            "ja": "アルボワ ピノ・ノワール \"レヴェラシオン\"",
+            "en": "Arbois Pinot Noir \"Révélation\""
         },
         "type": "red",
         "country": {
@@ -1660,10 +1660,10 @@ const initialWines = [
     {
         "id": 37,
         "name": {
-            "ja": "クリスチャン・ビネール セシュシュール",
-            "en": "Christian Binner S'esch Sur"
+            "ja": "セシュシュール",
+            "en": "S'esch Sur"
         },
-        "type": "red",
+        "type": "white",
         "country": {
             "ja": "フランス",
             "en": "France"
@@ -1674,8 +1674,8 @@ const initialWines = [
         },
         "vintage": "2021",
         "variety": {
-            "ja": "水, ミラベル, 洋梨, ホップの花, ゲヴュルツトラミネール",
-            "en": "Water, Mirabelle, Pear, Hops, Gewurztraminer"
+            "ja": "ミラベル, 洋梨, ホップの花, ゲヴュルツトラミネール",
+            "en": "Mirabelle, Pear, Hops, Gewurztraminer"
         },
         "body": "dry",
         "winery": {
@@ -1706,10 +1706,10 @@ const initialWines = [
     {
         "id": 38,
         "name": {
-            "ja": "グート・オッガウ マスケラード",
-            "en": "Gut Oggau Maskerade"
+            "ja": "マスケラード",
+            "en": "Maskerade"
         },
-        "type": "red",
+        "type": "rose",
         "country": {
             "ja": "オーストリア"
         },
@@ -1751,8 +1751,8 @@ const initialWines = [
     {
         "id": 39,
         "name": {
-            "ja": "グート・オッガウ テオドラ",
-            "en": "Gut Oggau Theodora"
+            "ja": "テオドラ",
+            "en": "Theodora"
         },
         "type": "white",
         "country": {
@@ -1765,7 +1765,7 @@ const initialWines = [
         "vintage": "2024",
         "variety": {
             "ja": "グリューナー・ヴェルトリーナー, ヴェルシュリースリング",
-            "en": "Gruner Veltliner, Veruschriesling"
+            "en": "Gruner Veltliner, Welschriesling"
         },
         "body": "dry",
         "winery": {
@@ -1796,8 +1796,8 @@ const initialWines = [
     {
         "id": 40,
         "name": {
-            "ja": "グート・オッガウ ヴィニフレッド",
-            "en": "Gut Oggau Winifred"
+            "ja": "ヴィニフレッド",
+            "en": "Winifred"
         },
         "type": "rose",
         "country": {
@@ -1841,8 +1841,8 @@ const initialWines = [
     {
         "id": 41,
         "name": {
-            "ja": "グート・オッガウ ヨゼフィーネ",
-            "en": "Gut Oggau Josephine"
+            "ja": "ヨゼフィーネ",
+            "en": "Josephine"
         },
         "type": "red",
         "country": {
@@ -1855,7 +1855,7 @@ const initialWines = [
         "vintage": "2023",
         "variety": {
             "ja": "ロースラー, ブラウフレンキッシュ",
-            "en": "Roussillon, Blaufränkisch"
+            "en": "Roesler, Blaufränkisch"
         },
         "body": "medium",
         "winery": {
@@ -1886,8 +1886,8 @@ const initialWines = [
     {
         "id": 42,
         "name": {
-            "ja": "グート・オッガウ ヨシュアリ",
-            "en": "Gut Oggau Joshuari"
+            "ja": "ヨシュアリ",
+            "en": "Joshuari"
         },
         "type": "red",
         "country": {
@@ -1931,10 +1931,10 @@ const initialWines = [
     {
         "id": 43,
         "name": {
-            "ja": "ロコ ヴェルデ",
-            "en": "Roco Verde"
+            "ja": "ヴェルデ",
+            "en": "Verde"
         },
-        "type": "orange",
+        "type": "white",
         "country": {
             "ja": "イタリア",
             "en": "Italy"
@@ -1977,8 +1977,8 @@ const initialWines = [
     {
         "id": 44,
         "name": {
-            "ja": "ロコ フッシア",
-            "en": "Roco Fucsia"
+            "ja": "フッシア",
+            "en": "Fucsia"
         },
         "type": "rose",
         "country": {
@@ -2023,10 +2023,10 @@ const initialWines = [
     {
         "id": 45,
         "name": {
-            "ja": "ロコ ロッソ",
-            "en": "Roco Rosso"
+            "ja": "ロッソ",
+            "en": "Rosso"
         },
-        "type": "red",
+        "type": "rose",
         "country": {
             "ja": "イタリア",
             "en": "Italy"
@@ -2038,7 +2038,7 @@ const initialWines = [
         "vintage": "2022",
         "variety": {
             "ja": "ネロ・ディ・トロイア, ボンビーノ・ビアンコ",
-            "en": "Nero di Troia, Bonino Bianco"
+            "en": "Nero di Troia, Bombino Bianco"
         },
         "body": "medium",
         "winery": {
@@ -2069,10 +2069,10 @@ const initialWines = [
     {
         "id": 46,
         "name": {
-            "ja": "ロコ リッラ",
-            "en": "Roco Lilla"
+            "ja": "リッラ",
+            "en": "Lilla"
         },
-        "type": "red",
+        "type": "rose",
         "country": {
             "ja": "イタリア",
             "en": "Italy"
@@ -2084,7 +2084,7 @@ const initialWines = [
         "vintage": "2022",
         "variety": {
             "ja": "マレスコ, オッタヴィア・ネッロ, ミヌートロ",
-            "en": "Maresco, Ottavia Nero, Minutolo"
+            "en": "Maresco, Ottavianello, Minutolo"
         },
         "body": "dry",
         "winery": {
@@ -2115,8 +2115,8 @@ const initialWines = [
     {
         "id": 47,
         "name": {
-            "ja": "ロコ ヴィオラ",
-            "en": "Roco Viola"
+            "ja": "ヴィオラ",
+            "en": "Viola"
         },
         "type": "red",
         "country": {
@@ -2130,7 +2130,7 @@ const initialWines = [
         "vintage": "2022",
         "variety": {
             "ja": "ボンビーノ・ネーロ, ネロ・ディ・トロイア, ボンビーノ・ビアンコ",
-            "en": "Bonino Nero, Nero di Troia, Bonino Bianco"
+            "en": "Bombino Nero, Nero di Troia, Bombino Bianco"
         },
         "body": "medium",
         "winery": {
@@ -2157,8 +2157,8 @@ const initialWines = [
     {
         "id": 48,
         "name": {
-            "ja": "ラディコン ピニョーリ",
-            "en": "Radikon Pignoli"
+            "ja": "ピニョーリ",
+            "en": "Pignoli"
         },
         "type": "red",
         "country": {
@@ -2203,8 +2203,8 @@ const initialWines = [
     {
         "id": 49,
         "name": {
-            "ja": "アレッサンドロ・ヴィオラ カリカッツ",
-            "en": "Alessandro Viola Catarratto"
+            "ja": "カタラット",
+            "en": "Catarratto"
         },
         "type": "white",
         "country": {
@@ -2218,7 +2218,7 @@ const initialWines = [
         "vintage": "2023",
         "variety": {
             "ja": "カタラット, カリカンテ",
-            "en": "Catarratto, Carignante"
+            "en": "Catarratto, Carricante"
         },
         "body": "dry",
         "winery": {
@@ -2249,8 +2249,8 @@ const initialWines = [
     {
         "id": 50,
         "name": {
-            "ja": "アレッサンドロ・ヴィオラ ノートディロッソ",
-            "en": "Alessandro Viola Note di Rosso"
+            "ja": "ノート・ディ・ロッソ",
+            "en": "Note di Rosso"
         },
         "type": "red",
         "country": {
@@ -2295,8 +2295,8 @@ const initialWines = [
     {
         "id": 51,
         "name": {
-            "ja": "アレッサンドロ・ヴィオラ シンフォニア・ディ・ロッソ",
-            "en": "Alessandro Viola Sinfonia di Rosso"
+            "ja": "シンフォニア・ディ・ロッソ",
+            "en": "Sinfonia di Rosso"
         },
         "type": "red",
         "country": {
@@ -2341,8 +2341,8 @@ const initialWines = [
     {
         "id": 52,
         "name": {
-            "ja": "アレッサンドロ・ヴィオラ シンフォニア・ディ・ビアンコ",
-            "en": "Alessandro Viola Sinfonia di Bianco"
+            "ja": "シンフォニア・ディ・ビアンコ",
+            "en": "Sinfonia di Bianco"
         },
         "type": "white",
         "country": {
@@ -2387,8 +2387,8 @@ const initialWines = [
     {
         "id": 53,
         "name": {
-            "ja": "アレッサンドロ・ヴィオラ レ・ミエ・オリジニ",
-            "en": "Alessandro Viola Le Miel Origini"
+            "ja": "レ・ミエ・オリジニ",
+            "en": "Le Mie Origini"
         },
         "type": "white",
         "country": {
@@ -2411,17 +2411,13 @@ const initialWines = [
         },
         "price": 11690,
         "description": {
-            "ja": "カタラット種。アンフォラ熟成など伝統的手法。複雑でオレンジピールやスパイスの香り。",
-            "en": "Catarratto. Traditional methods like Amphora aging. Complex aromas of orange peel and spice."
+            "ja": "カリン、淡い柑橘とミネラル香。徐々にジャスミンの様な爽やかな香りも感じられる。様々な植物や果物が溶け込んだ充実感に満ちた複雑なアロマ。",
+            "en": "Karin, with delicate citrus and mineral notes. Gradually, a refreshing jasmine-like fragrance also emerges.A complex aroma brimming with richness, blending various plants and fruits."
         },
         "tags": [
             {
                 "ja": "自然派",
                 "en": "Natural Wine"
-            },
-            {
-                "ja": "オレンジワイン",
-                "en": "Orange Wine"
             },
             {
                 "ja": "複雑",
@@ -2433,8 +2429,8 @@ const initialWines = [
     {
         "id": 54,
         "name": {
-            "ja": "カンティーナ・フィオレンティーノ マードレテッラ・ロッソ",
-            "en": "Cantina Fiorentino Madreterra Rosso"
+            "ja": "マードレテッラ ロッソ",
+            "en": "Madreterra Rosso"
         },
         "type": "red",
         "country": {
@@ -2479,8 +2475,8 @@ const initialWines = [
     {
         "id": 55,
         "name": {
-            "ja": "カンティーナ・フィオレンティーノ マードレテッラ・ビアンコ",
-            "en": "Cantina Fiorentino Madreterra Bianco"
+            "ja": "マードレテッラ ビアンコ",
+            "en": "Madreterra Bianco"
         },
         "type": "white",
         "country": {
@@ -2525,10 +2521,10 @@ const initialWines = [
     {
         "id": 56,
         "name": {
-            "ja": "スカッコ スプマンテ",
-            "en": "Scacco Spumante"
+            "ja": "スカッコ",
+            "en": "Scacco"
         },
-        "type": "red",
+        "type": "sparkling",
         "country": {
             "ja": "イタリア",
             "en": "Italy"
@@ -2571,7 +2567,7 @@ const initialWines = [
     {
         "id": 57,
         "name": {
-            "ja": "ロッソ コーネロ",
+            "ja": "ロッソ・コーネロ",
             "en": "Rosso Conero"
         },
         "type": "red",
@@ -2617,8 +2613,8 @@ const initialWines = [
     {
         "id": 58,
         "name": {
-            "ja": "サン ピエトロ ヴァルポリチェッラ スペリオーレ",
-            "en": "San Pietro Valpolicella Superiore"
+            "ja": "ヴァルポリチェッラ・スペリオーレ \"サン・ピエトロ\"",
+            "en": "Valpolicella Superiore \"San Pietro\""
         },
         "type": "red",
         "country": {
@@ -2663,7 +2659,7 @@ const initialWines = [
     {
         "id": 59,
         "name": {
-            "ja": "キアンティ コッレ フィオレンティーニ",
+            "ja": "キャンティ・コッリ・フィオレンティーニ",
             "en": "Chianti Colli Fiorentini"
         },
         "type": "red",
@@ -2678,7 +2674,7 @@ const initialWines = [
         "vintage": "2022",
         "variety": {
             "ja": "サンジョヴェーゼ・グロッソ, カナイオーロ",
-            "en": "San Giovanni Grosso, Canaiolo"
+            "en": "Sangiovese Grosso, Canaiolo"
         },
         "body": "medium",
         "winery": {
@@ -2710,7 +2706,7 @@ const initialWines = [
         "id": 60,
         "name": {
             "ja": "マロ",
-            "en": "Maro"
+            "en": "Malot"
         },
         "type": "red",
         "country": {
@@ -2755,8 +2751,8 @@ const initialWines = [
     {
         "id": 61,
         "name": {
-            "ja": "ドンナ カテリーナ チロ ロッソ",
-            "en": "Donna Caterina Ciro Rosso"
+            "ja": "チロ・ロッソ \"ドンナ・カテリーナ\"",
+            "en": "Ciro Rosso \"Donna Caterina\""
         },
         "type": "red",
         "country": {
@@ -2801,8 +2797,8 @@ const initialWines = [
     {
         "id": 62,
         "name": {
-            "ja": "レザン アン ルージュ テールドシエル",
-            "en": "Raisin en Rouge Terre de Ciel"
+            "ja": "レザン・アン・ルージュ",
+            "en": "Raisin en Rouge"
         },
         "type": "red",
         "country": {
@@ -2847,8 +2843,8 @@ const initialWines = [
     {
         "id": 63,
         "name": {
-            "ja": "レオナルド・バルベーラ・ダスティ・スペリオーレ",
-            "en": "Leonardo Barbera d'Asti Superiore"
+            "ja": "バルベーラ・ダスティ \"レオナルド\"",
+            "en": "Barbera d'Asti \"Leonardo\""
         },
         "type": "red",
         "country": {
@@ -2867,7 +2863,7 @@ const initialWines = [
         "body": "full",
         "winery": {
             "ja": "ラッセッラ",
-            "en": "L'Acella"
+            "en": "Lasserra"
         },
         "price": 7200,
         "description": {
@@ -2893,8 +2889,8 @@ const initialWines = [
     {
         "id": 64,
         "name": {
-            "ja": "コッリ・ピアチェンティーニ・ボナルダ 2020 / イル・ヴェイ",
-            "en": "Colli Piacentini Bonarda 2020 / Il Vei"
+            "ja": "コッリ・ピアチェンティーニ・ボナルダ",
+            "en": "Colli Piacentini Bonarda"
         },
         "type": "red",
         "country": {
@@ -2984,7 +2980,7 @@ const initialWines = [
     },
     {
         "id": 67,
-        "name": { "ja": "ヴァインライヒ ヴァイス", "en": "Weinreich Weiss" },
+        "name": { "ja": "ヴァイス", "en": "Weiss" },
         "type": "white",
         "country": { "ja": "ドイツ", "en": "Germany" },
         "region": { "ja": "ラインヘッセン", "en": "Rheinhessen" },
@@ -3006,7 +3002,7 @@ const initialWines = [
     },
     {
         "id": 68,
-        "name": { "ja": "ヴァインライヒ グラウ", "en": "Weinreich Grau" },
+        "name": { "ja": "グラウ", "en": "Grau" },
         "type": "white",
         "country": { "ja": "ドイツ", "en": "Germany" },
         "region": { "ja": "ラインヘッセン", "en": "Rheinhessen" },
@@ -3028,7 +3024,7 @@ const initialWines = [
     },
     {
         "id": 69,
-        "name": { "ja": "ヴァインライヒ ロット", "en": "Weinreich Rot" },
+        "name": { "ja": "ロット", "en": "Rot" },
         "type": "red",
         "country": { "ja": "ドイツ", "en": "Germany" },
         "region": { "ja": "ラインヘッセン", "en": "Rheinhessen" },
@@ -3050,7 +3046,7 @@ const initialWines = [
     },
     {
         "id": 70,
-        "name": { "ja": "ヴァインライヒ ロゼ", "en": "Weinreich Rose" },
+        "name": { "ja": "ロゼ", "en": "Rose" },
         "type": "rose",
         "country": { "ja": "ドイツ", "en": "Germany" },
         "region": { "ja": "ラインヘッセン", "en": "Rheinhessen" },
@@ -3068,11 +3064,11 @@ const initialWines = [
             { "ja": "自然派", "en": "Natural" },
             { "ja": "辛口ロゼ", "en": "Dry Rose" }
         ],
-        "isVisible": true
+        "isVisible": false
     },
     {
         "id": 71,
-        "name": { "ja": "タケダワイナリー サン・スフル", "en": "Takeda Winery Sans Soufre" },
+        "name": { "ja": "サン・スフル 白", "en": "Sans Soufre White" },
         "type": "sparkling",
         "country": { "ja": "日本", "en": "Japan" },
         "region": { "ja": "山形", "en": "Yamagata" },
@@ -3094,7 +3090,7 @@ const initialWines = [
     },
     {
         "id": 72,
-        "name": { "ja": "トソ スパークリング ブリュット", "en": "Toso Sparkling Brut" },
+        "name": { "ja": "スパークリング ブリュット", "en": "Sparkling Brut" },
         "type": "sparkling",
         "country": { "ja": "アルゼンチン", "en": "Argentina" },
         "region": { "ja": "マイプ", "en": "Maipu" },
@@ -3112,11 +3108,11 @@ const initialWines = [
             { "ja": "シャルドネ", "en": "Chardonnay" },
             { "ja": "クリーミー", "en": "Creamy" }
         ],
-        "isVisible": true
+        "isVisible": false
     },
     {
         "id": 73,
-        "name": { "ja": "シン キュヴェ ブラン", "en": "Syn Cuvée Blanc" },
+        "name": { "ja": "キュヴェ・ブラン", "en": "Cuvée Blanc" },
         "type": "sparkling",
         "country": { "ja": "オーストラリア", "en": "Australia" },
         "region": { "ja": "クナワラ", "en": "Coonawarra" },
@@ -3134,7 +3130,7 @@ const initialWines = [
             { "ja": "スタイリッシュ", "en": "Stylish" },
             { "ja": "エレガント", "en": "Elegant" }
         ],
-        "isVisible": true
+        "isVisible": false
     },
     {
         "id": 74,
@@ -3156,7 +3152,7 @@ const initialWines = [
             { "ja": "プーリア", "en": "Puglia" },
             { "ja": "爽やか", "en": "Crisp" }
         ],
-        "isVisible": true
+        "isVisible": false
     },
     {
         "id": 75,
@@ -3178,11 +3174,11 @@ const initialWines = [
             { "ja": "華やか", "en": "Gorgeous" },
             { "ja": "フルーティ", "en": "Fruity" }
         ],
-        "isVisible": true
+        "isVisible": false
     },
     {
         "id": 76,
-        "name": { "ja": "ドメーヌ・サルヴァ ドュレイユ シュベルニー", "en": "Domaine Salvard Delaille Cheverny" },
+        "name": { "ja": "シュヴェルニー \"ドゥレイユ\"", "en": "Cheverny \"Delaille\"" },
         "type": "white",
         "country": { "ja": "フランス", "en": "France" },
         "region": { "ja": "ロワール", "en": "Loire" },
@@ -3200,11 +3196,11 @@ const initialWines = [
             { "ja": "ソーヴィニヨン・ブラン", "en": "Sauvignon Blanc" },
             { "ja": "清涼感", "en": "Refreshing" }
         ],
-        "isVisible": true
+        "isVisible": false
     },
     {
         "id": 77,
-        "name": { "ja": "パナメラ シャルドネ", "en": "Panamera Chardonnay" },
+        "name": { "ja": "カリフォルニア シャルドネ", "en": "California Chardonnay" },
         "type": "white",
         "country": { "ja": "アメリカ", "en": "USA" },
         "region": { "ja": "カリフォルニア", "en": "California" },
@@ -3222,18 +3218,18 @@ const initialWines = [
             { "ja": "樽香", "en": "Oaky" },
             { "ja": "濃厚", "en": "Rich" }
         ],
-        "isVisible": true
+        "isVisible": false
     },
     {
         "id": 78,
-        "name": { "ja": "オッチ ロッソ", "en": "Occhi Rosso" },
+        "name": { "ja": "オッチ・ロッソ", "en": "Occi Rosso" },
         "type": "red",
         "country": { "ja": "イタリア", "en": "Italy" },
         "region": { "ja": "シチリア", "en": "Sicily" },
         "vintage": "NV",
         "variety": { "ja": "ネロ・ダヴォラ", "en": "Nero d'Avola" },
         "body": "full",
-        "winery": { "ja": "オッチ", "en": "Occhi" },
+        "winery": { "ja": "オッチ", "en": "Occi" },
         "price": 3550,
         "description": {
             "ja": "シチリアの太陽を浴びた完熟果実の香りと、スパイシーで凝縮感のある味わいが特徴。",
@@ -3244,11 +3240,11 @@ const initialWines = [
             { "ja": "ネロ・ダヴォラ", "en": "Nero d'Avola" },
             { "ja": "スパイシー", "en": "Spicy" }
         ],
-        "isVisible": true
+        "isVisible": false
     },
     {
         "id": 79,
-        "name": { "ja": "タオバ サペラヴィ", "en": "Taoba Saperavi" },
+        "name": { "ja": "サペラヴィ", "en": "Saperavi" },
         "type": "red",
         "country": { "ja": "ジョージア", "en": "Georgia" },
         "region": { "ja": "カヘティ", "en": "Kakheti" },
@@ -3266,8 +3262,54 @@ const initialWines = [
             { "ja": "サペラヴィ", "en": "Saperavi" },
             { "ja": "濃厚", "en": "Rich" }
         ],
+        "isVisible": false
+    },
+    {
+        "id": 80,
+        "name": {
+            "ja": "コート・デ・ローズ",
+            "en": "Cote des Roses"
+        },
+        "type": "red",
+        "country": {
+            "ja": "フランス",
+            "en": "France"
+        },
+        "region": {
+            "ja": "ラングドック・ルーション",
+            "en": "Languedoc-Roussillon"
+        },
+        "vintage": "2022",
+        "variety": {
+            "ja": "ピノ・ノワール",
+            "en": "Pinot Noir"
+        },
+        "body": "medium",
+        "winery": {
+            "ja": "ジェラール・ベルトラン",
+            "en": "Gérard Bertrand"
+        },
+        "price": 4300,
+        "description": {
+            "ja": "瓶底がバラの形のボトル。サクランボや野イチゴの果実味とスパイスの香り。ビロードのような口当たりとシルキーなタンニン。",
+            "en": "Bottle with a rose-shaped bottom. Aromas of cherry and wild strawberry with spicy notes. Velvety mouthfeel and silky tannins."
+        },
+        "tags": [
+            {
+                "ja": "バラのボトル",
+                "en": "Rose Bottle"
+            },
+            {
+                "ja": "南仏",
+                "en": "South of France"
+            },
+            {
+                "ja": "エレガント",
+                "en": "Elegant"
+            }
+        ],
         "isVisible": true
     }
 ];
 
-const WINE_STORAGE_KEY = 'lalupa_wines_v8';
+const WINE_STORAGE_KEY = 'lalupa_wines_v12';
