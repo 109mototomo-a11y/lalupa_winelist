@@ -111,10 +111,7 @@ function updateWine(id, updatedWine) {
     }
 }
 
-function deleteWine(id) {
-    wines = wines.filter(w => w.id !== id);
-    saveWines();
-}
+
 
 // Helper to get localized text from a multi-lang object
 // Helper to get localized text from a multi-lang object
@@ -1004,11 +1001,7 @@ function saveWineForm(e) {
     populateVintageFilter();
 }
 
-function confirmDeleteWine(id) {
-    if (confirm('本当にこのワインを削除しますか？')) {
-        deleteWine(id);
-    }
-}
+
 
 function deleteWine(id) {
     wines = wines.filter(w => w.id !== id);
