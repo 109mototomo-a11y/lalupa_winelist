@@ -47,7 +47,7 @@ const initialWines = [
                 "en": "Powerful"
             }
         ],
-        "isVisible": true
+        "is_visible": true
     },
     {
         "id": 2,
@@ -93,7 +93,7 @@ const initialWines = [
                 "en": "Fresh"
             }
         ],
-        "isVisible": true
+        "is_visible": true
     },
     {
         "id": 3,
@@ -139,7 +139,7 @@ const initialWines = [
                 "en": "Full Body"
             }
         ],
-        "isVisible": true
+        "is_visible": true
     },
     {
         "id": 4,
@@ -185,7 +185,7 @@ const initialWines = [
                 "en": "Minerality"
             }
         ],
-        "isVisible": true
+        "is_visible": true
     },
     {
         "id": 5,
@@ -231,7 +231,7 @@ const initialWines = [
                 "en": "Spicy"
             }
         ],
-        "isVisible": true
+        "is_visible": true
     },
     {
         "id": 6,
@@ -277,7 +277,7 @@ const initialWines = [
                 "en": "Complexity"
             }
         ],
-        "isVisible": true
+        "is_visible": true
     },
     {
         "id": 7,
@@ -323,7 +323,7 @@ const initialWines = [
                 "en": "Pairs with Meat"
             }
         ],
-        "isVisible": true
+        "is_visible": true
     },
     {
         "id": 8,
@@ -369,7 +369,7 @@ const initialWines = [
                 "en": "Harmonious"
             }
         ],
-        "isVisible": true
+        "is_visible": true
     },
     {
         "id": 9,
@@ -415,7 +415,7 @@ const initialWines = [
                 "en": "Dry"
             }
         ],
-        "isVisible": true
+        "is_visible": true
     },
     {
         "id": 10,
@@ -461,7 +461,7 @@ const initialWines = [
                 "en": "Mellow"
             }
         ],
-        "isVisible": true
+        "is_visible": true
     },
     {
         "id": 11,
@@ -506,7 +506,7 @@ const initialWines = [
                 "en": "Fresh"
             }
         ],
-        "isVisible": true
+        "is_visible": true
     },
     {
         "id": 12,
@@ -552,7 +552,7 @@ const initialWines = [
                 "en": "Gorgeous"
             }
         ],
-        "isVisible": true
+        "is_visible": true
     },
     {
         "id": 13,
@@ -597,7 +597,7 @@ const initialWines = [
                 "en": "Sweet Tannins"
             }
         ],
-        "isVisible": true
+        "is_visible": true
     },
     {
         "id": 14,
@@ -643,7 +643,7 @@ const initialWines = [
                 "en": "Soft Astringency"
             }
         ],
-        "isVisible": true
+        "is_visible": true
     },
     {
         "id": 15,
@@ -689,7 +689,7 @@ const initialWines = [
                 "en": "Vanilla Aroma"
             }
         ],
-        "isVisible": true
+        "is_visible": true
     },
     {
         "id": 16,
@@ -735,7 +735,7 @@ const initialWines = [
                 "en": "Long Finish"
             }
         ],
-        "isVisible": true
+        "is_visible": true
     },
     {
         "id": 17,
@@ -781,7 +781,7 @@ const initialWines = [
                 "en": "Blanc de Blancs"
             }
         ],
-        "isVisible": true
+        "is_visible": true
     },
     {
         "id": 18,
@@ -827,7 +827,7 @@ const initialWines = [
                 "en": "Long Aging"
             }
         ],
-        "isVisible": true
+        "is_visible": true
     },
     {
         "id": 19,
@@ -873,7 +873,7 @@ const initialWines = [
                 "en": "Smooth"
             }
         ],
-        "isVisible": true
+        "is_visible": true
     },
     {
         "id": 20,
@@ -919,7 +919,7 @@ const initialWines = [
                 "en": "Minerality"
             }
         ],
-        "isVisible": true
+        "is_visible": true
     },
     {
         "id": 21,
@@ -965,7 +965,7 @@ const initialWines = [
                 "en": "Tropical"
             }
         ],
-        "isVisible": true
+        "is_visible": true
     },
     {
         "id": 22,
@@ -1011,7 +1011,7 @@ const initialWines = [
                 "en": "Dry"
             }
         ],
-        "isVisible": true
+        "is_visible": true
     },
     {
         "id": 23,
@@ -1057,7 +1057,7 @@ const initialWines = [
                 "en": "Long Aging"
             }
         ],
-        "isVisible": true
+        "is_visible": true
     },
     {
         "id": 24,
@@ -1103,7 +1103,7 @@ const initialWines = [
                 "en": "Barrel Aged"
             }
         ],
-        "isVisible": true
+        "is_visible": true
     },
     {
         "id": 25,
@@ -1149,7 +1149,7 @@ const initialWines = [
                 "en": "Spicy"
             }
         ],
-        "isVisible": true
+        "is_visible": true
     },
     {
         "id": 26,
@@ -1195,7 +1195,7 @@ const initialWines = [
                 "en": "Gorgeous"
             }
         ],
-        "isVisible": true
+        "is_visible": true
     },
     {
         "id": 27,
@@ -1241,7 +1241,7 @@ const initialWines = [
                 "en": "Croatia"
             }
         ],
-        "isVisible": true
+        "is_visible": true
     },
     {
         "id": 28,
@@ -1287,7 +1287,7 @@ const initialWines = [
                 "en": "Limited Edition"
             }
         ],
-        "isVisible": true
+        "is_visible": true
     },
     {
         "id": 29,
@@ -1333,7 +1333,7 @@ const initialWines = [
                 "en": "Indigenous Variety"
             }
         ],
-        "isVisible": true
+        "is_visible": true
     },
     {
         "id": 30,
@@ -1379,7 +1379,7 @@ const initialWines = [
                 "en": "Soft"
             }
         ],
-        "isVisible": true
+        "is_visible": true
     },
     {
         "id": 31,
@@ -1425,7 +1425,7 @@ const initialWines = [
                 "en": "Pure"
             }
         ],
-        "isVisible": true
+        "is_visible": true
     },
     {
         "id": 32,
@@ -1471,7 +1471,7 @@ const initialWines = [
                 "en": "Light"
             }
         ],
-        "isVisible": true
+        "is_visible": true
     },
     {
         "id": 33,
@@ -1517,7 +1517,7 @@ const initialWines = [
                 "en": "Minerality"
             }
         ],
-        "isVisible": true
+        "is_visible": true
     },
     {
         "id": 34,
@@ -1563,7 +1563,7 @@ const initialWines = [
                 "en": "Traditional"
             }
         ],
-        "isVisible": true
+        "is_visible": true
     },
     {
         "id": 35,
@@ -1609,7 +1609,7 @@ const initialWines = [
                 "en": "Spicy"
             }
         ],
-        "isVisible": true
+        "is_visible": true
     },
     {
         "id": 36,
@@ -1655,7 +1655,7 @@ const initialWines = [
                 "en": "Refreshing"
             }
         ],
-        "isVisible": true
+        "is_visible": true
     },
     {
         "id": 37,
@@ -1701,7 +1701,7 @@ const initialWines = [
                 "en": "Piquette"
             }
         ],
-        "isVisible": true
+        "is_visible": true
     },
     {
         "id": 38,
@@ -1746,7 +1746,7 @@ const initialWines = [
                 "en": "Fresh"
             }
         ],
-        "isVisible": true
+        "is_visible": true
     },
     {
         "id": 39,
@@ -1791,7 +1791,7 @@ const initialWines = [
                 "en": "Juicy"
             }
         ],
-        "isVisible": true
+        "is_visible": true
     },
     {
         "id": 40,
@@ -1836,7 +1836,7 @@ const initialWines = [
                 "en": "Fruity"
             }
         ],
-        "isVisible": true
+        "is_visible": true
     },
     {
         "id": 41,
@@ -1881,7 +1881,7 @@ const initialWines = [
                 "en": "Complex"
             }
         ],
-        "isVisible": true
+        "is_visible": true
     },
     {
         "id": 42,
@@ -1926,7 +1926,7 @@ const initialWines = [
                 "en": "Long Aging"
             }
         ],
-        "isVisible": true
+        "is_visible": true
     },
     {
         "id": 43,
@@ -1972,7 +1972,7 @@ const initialWines = [
                 "en": "Salty/Salinity"
             }
         ],
-        "isVisible": true
+        "is_visible": true
     },
     {
         "id": 44,
@@ -2018,7 +2018,7 @@ const initialWines = [
                 "en": "Elegant"
             }
         ],
-        "isVisible": true
+        "is_visible": true
     },
     {
         "id": 45,
@@ -2064,7 +2064,7 @@ const initialWines = [
                 "en": "Unique"
             }
         ],
-        "isVisible": true
+        "is_visible": true
     },
     {
         "id": 46,
@@ -2110,7 +2110,7 @@ const initialWines = [
                 "en": "Salty/Salinity"
             }
         ],
-        "isVisible": true
+        "is_visible": true
     },
     {
         "id": 47,
@@ -2152,7 +2152,7 @@ const initialWines = [
                 "en": "Puglia"
             }
         ],
-        "isVisible": true
+        "is_visible": true
     },
     {
         "id": 48,
@@ -2198,7 +2198,7 @@ const initialWines = [
                 "en": "Complex"
             }
         ],
-        "isVisible": true
+        "is_visible": true
     },
     {
         "id": 49,
@@ -2244,7 +2244,7 @@ const initialWines = [
                 "en": "Pure"
             }
         ],
-        "isVisible": true
+        "is_visible": true
     },
     {
         "id": 50,
@@ -2290,7 +2290,7 @@ const initialWines = [
                 "en": "Savory/Nourishing"
             }
         ],
-        "isVisible": true
+        "is_visible": true
     },
     {
         "id": 51,
@@ -2336,7 +2336,7 @@ const initialWines = [
                 "en": "Pure"
             }
         ],
-        "isVisible": true
+        "is_visible": true
     },
     {
         "id": 52,
@@ -2382,7 +2382,7 @@ const initialWines = [
                 "en": "Minerality"
             }
         ],
-        "isVisible": true
+        "is_visible": true
     },
     {
         "id": 53,
@@ -2424,7 +2424,7 @@ const initialWines = [
                 "en": "Complex"
             }
         ],
-        "isVisible": true
+        "is_visible": true
     },
     {
         "id": 54,
@@ -2470,7 +2470,7 @@ const initialWines = [
                 "en": "Soft"
             }
         ],
-        "isVisible": true
+        "is_visible": true
     },
     {
         "id": 55,
@@ -2516,7 +2516,7 @@ const initialWines = [
                 "en": "Fruity"
             }
         ],
-        "isVisible": true
+        "is_visible": true
     },
     {
         "id": 56,
@@ -2562,7 +2562,7 @@ const initialWines = [
                 "en": "Elegant"
             }
         ],
-        "isVisible": true
+        "is_visible": true
     },
     {
         "id": 57,
@@ -2608,7 +2608,7 @@ const initialWines = [
                 "en": "Harmony"
             }
         ],
-        "isVisible": true
+        "is_visible": true
     },
     {
         "id": 58,
@@ -2654,7 +2654,7 @@ const initialWines = [
                 "en": "Red Fruit"
             }
         ],
-        "isVisible": true
+        "is_visible": true
     },
     {
         "id": 59,
@@ -2700,7 +2700,7 @@ const initialWines = [
                 "en": "Chianti"
             }
         ],
-        "isVisible": true
+        "is_visible": true
     },
     {
         "id": 60,
@@ -2746,7 +2746,7 @@ const initialWines = [
                 "en": "Umbria"
             }
         ],
-        "isVisible": true
+        "is_visible": true
     },
     {
         "id": 61,
@@ -2792,7 +2792,7 @@ const initialWines = [
                 "en": "Bio Wine"
             }
         ],
-        "isVisible": true
+        "is_visible": true
     },
     {
         "id": 62,
@@ -2838,7 +2838,7 @@ const initialWines = [
                 "en": "Light/Lively"
             }
         ],
-        "isVisible": true
+        "is_visible": true
     },
     {
         "id": 63,
@@ -2884,7 +2884,7 @@ const initialWines = [
                 "en": "Elegant"
             }
         ],
-        "isVisible": true
+        "is_visible": true
     },
     {
         "id": 64,
@@ -2930,7 +2930,7 @@ const initialWines = [
                 "en": "Pleasant Drinkability"
             }
         ],
-        "isVisible": true
+        "is_visible": true
     },
     {
         "id": 65,
@@ -2976,7 +2976,7 @@ const initialWines = [
                 "en": "Fresh"
             }
         ],
-        "isVisible": true
+        "is_visible": true
     },
     {
         "id": 67,
@@ -2998,7 +2998,7 @@ const initialWines = [
             { "ja": "自然派", "en": "Natural" },
             { "ja": "フレッシュ", "en": "Fresh" }
         ],
-        "isVisible": true
+        "is_visible": true
     },
     {
         "id": 68,
@@ -3020,7 +3020,7 @@ const initialWines = [
             { "ja": "自然派", "en": "Natural" },
             { "ja": "複雑味", "en": "Complex" }
         ],
-        "isVisible": true
+        "is_visible": true
     },
     {
         "id": 69,
@@ -3042,7 +3042,7 @@ const initialWines = [
             { "ja": "自然派", "en": "Natural" },
             { "ja": "飲みやすい", "en": "Easy to drink" }
         ],
-        "isVisible": true
+        "is_visible": true
     },
     {
         "id": 70,
@@ -3064,7 +3064,7 @@ const initialWines = [
             { "ja": "自然派", "en": "Natural" },
             { "ja": "辛口ロゼ", "en": "Dry Rose" }
         ],
-        "isVisible": false
+        "is_visible": false
     },
     {
         "id": 71,
@@ -3086,7 +3086,7 @@ const initialWines = [
             { "ja": "自然派", "en": "Natural" },
             { "ja": "濁り泡", "en": "Cloudy Sparkling" }
         ],
-        "isVisible": true
+        "is_visible": true
     },
     {
         "id": 72,
@@ -3108,7 +3108,7 @@ const initialWines = [
             { "ja": "シャルドネ", "en": "Chardonnay" },
             { "ja": "クリーミー", "en": "Creamy" }
         ],
-        "isVisible": false
+        "is_visible": false
     },
     {
         "id": 73,
@@ -3130,7 +3130,7 @@ const initialWines = [
             { "ja": "スタイリッシュ", "en": "Stylish" },
             { "ja": "エレガント", "en": "Elegant" }
         ],
-        "isVisible": false
+        "is_visible": false
     },
     {
         "id": 74,
@@ -3152,7 +3152,7 @@ const initialWines = [
             { "ja": "プーリア", "en": "Puglia" },
             { "ja": "爽やか", "en": "Crisp" }
         ],
-        "isVisible": false
+        "is_visible": false
     },
     {
         "id": 75,
@@ -3174,7 +3174,7 @@ const initialWines = [
             { "ja": "華やか", "en": "Gorgeous" },
             { "ja": "フルーティ", "en": "Fruity" }
         ],
-        "isVisible": false
+        "is_visible": false
     },
     {
         "id": 76,
@@ -3196,7 +3196,7 @@ const initialWines = [
             { "ja": "ソーヴィニヨン・ブラン", "en": "Sauvignon Blanc" },
             { "ja": "清涼感", "en": "Refreshing" }
         ],
-        "isVisible": false
+        "is_visible": false
     },
     {
         "id": 77,
@@ -3218,7 +3218,7 @@ const initialWines = [
             { "ja": "樽香", "en": "Oaky" },
             { "ja": "濃厚", "en": "Rich" }
         ],
-        "isVisible": false
+        "is_visible": false
     },
     {
         "id": 78,
@@ -3240,7 +3240,7 @@ const initialWines = [
             { "ja": "ネロ・ダヴォラ", "en": "Nero d'Avola" },
             { "ja": "スパイシー", "en": "Spicy" }
         ],
-        "isVisible": false
+        "is_visible": false
     },
     {
         "id": 79,
@@ -3262,7 +3262,7 @@ const initialWines = [
             { "ja": "サペラヴィ", "en": "Saperavi" },
             { "ja": "濃厚", "en": "Rich" }
         ],
-        "isVisible": false
+        "is_visible": false
     },
     {
         "id": 80,
@@ -3308,7 +3308,7 @@ const initialWines = [
                 "en": "Elegant"
             }
         ],
-        "isVisible": true
+        "is_visible": true
     }
 ];
 

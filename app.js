@@ -340,7 +340,7 @@ function createWineCard(wine) {
                         <h3 class="wine-name">${name}</h3>
                         <span class="wine-vintage-badge">${vintage}</span>
                     </div>
-                    ${!wine.isVisible ? `<span class="hidden-badge">Hidden</span>` : ''}
+                    ${!wine.is_visible ? `<span class="hidden-badge">Hidden</span>` : ''}
                 </div>
                 
                 <p class="wine-winery">${winery}</p>
@@ -431,7 +431,7 @@ function getFilteredWines() {
 
     return wines.filter(wine => {
         // Visibility check (Customer view only)
-        if (currentView === 'customer' && !wine.isVisible) {
+        if (currentView === 'customer' && !wine.is_visible) {
             return false;
         }
 
@@ -610,7 +610,7 @@ function populateCountryFilter() {
     // Collect unique JA countries
     const countries = new Set();
     wines.forEach(w => {
-        if ((w.isVisible || currentView === 'admin') && w.country?.ja) {
+        if ((w.is_visible || currentView === 'admin') && w.country?.ja) {
             countries.add(w.country.ja);
         }
     });
@@ -648,7 +648,7 @@ function populateCountryFilter() {
 function populateVintageFilter() {
     const vintageSelect = document.getElementById('vintageFilter');
     const currentVal = vintageSelect.value;
-    const vintages = new Set(wines.filter(w => w.isVisible || currentView === 'admin').map(w => w.vintage));
+    const vintages = new Set(wines.filter(w => w.is_visible || currentView === 'admin').map(w => w.vintage));
     const sorted = Array.from(vintages).sort().reverse(); // Newest first
 
     while (vintageSelect.options.length > 1) vintageSelect.remove(1);
@@ -792,13 +792,13 @@ function createAdminWineItem(wine) {
     const country = getLocalizedText(wine.country);
 
     return `
-        <div class="admin-wine-item ${!wine.isVisible ? 'item-hidden' : ''}" data-id="${wine.id}">
+        <div class="admin-wine-item ${!wine.is_visible ? 'item-hidden' : ''}" data-id="${wine.id}">
             <div class="admin-wine-number ${wine.type}">${wine.id}</div>
             <div class="admin-wine-info">
                 <div class="admin-wine-name-row">
                     <span class="admin-wine-name">${name}</span>
                     <label class="toggle-switch">
-                        <input type="checkbox" class="visibility-toggle" ${wine.isVisible ? 'checked' : ''}>
+                        <input type="checkbox" class="visibility-toggle" ${wine.is_visible ? 'checked' : ''}>
                         <span class="slider round"></span>
                     </label>
                 </div>
@@ -816,10 +816,10 @@ function createAdminWineItem(wine) {
         `;
 }
 
-function toggleWineVisibility(id, isVisible) {
+function toggleWineVisibility(id, is_visible) {
     const wine = wines.find(w => w.id === id);
     if (wine) {
-        wine.isVisible = isVisible;
+        wine.is_visible = is_visible;
         saveWines();
         renderAdminWineList();
     }
@@ -881,7 +881,7 @@ function populateWineForm(wine) {
     document.getElementById('winePrice').value = wine.price;
     document.getElementById('wineType').value = wine.type;
     // Body is set later after options update
-    // document.getElementById('wineIsVisible').checked = wine.isVisible !== false; // Moved to list toggle
+    // document.getElementById('wineIsVisible').checked = wine.is_visible !== false; // Moved to list toggle
     document.getElementById('wineVintage').value = wine.vintage || '';
 
     // Initialize localized fields using Japanese values
@@ -931,7 +931,7 @@ function saveWineForm(e) {
         type: document.getElementById('wineType').value,
         body: document.getElementById('wineBody').value,
         vintage: document.getElementById('wineVintage').value,
-        isVisible: true, // Default to true if editing via form, separate toggle handles visibility
+        is_visible: true, // Default to true if editing via form, separate toggle handles visibility
         name: { ja: document.getElementById('wineName').value },
         winery: { ja: document.getElementById('wineWinery').value },
         country: { ja: document.getElementById('wineCountry').value },
@@ -941,10 +941,10 @@ function saveWineForm(e) {
         tags: []
     };
 
-    // Preserve isVisible from existing if editing
+    // Preserve is_visible from existing if editing
     if (editingWineId) {
         const existing = wines.find(w => w.id === editingWineId);
-        if (existing) wine.isVisible = existing.isVisible;
+        if (existing) wine.is_visible = existing.is_visible;
     }
 
     // Process Tags (JA Master)
