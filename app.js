@@ -4,6 +4,7 @@
 
 // Current language (default: Japanese)
 let currentLanguage = 'ja';
+window.currentLanguage = currentLanguage;
 
 // Current view mode
 let currentView = 'customer'; // 'customer' or 'admin'
@@ -228,6 +229,7 @@ console.log('Term Dictionary Built:', Object.keys(termDictionary).length, 'terms
 
 function setLanguage(lang) {
     currentLanguage = lang;
+    window.currentLanguage = lang;
 
     // Update language buttons
     document.querySelectorAll('.lang-option').forEach(btn => {

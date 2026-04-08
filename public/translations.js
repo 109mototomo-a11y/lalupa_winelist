@@ -597,6 +597,6 @@ const termDictionary = {
 };
 
 // Translation helper function
-function t(key, lang = currentLanguage) {
+function t(key, lang = window.currentLanguage || 'ja') {
     return translations[lang]?.[key] || translations['ja']?.[key] || key;
 }
