@@ -1,6 +1,7 @@
 // ===================================
 // La Lupa Wine List - Main Application
 // ===================================
+import { supabase } from './src/utils/supabaseClient.js';
 
 // Current language (default: Japanese)
 let currentLanguage = 'ja';
@@ -66,11 +67,22 @@ const elements = {
 // Initialization
 // ===================================
 
-function init() {
-    loadWines();
-    // buildTermDictionary(); Removed - using static dictionary
+async function init() {
     setupEventListeners();
-    setupTabListeners(); // Setup tab translation logic
+    setupTabListeners();
+    updateUI();
+    lucide.createIcons();
+    await loadWines();
+    subscribeRealtime();
+}
+
+// ===================================
+// Data Management
+// ===================================
+
+// ローカルキャッシュへの反映ユーティリティ
+function _refreshUIAfterLoad() {
+    buildTermDictionary();
     populateVarietyFilter();
     populateCountryFilter();
     populateVintageFilter();
@@ -79,36 +91,64 @@ function init() {
     lucide.createIcons();
 }
 
-// ===================================
-// Data Management
-// ===================================
+async function loadWines() {
+    try {
+        const { data, error } = await supabase
+            .from('wines')
+            .select('*')
+            .order('id');
+        if (error) throw error;
 
-function loadWines() {
-    const stored = localStorage.getItem(WINE_STORAGE_KEY);
-    if (stored) {
-        wines = JSON.parse(stored);
-    } else {
+        if (data && data.length > 0) {
+            wines = data.map(row => row.data);
+        } else {
+            // テーブルが空なら初期データを投入
+            await _seedInitialWines();
+        }
+    } catch (err) {
+        console.error('Supabase load error:', err);
+        // フォールバック: wines.js の初期データを使用
         wines = [...initialWines];
-        saveWines();
+    }
+    _refreshUIAfterLoad();
+}
+
+async function _seedInitialWines() {
+    try {
+        const rows = initialWines.map(w => ({ id: w.id, data: w }));
+        const { error } = await supabase.from('wines').insert(rows);
+        if (error) throw error;
+        wines = [...initialWines];
+    } catch (err) {
+        console.error('Seed error:', err);
+        wines = [...initialWines];
     }
 }
 
-function saveWines() {
-    localStorage.setItem(WINE_STORAGE_KEY, JSON.stringify(wines));
+async function _saveWineToSupabase(wine) {
+    const { error } = await supabase
+        .from('wines')
+        .upsert({ id: wine.id, data: wine }, { onConflict: 'id' });
+    if (error) console.error('Supabase save error:', error);
 }
 
-function addWine(wine) {
+// 後方互換のため残す（CSVインポート内から呼ばれる可能性を除去）
+function saveWines() {
+    // no-op: Supabase に移行済み
+}
+
+async function addWine(wine) {
     const maxId = wines.reduce((max, w) => Math.max(max, w.id), 0);
     wine.id = maxId + 1;
     wines.push(wine);
-    saveWines();
+    await _saveWineToSupabase(wine);
 }
 
-function updateWine(id, updatedWine) {
+async function updateWine(id, updatedWine) {
     const index = wines.findIndex(w => w.id === id);
     if (index !== -1) {
         wines[index] = { ...wines[index], ...updatedWine };
-        saveWines();
+        await _saveWineToSupabase(wines[index]);
     }
 }
 
@@ -815,20 +855,19 @@ function createAdminWineItem(wine) {
         `;
 }
 
-function toggleWineVisibility(id, is_visible) {
+async function toggleWineVisibility(id, is_visible) {
     const wine = wines.find(w => w.id === id);
     if (wine) {
         wine.is_visible = is_visible;
-        saveWines();
+        await _saveWineToSupabase(wine);
         renderAdminWineList();
     }
 }
 
-function confirmDeleteWine(id) {
+async function confirmDeleteWine(id) {
     const wine = wines.find(w => w.id === id);
     if (confirm(t('admin.deleteConfirm') + `\n\n${getLocalizedText(wine.name)} `)) {
-        deleteWine(id);
-        renderAdminWineList();
+        await deleteWine(id);
     }
 }
 
@@ -921,7 +960,7 @@ function populateWineForm(wine) {
     });
 }
 
-function saveWineForm(e) {
+async function saveWineForm(e) {
     e.preventDefault();
 
     const wine = {
@@ -983,15 +1022,14 @@ function saveWineForm(e) {
         });
     });
 
+    closeWineForm();
+
     if (editingWineId) {
-        updateWine(editingWineId, wine);
+        await updateWine(editingWineId, wine);
     } else {
-        addWine(wine);
+        await addWine(wine);
     }
 
-    closeWineForm();
-    closeWineForm();
-    closeWineForm();
     renderAdminWineList();
 
     // Rebuild dictionary with new data
@@ -1005,9 +1043,14 @@ function saveWineForm(e) {
 
 
 
-function deleteWine(id) {
+async function deleteWine(id) {
+    const { error } = await supabase.from('wines').delete().eq('id', id);
+    if (error) {
+        console.error('Supabase delete error:', error);
+        alert('削除に失敗しました。');
+        return;
+    }
     wines = wines.filter(w => w.id !== id);
-    saveWines();
     renderAdminWineList();
 
     // Rebuild dictionary with new data
@@ -1355,10 +1398,10 @@ function handleCSVImport(e) {
             let addedCount = 0;
             let updatedCount = 0;
 
+            // ローカル配列を更新
             newWines.forEach(newWine => {
                 const existingIndex = wines.findIndex(w => w.id === newWine.id);
                 if (existingIndex !== -1) {
-                    // Update existing, preserving fields not in CSV
                     const existing = wines[existingIndex];
                     wines[existingIndex] = {
                         ...existing,
@@ -1376,8 +1419,17 @@ function handleCSVImport(e) {
                 }
             });
 
-            saveWines();
-            saveWines();
+            // Supabase へ一括 upsert
+            const rows = wines.map(w => ({ id: w.id, data: w }));
+            const { error: upsertError } = await supabase
+                .from('wines')
+                .upsert(rows, { onConflict: 'id' });
+            if (upsertError) {
+                console.error('CSV upsert error:', upsertError);
+                alert('Supabaseへの保存に失敗しました: ' + upsertError.message);
+                return;
+            }
+
             renderAdminWineList();
 
             // Rebuild dictionary with new data
@@ -1402,5 +1454,40 @@ function handleCSVImport(e) {
 // ===================================
 // Start Application
 // ===================================
+
+// ===================================
+// リアルタイム同期
+// ===================================
+
+function subscribeRealtime() {
+    supabase
+        .channel('public:wines')
+        .on(
+            'postgres_changes',
+            { event: '*', schema: 'public', table: 'wines' },
+            (payload) => {
+                if (payload.eventType === 'INSERT') {
+                    const newWine = payload.new.data;
+                    if (!wines.find(w => w.id === newWine.id)) {
+                        wines.push(newWine);
+                    }
+                } else if (payload.eventType === 'UPDATE') {
+                    const updatedWine = payload.new.data;
+                    const idx = wines.findIndex(w => w.id === updatedWine.id);
+                    if (idx !== -1) wines[idx] = updatedWine;
+                } else if (payload.eventType === 'DELETE') {
+                    const deletedId = payload.old.id;
+                    wines = wines.filter(w => w.id !== deletedId);
+                }
+                buildTermDictionary();
+                populateVarietyFilter();
+                populateCountryFilter();
+                populateVintageFilter();
+                renderWineGrid();
+                if (currentView === 'admin') renderAdminWineList();
+            }
+        )
+        .subscribe();
+}
 
 document.addEventListener('DOMContentLoaded', init);
