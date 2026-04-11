@@ -85,7 +85,6 @@ async function init() {
 
 // ローカルキャッシュへの反映ユーティリティ
 function _refreshUIAfterLoad() {
-    buildTermDictionary();
     populateVarietyFilter();
     populateCountryFilter();
     populateVintageFilter();
@@ -1035,8 +1034,7 @@ async function saveWineForm(e) {
 
     renderAdminWineList();
 
-    // Rebuild dictionary with new data
-    buildTermDictionary();
+    // Rebuild dictionary with new data (Removed)
 
     // Refresh filters as new data might have new countries/varieties
     populateVarietyFilter();
@@ -1056,8 +1054,7 @@ async function deleteWine(id) {
     wines = wines.filter(w => w.id !== id);
     renderAdminWineList();
 
-    // Rebuild dictionary with new data
-    buildTermDictionary();
+    // Rebuild dictionary with new data (Removed)
 
     // Refresh filters
     populateVarietyFilter();
@@ -1448,8 +1445,7 @@ function handleCSVImport(e) {
 
             renderAdminWineList();
 
-            // Rebuild dictionary with new data
-            buildTermDictionary();
+            // Rebuild dictionary with new data (Removed)
 
             // Refresh filters with new data
             populateVarietyFilter();
@@ -1495,7 +1491,6 @@ function subscribeRealtime() {
                     const deletedId = payload.old.id;
                     wines = wines.filter(w => w.id !== deletedId);
                 }
-                buildTermDictionary();
                 populateVarietyFilter();
                 populateCountryFilter();
                 populateVintageFilter();
