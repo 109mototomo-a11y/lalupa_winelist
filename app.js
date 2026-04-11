@@ -60,7 +60,10 @@ const elements = {
     addWineBtn: document.getElementById('addWineBtn'),
     adminWineList: document.getElementById('adminWineList'),
     importCsvBtn: document.getElementById('importCsvBtn'),
-    csvInput: document.getElementById('csvInput')
+    csvInput: document.getElementById('csvInput'),
+
+    // Utility
+    backToTopBtn: document.getElementById('backToTopBtn')
 };
 
 // ===================================
@@ -1248,6 +1251,19 @@ function setupEventListeners() {
                 f.classList.toggle('active', f.dataset.langFields === lang)
             );
         });
+    });
+
+    // Back to top button
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            elements.backToTopBtn.classList.remove('hidden');
+        } else {
+            elements.backToTopBtn.classList.add('hidden');
+        }
+    });
+
+    elements.backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 }
 
