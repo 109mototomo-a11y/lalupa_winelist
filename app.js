@@ -1025,10 +1025,13 @@ async function saveWineForm(e) {
         });
     });
 
+    // closeWineForm() は editingWineId を null にリセットするため、
+    // 先にローカル変数に退避してから呼ぶ
+    const targetId = editingWineId;
     closeWineForm();
 
-    if (editingWineId) {
-        await updateWine(editingWineId, wine);
+    if (targetId) {
+        await updateWine(targetId, wine);
     } else {
         await addWine(wine);
     }
