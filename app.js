@@ -2,6 +2,7 @@
 // La Lupa Wine List - Main Application
 // ===================================
 import { supabase } from './src/utils/supabaseClient.js';
+import * as XLSX from 'xlsx';
 
 // Current language (default: Japanese)
 let currentLanguage = 'ja';
@@ -1191,10 +1192,10 @@ function setupEventListeners() {
     elements.backToCustomer.addEventListener('click', switchToCustomer);
     elements.addWineBtn.addEventListener('click', () => openWineForm());
 
-    // CSV Import
+    // XLSX Import
     if (elements.importCsvBtn && elements.csvInput) {
         elements.importCsvBtn.addEventListener('click', () => elements.csvInput.click());
-        elements.csvInput.addEventListener('change', handleCSVImport);
+        elements.csvInput.addEventListener('change', handleXLSXImport);
     }
 
     // Form Type Change -> Update Body Options
@@ -1377,90 +1378,180 @@ function debounce(func, wait) {
 }
 
 // ===================================
-// CSV Import Logic
+// XLSX Import Logic
 // ===================================
 
-function handleCSVImport(e) {
+// ワインの種類（日本語 → 内部値）マッピング
+const TYPE_MAP = {
+    '赤': 'red', '赤ワイン': 'red',
+    '白': 'white', '白ワイン': 'white',
+    'スパークリング': 'sparkling', 'スパークリングワイン': 'sparkling',
+    'ロゼ': 'rose', 'ロゼワイン': 'rose',
+    'オレンジ': 'orange', 'オレンジワイン': 'orange',
+    'ロゼスパークリング': 'rose_sparkling', 'ロゼ スパークリング': 'rose_sparkling',
+    'ロゼスパークリングワイン': 'rose_sparkling'
+};
+
+// ボディ（日本語 → 内部値）マッピング
+const BODY_MAP = {
+    'ライト': 'light', 'ライトボディ': 'light',
+    'ミディアム': 'medium', 'ミディアムボディ': 'medium',
+    'フル': 'full', 'フルボディ': 'full',
+    'スウィート': 'sweet', '甘口': 'sweet',
+    'セミドライ': 'semidry', '中辛口': 'semidry',
+    'ドライ': 'dry', '辛口': 'dry'
+};
+
+function parseXLSXRow(row) {
+    // 番号（ID）
+    const rawId = row['番号'];
+    const id = parseInt(rawId);
+    if (!rawId || isNaN(id)) return null; // 番号が無効な行はスキップ
+
+    // ワイン名
+    const nameJa = String(row['ワイン名'] || '').trim();
+    if (!nameJa) return null; // ワイン名が空の行はスキップ
+
+    // 種類
+    const rawType = String(row['種類'] || '').trim();
+    const type = TYPE_MAP[rawType] || 'red'; // デフォルト: 赤
+
+    // 国・地域
+    const countryJa = String(row['国'] || '').trim();
+    const regionJa = String(row['地域'] || '').trim();
+
+    // ヴィンテージ
+    const rawVintage = row['ヴィンテージ'];
+    const vintage = rawVintage ? String(rawVintage).trim() : 'NV';
+
+    // ボディ
+    const rawBody = String(row['ボディ'] || '').trim();
+    const body = BODY_MAP[rawBody] || (type === 'red' ? 'medium' : 'dry'); // デフォルト
+
+    // 販売価格
+    const rawPrice = row['販売価格'];
+    const price = parseInt(rawPrice) || 0;
+
+    // 特徴タグ（カンマ・読点区切り）
+    const rawTags = String(row['特徴タグ'] || '').trim();
+    const tags = rawTags
+        ? rawTags.split(/[,，、]/).map(t => t.trim()).filter(t => t).map(t => ({ ja: t }))
+        : [];
+
+    // 特徴（説明）
+    const description = String(row['特徴'] || '').trim();
+
+    return {
+        id,
+        name: { ja: nameJa },
+        type,
+        country: { ja: countryJa },
+        region: { ja: regionJa },
+        vintage,
+        body,
+        price,
+        tags,
+        description: description ? { ja: description } : { ja: '' },
+        winery: { ja: '' },
+        variety: { ja: '' },
+        is_visible: true
+    };
+}
+
+async function handleXLSXImport(e) {
     const file = e.target.files[0];
     if (!file) return;
 
-    if (confirm('CSVをインポートしますか？既存の同一番号データは上書きされます。')) {
-        const reader = new FileReader();
-        reader.onload = async function (event) {
-            const csvData = event.target.result;
-            const newWines = parseCSV(csvData);
+    const reader = new FileReader();
+    reader.onload = async function (event) {
+        try {
+            // xlsxファイルをパース
+            const data = new Uint8Array(event.target.result);
+            const workbook = XLSX.read(data, { type: 'array' });
+            const sheetName = workbook.SheetNames[0];
+            const sheet = workbook.Sheets[sheetName];
+            const rows = XLSX.utils.sheet_to_json(sheet, { defval: '' });
 
-            if (newWines.length === 0) {
-                alert('有効なワインデータが見つかりませんでした。ヘッダーを確認してください。');
+            if (rows.length === 0) {
+                alert('ファイルにデータが見つかりませんでした。');
                 return;
             }
 
-            // Show loading
+            // 各行をパース
+            const parsedWines = rows.map(parseXLSXRow).filter(w => w !== null);
+
+            if (parsedWines.length === 0) {
+                alert('有効なワインデータが見つかりませんでした。\n列名（番号・ワイン名など）を確認してください。');
+                return;
+            }
+
+            // 既存IDのセット
+            const existingIds = new Set(wines.map(w => w.id));
+
+            // 新規のみフィルタリング（既存IDはスキップ）
+            const toAdd = parsedWines.filter(w => !existingIds.has(w.id));
+            const skippedCount = parsedWines.length - toAdd.length;
+
+            if (toAdd.length === 0) {
+                alert(`追加するワインがありません。\n${skippedCount}件はすべて既に登録済みです。`);
+                elements.csvInput.value = '';
+                return;
+            }
+
+            // 確認ダイアログ
+            const msg = `Excelファイルから ${parsedWines.length} 件を読み込みました。\n\n追加: ${toAdd.length} 件\nスキップ（既存）: ${skippedCount} 件\n\n追加を実行しますか？`;
+            if (!confirm(msg)) {
+                elements.csvInput.value = '';
+                return;
+            }
+
+            // ローディング表示
             const importBtn = elements.importCsvBtn;
             if (importBtn) {
                 importBtn.innerHTML = `<i data-lucide="loader-2" class="animate-spin"></i> インポート中...`;
+                importBtn.disabled = true;
                 lucide.createIcons();
             }
 
-            // Translation loop removed for performance
-
-            if (importBtn) {
-                importBtn.innerHTML = `CSVインポート`;
-            }
-
-            let addedCount = 0;
-            let updatedCount = 0;
-
-            // ローカル配列を更新
-            newWines.forEach(newWine => {
-                const existingIndex = wines.findIndex(w => w.id === newWine.id);
-                if (existingIndex !== -1) {
-                    const existing = wines[existingIndex];
-                    wines[existingIndex] = {
-                        ...existing,
-                        ...newWine,
-                        name: { ...existing.name, ...newWine.name },
-                        country: { ...existing.country, ...newWine.country },
-                        region: { ...existing.region, ...newWine.region },
-                        variety: { ...existing.variety, ...newWine.variety },
-                        tags: newWine.tags && newWine.tags.length ? newWine.tags : existing.tags
-                    };
-                    updatedCount++;
-                } else {
-                    wines.push(newWine);
-                    addedCount++;
-                }
-            });
-
-            // Supabase へ一括 upsert
-            const rows = wines.map(w => ({ id: w.id, data: w }));
-            const { error: upsertError } = await supabase
+            // Supabase に insert（新規のみ）
+            const rows2insert = toAdd.map(w => ({ id: w.id, data: w }));
+            const { error: insertError } = await supabase
                 .from('wines')
-                .upsert(rows, { onConflict: 'id' });
-            if (upsertError) {
-                console.error('CSV upsert error:', upsertError);
-                alert('Supabaseへの保存に失敗しました: ' + upsertError.message);
+                .insert(rows2insert);
+
+            if (insertError) {
+                console.error('XLSX insert error:', insertError);
+                alert('Supabaseへの保存に失敗しました: ' + insertError.message);
                 return;
             }
 
+            // ローカル配列に追加
+            wines.push(...toAdd);
+
+            // UI更新
             renderAdminWineList();
-
-            // Rebuild dictionary with new data (Removed)
-
-            // Refresh filters with new data
             populateVarietyFilter();
             populateCountryFilter();
             populateVintageFilter();
 
-            alert(`インポート完了: 追加 ${addedCount}件, 更新 ${updatedCount}件`);
+            alert(`インポート完了！\n追加: ${toAdd.length}件\nスキップ（既存）: ${skippedCount}件`);
 
-            // Allow re-importing same file
+        } catch (err) {
+            console.error('XLSX import error:', err);
+            alert('xlsxファイルの読み込みに失敗しました。\n' + err.message);
+        } finally {
+            // ボタンを復元
+            const importBtn = elements.importCsvBtn;
+            if (importBtn) {
+                importBtn.innerHTML = `<i data-lucide="file-spreadsheet"></i> <span>Excelインポート</span>`;
+                importBtn.disabled = false;
+                lucide.createIcons();
+            }
+            // 同じファイルを再インポートできるようにリセット
             elements.csvInput.value = '';
-        };
-        reader.readAsText(file, 'Shift-JIS');
-    } else {
-        elements.csvInput.value = '';
-    }
+        }
+    };
+    reader.readAsArrayBuffer(file);
 }
 
 // ===================================
