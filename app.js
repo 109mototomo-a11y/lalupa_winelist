@@ -1444,6 +1444,9 @@ function parseXLSXRow(row) {
     // 特徴（説明）
     const description = String(row['特徴'] || '').trim();
 
+    // 生産者（ワイナリー）
+    const wineryJa = String(row['生産者'] || '').trim();
+
     return {
         id,
         name: { ja: nameJa },
@@ -1455,7 +1458,7 @@ function parseXLSXRow(row) {
         price,
         tags,
         description: description ? { ja: description } : { ja: '' },
-        winery: { ja: '' },
+        winery: { ja: wineryJa },
         variety: { ja: '' },
         is_visible: true
     };
@@ -1513,6 +1516,39 @@ async function handleXLSXImport(e) {
             if (importBtn) {
                 importBtn.innerHTML = `<i data-lucide="loader-2" class="animate-spin"></i> インポート中...`;
                 importBtn.disabled = true;
+                lucide.createIcons();
+            }
+
+            // 翻訳処理: 追加するワインの各項目を英語に翻訳
+            const fieldsToTranslate = ['name', 'winery', 'country', 'region', 'description'];
+            let currentCount = 0;
+            
+            for (const wine of toAdd) {
+                currentCount++;
+                if (importBtn) {
+                    importBtn.innerHTML = `<i data-lucide="loader-2" class="animate-spin"></i> 翻訳中 (${currentCount}/${toAdd.length}件)...`;
+                    lucide.createIcons();
+                }
+
+                // 各フィールドの翻訳 (日本語 -> 英語)
+                for (const field of fieldsToTranslate) {
+                    if (wine[field] && wine[field].ja) {
+                        wine[field].en = await translateWithDictionaryFallback(wine[field].ja, 'en');
+                    }
+                }
+                
+                // タグの翻訳
+                if (wine.tags && wine.tags.length > 0) {
+                    for (const tag of wine.tags) {
+                        if (tag.ja) {
+                            tag.en = await translateWithDictionaryFallback(tag.ja, 'en');
+                        }
+                    }
+                }
+            }
+            
+            if (importBtn) {
+                importBtn.innerHTML = `<i data-lucide="loader-2" class="animate-spin"></i> データを保存中...`;
                 lucide.createIcons();
             }
 
