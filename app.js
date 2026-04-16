@@ -1431,9 +1431,12 @@ function parseXLSXRow(row) {
     const rawBody = String(row['ボディ'] || '').trim();
     const body = BODY_MAP[rawBody] || (type === 'red' ? 'medium' : 'dry'); // デフォルト
 
-    // 販売価格
-    const rawPrice = row['販売価格'];
+    // 価格（「価格」または「販売価格」列）
+    const rawPrice = row['価格'] || row['販売価格'];
     const price = parseInt(rawPrice) || 0;
+
+    // 品種
+    const varietyJa = String(row['品種'] || '').trim();
 
     // 特徴タグ（カンマ・読点区切り）
     const rawTags = String(row['特徴タグ'] || '').trim();
@@ -1459,7 +1462,7 @@ function parseXLSXRow(row) {
         tags,
         description: description ? { ja: description } : { ja: '' },
         winery: { ja: wineryJa },
-        variety: { ja: '' },
+        variety: { ja: varietyJa },
         is_visible: true
     };
 }
@@ -1520,7 +1523,7 @@ async function handleXLSXImport(e) {
             }
 
             // 翻訳処理: 追加するワインの各項目を英語に翻訳
-            const fieldsToTranslate = ['name', 'winery', 'country', 'region', 'description'];
+            const fieldsToTranslate = ['name', 'winery', 'country', 'region', 'variety', 'description'];
             let currentCount = 0;
             
             for (const wine of toAdd) {
