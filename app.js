@@ -2,7 +2,7 @@
 // La Lupa Wine List - Main Application
 // ===================================
 import { supabase } from './src/utils/supabaseClient.js';
-import readXlsxFile from 'read-excel-file/browser';
+// read-excel-file は管理画面でのインポート時のみ動的importする (初期バンドルから除外)
 
 // Current language (default: Japanese)
 let currentLanguage = 'ja';
@@ -16,6 +16,27 @@ const ADMIN_PIN = '1234';
 
 // Wine data
 let wines = [];
+
+// Inline SVG icons (index.html の <symbol> 定義を参照。Lucide ランタイム置き換え)
+function icon(name, cls = '') {
+    return `<svg class="icon ${cls}"><use href="#i-${name}"/></svg>`;
+}
+
+// 言語ごとのGoogle Fonts遅延読み込み (初期ロードはJPのみ)
+const loadedFontLangs = new Set(['ja', 'en']);
+const FONT_URLS = {
+    'ko': 'https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap',
+    'zh-TW': 'https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap'
+};
+
+function ensureFontForLang(lang) {
+    if (loadedFontLangs.has(lang) || !FONT_URLS[lang]) return;
+    loadedFontLangs.add(lang);
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = FONT_URLS[lang];
+    document.head.appendChild(link);
+}
 
 // Term Dictionary for fallback translations is in translations.js
 
@@ -75,7 +96,6 @@ async function init() {
     setupEventListeners();
     setupTabListeners();
     updateUI();
-    lucide.createIcons();
     await loadWines();
     subscribeRealtime();
 }
@@ -91,11 +111,11 @@ function _refreshUIAfterLoad() {
     populateVintageFilter();
     renderWineGrid();
     updateUI();
-    lucide.createIcons();
 }
 
 async function loadWines() {
     try {
+        if (!supabase) throw new Error('Supabase not configured');
         const { data, error } = await supabase
             .from('wines')
             .select('*')
@@ -118,6 +138,7 @@ async function loadWines() {
 
 async function _seedInitialWines() {
     try {
+        if (!supabase) throw new Error('Supabase not configured');
         const rows = initialWines.map(w => ({ id: w.id, data: w }));
         const { error } = await supabase.from('wines').insert(rows);
         if (error) throw error;
@@ -129,6 +150,7 @@ async function _seedInitialWines() {
 }
 
 async function _saveWineToSupabase(wine) {
+    if (!supabase) return;
     const { error } = await supabase
         .from('wines')
         .upsert({ id: wine.id, data: wine }, { onConflict: 'id' });
@@ -273,6 +295,7 @@ console.log('Term Dictionary Built:', Object.keys(termDictionary).length, 'terms
 function setLanguage(lang) {
     currentLanguage = lang;
     window.currentLanguage = lang;
+    ensureFontForLang(lang);
 
     // Update language buttons
     document.querySelectorAll('.lang-option').forEach(btn => {
@@ -314,9 +337,6 @@ function updateUI() {
         const key = option.getAttribute('data-i18n');
         option.textContent = t(key);
     });
-
-    // Refresh variety filter options
-    populateVarietyFilter();
 }
 
 // ===================================
@@ -338,16 +358,7 @@ function renderWineGrid() {
     }
 
     elements.wineGrid.innerHTML = filteredWines.map(wine => createWineCard(wine)).join('');
-
-    // Add click handlers
-    document.querySelectorAll('.wine-card').forEach(card => {
-        card.addEventListener('click', () => {
-            const wineId = parseInt(card.dataset.id);
-            showWineDetail(wineId);
-        });
-    });
-
-    lucide.createIcons();
+    // クリックは setupEventListeners のイベント委譲で処理 (カード毎のリスナー登録を廃止)
 }
 
 function createWineCard(wine) {
@@ -684,7 +695,7 @@ function populateCountryFilter() {
         countrySelect.appendChild(opt);
     });
 
-    if (currentVal && sorted.includes(currentVal)) countrySelect.value = currentVal;
+    if (currentVal && options.some(o => o.value === currentVal)) countrySelect.value = currentVal;
 }
 
 function populateVintageFilter() {
@@ -826,7 +837,6 @@ function renderAdminWineList() {
         .join('');
 
     // Event handlers are now managed by delegation in setupEventListeners
-    lucide.createIcons();
 }
 
 function createAdminWineItem(wine) {
@@ -848,10 +858,10 @@ function createAdminWineItem(wine) {
             </div>
             <div class="admin-wine-actions">
                 <button class="btn btn-icon btn-edit" title="${t('common.edit')}">
-                    <i data-lucide="pencil"></i>
+                    ${icon('pencil')}
                 </button>
                 <button class="btn btn-icon btn-delete" title="${t('common.delete')}">
-                    <i data-lucide="trash-2"></i>
+                    ${icon('trash')}
                 </button>
             </div>
         </div>
@@ -1049,6 +1059,7 @@ async function saveWineForm(e) {
 
 
 async function deleteWine(id) {
+    if (!supabase) return;
     const { error } = await supabase.from('wines').delete().eq('id', id);
     if (error) {
         console.error('Supabase delete error:', error);
@@ -1166,6 +1177,14 @@ function setupEventListeners() {
         });
     }
 
+    // Wine grid: イベント委譲 (再描画のたびのリスナー再登録を廃止)
+    elements.wineGrid.addEventListener('click', (e) => {
+        const card = e.target.closest('.wine-card');
+        if (card) {
+            showWineDetail(parseInt(card.dataset.id));
+        }
+    });
+
     // Search input (Debounced)
     elements.searchInput.addEventListener('input', debounce(() => {
         renderWineGrid();
@@ -1254,17 +1273,25 @@ function setupEventListeners() {
         });
     });
 
-    // Back to top button
+    // Back to top button (passive + rAF スロットル。状態が変わった時だけクラスを触る)
+    let backToTopVisible = false;
+    let scrollTicking = false;
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 300) {
-            elements.backToTopBtn.classList.remove('hidden');
-        } else {
-            elements.backToTopBtn.classList.add('hidden');
-        }
-    });
+        if (scrollTicking) return;
+        scrollTicking = true;
+        requestAnimationFrame(() => {
+            scrollTicking = false;
+            const shouldShow = window.scrollY > 300;
+            if (shouldShow !== backToTopVisible) {
+                backToTopVisible = shouldShow;
+                elements.backToTopBtn.classList.toggle('hidden', !shouldShow);
+            }
+        });
+    }, { passive: true });
 
     elements.backToTopBtn.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        // 低スペック端末ではスムーススクロールのアニメーションが重いため即時ジャンプ
+        window.scrollTo(0, 0);
     });
 }
 
@@ -1311,8 +1338,7 @@ async function handleAutoTranslate() {
     const btn = document.getElementById('autoTranslateBtn');
     const originalText = btn.innerHTML;
     btn.disabled = true;
-    btn.innerHTML = `<i data-lucide="loader-2" class="animate-spin" style="width:16px;height:16px;"></i> 翻訳中...`;
-    lucide.createIcons();
+    btn.innerHTML = `${icon('loader', 'animate-spin')} 翻訳中...`;
 
     try {
         const fields = ['Name', 'Winery', 'Country', 'Region', 'Variety'];
@@ -1360,7 +1386,6 @@ async function handleAutoTranslate() {
     } finally {
         btn.disabled = false;
         btn.innerHTML = originalText;
-        lucide.createIcons();
     }
 }
 
@@ -1492,6 +1517,9 @@ async function handleXLSXImport(e) {
     if (!file) return;
 
     try {
+        // パーサーを必要時のみロード (初期バンドルの軽量化)
+        const { default: readXlsxFile } = await import('read-excel-file/browser');
+
         // xlsxファイルをパース
         const sheetRows = await readXlsxFile(file);
         const rows = sheetRowsToObjects(sheetRows);
@@ -1532,9 +1560,8 @@ async function handleXLSXImport(e) {
         // ローディング表示
         const importBtn = elements.importCsvBtn;
         if (importBtn) {
-            importBtn.innerHTML = `<i data-lucide="loader-2" class="animate-spin"></i> インポート中...`;
+            importBtn.innerHTML = `${icon('loader', 'animate-spin')} インポート中...`;
             importBtn.disabled = true;
-            lucide.createIcons();
         }
 
         // 翻訳処理: 追加するワインの各項目を英語に翻訳
@@ -1544,8 +1571,7 @@ async function handleXLSXImport(e) {
         for (const wine of toAdd) {
             currentCount++;
             if (importBtn) {
-                importBtn.innerHTML = `<i data-lucide="loader-2" class="animate-spin"></i> 翻訳中 (${currentCount}/${toAdd.length}件)...`;
-                lucide.createIcons();
+                importBtn.innerHTML = `${icon('loader', 'animate-spin')} 翻訳中 (${currentCount}/${toAdd.length}件)...`;
             }
 
             // 各フィールドの翻訳 (日本語 -> 英語)
@@ -1566,8 +1592,7 @@ async function handleXLSXImport(e) {
         }
             
         if (importBtn) {
-            importBtn.innerHTML = `<i data-lucide="loader-2" class="animate-spin"></i> データを保存中...`;
-            lucide.createIcons();
+            importBtn.innerHTML = `${icon('loader', 'animate-spin')} データを保存中...`;
         }
 
         // Supabase に insert（新規のみ）
@@ -1599,9 +1624,8 @@ async function handleXLSXImport(e) {
         // ボタンを復元
         const importBtn = elements.importCsvBtn;
         if (importBtn) {
-            importBtn.innerHTML = `<i data-lucide="file-spreadsheet"></i> <span>Excelインポート</span>`;
+            importBtn.innerHTML = `${icon('file-spreadsheet')} <span>Excelインポート</span>`;
             importBtn.disabled = false;
-            lucide.createIcons();
         }
         // 同じファイルを再インポートできるようにリセット
         elements.csvInput.value = '';
@@ -1617,6 +1641,7 @@ async function handleXLSXImport(e) {
 // ===================================
 
 function subscribeRealtime() {
+    if (!supabase) return;
     supabase
         .channel('public:wines')
         .on(
