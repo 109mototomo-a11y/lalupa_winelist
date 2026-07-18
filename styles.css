@@ -45,7 +45,7 @@
     --font-sans: 'Noto Sans JP', 'Noto Sans KR', 'Noto Sans TC', sans-serif;
 
     /* Spacing */
-    --header-height: 90px;
+    --header-height: 108px;
     --footer-height: 70px;
 }
 
@@ -152,19 +152,19 @@ body::before {
 }
 
 .logo-image {
-    height: 64px;
+    height: 88px;
     width: auto;
     object-fit: contain;
 }
 
 .header-title {
     position: absolute;
-    left: 42%;
+    left: 50%;
     transform: translateX(-50%);
     font-family: 'Cinzel', serif;
-    font-size: 3rem;
+    font-size: clamp(2rem, 3.2vw, 3rem);
     font-weight: 700;
-    letter-spacing: 0.5em;
+    letter-spacing: 0.34em;
     text-transform: uppercase;
     background: linear-gradient(to right, #E31C25, #800000);
     -webkit-background-clip: text;
@@ -267,7 +267,7 @@ body::before {
     flex: 1;
     margin-top: var(--header-height);
     margin-bottom: var(--footer-height);
-    padding: 40px 32px;
+    padding: 36px 32px 48px;
     max-width: 1400px;
     width: 100%;
     margin-left: auto;
@@ -278,10 +278,10 @@ body::before {
 .filter-bar {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
-    margin-bottom: 40px;
-    padding: 24px;
-    background: var(--color-surface);
+    gap: 16px;
+    margin-bottom: 32px;
+    padding: 20px;
+    background: rgba(25, 25, 25, 0.9);
     border: 1px solid var(--color-gold-border);
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-md);
@@ -361,7 +361,7 @@ body::before {
    =================================== */
 .wine-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 24px;
 }
 
@@ -375,7 +375,7 @@ body::before {
     box-shadow: var(--shadow-sm);
     display: flex;
     flex-direction: row;
-    min-height: 280px;
+    min-height: 270px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     cursor: pointer;
 
@@ -389,9 +389,13 @@ body::before {
     border-color: var(--color-gold-border);
 }
 
+.wine-card:active {
+    transform: translateY(-1px) scale(0.99);
+}
+
 /* Sidebar Styles */
 .wine-card-sidebar {
-    width: 60px;
+    width: 52px;
     flex-shrink: 0;
     display: flex;
     align-items: center;
@@ -402,7 +406,7 @@ body::before {
 
 .wine-card-number {
     font-family: var(--font-serif);
-    font-size: 2.2rem;
+    font-size: 1.9rem;
     font-weight: 700;
     line-height: 1;
     z-index: 2;
@@ -1293,10 +1297,19 @@ body::before {
         padding: 6px 10px;
         font-size: 0.8rem;
     }
+
+    .wine-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 }
 
 /* Responsiveness */
 @media (max-width: 768px) {
+    :root {
+        --header-height: 82px;
+        --footer-height: 58px;
+    }
+
     .header-content {
         padding: 0 16px;
     }
@@ -1309,7 +1322,32 @@ body::before {
     }
 
     .main-content {
-        padding: 20px 16px;
+        padding: 18px 16px 32px;
+    }
+
+    .logo-image {
+        height: 68px;
+    }
+
+    .filter-bar {
+        display: block;
+        padding: 14px;
+        margin-bottom: 20px;
+        border-radius: var(--radius-md);
+    }
+
+    .filter-group {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .filter-select {
+        width: 100%;
+        min-width: 0;
+        padding: 13px 36px 13px 12px;
+        background-position: right 10px center;
     }
 
     .wine-grid {
@@ -1433,6 +1471,12 @@ body::before {
 }
 
 /* Small Mobile Devices */
+@media (max-width: 600px) {
+    .filter-group {
+        grid-template-columns: 1fr;
+    }
+}
+
 @media (max-width: 480px) {
     .header-title {
         font-size: 1.0rem;
@@ -1442,7 +1486,7 @@ body::before {
     }
 
     .logo-image {
-        height: 48px;
+        height: 58px;
     }
 
     .lang-btn {
@@ -1667,16 +1711,20 @@ input:checked+.slider:before {
    Responsive Changes
    =================================== */
 
-/* iPad Landscape & High-Res Tablets (1024px range) */
-@media screen and (min-width: 1024px) {
+/* Wide desktop */
+@media screen and (min-width: 1500px) {
     .wine-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(4, minmax(0, 1fr));
     }
 }
 
-/* Desktop Large */
-@media screen and (min-width: 1400px) {
-    .wine-grid {
-        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
     }
 }

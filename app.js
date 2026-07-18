@@ -204,6 +204,19 @@ function getLocalizedText(obj) {
     return obj['ja'] || Object.values(obj)[0] || '';
 }
 
+// ワイン固有の情報は日本語と英語のみを使う。
+// 繁体字・韓国語UIでは英語を表示する。
+function getWineText(obj) {
+    if (!obj) return '';
+    if (typeof obj === 'string') return obj;
+
+    if (currentLanguage === 'zh-TW' || currentLanguage === 'ko') {
+        return obj.en || termDictionary[obj.ja]?.en || obj.ja || Object.values(obj)[0] || '';
+    }
+
+    return getLocalizedText(obj);
+}
+
 // function buildTermDictionary() { ... } Removed to use static dictionary in translations.js
 
 /*
@@ -363,12 +376,12 @@ function renderWineGrid() {
 
 function createWineCard(wine) {
     // Special Name Logic handled by general fallback in getLocalizedText now
-    let name = getLocalizedText(wine.name);
+    let name = getWineText(wine.name);
 
-    const winery = getLocalizedText(wine.winery);
+    const winery = getWineText(wine.winery);
     const region = getLocalizedText(wine.region);
     const country = getLocalizedText(wine.country);
-    const varietyText = getLocalizedText(wine.variety);
+    const varietyText = getWineText(wine.variety);
     const varietyPills = varietyText ? varietyText.split(/[,\u3001]/).map(v => v.trim()).filter(v => v).map(v =>
         `<span class="variety-pill">${v}</span>`
     ).join('') : '';
@@ -376,7 +389,7 @@ function createWineCard(wine) {
     const vintage = wine.vintage || 'NV';
 
     const tagsHtml = wine.tags?.slice(0, 3).map(tag =>
-        `<span class="wine-tag-pill">${getLocalizedText(tag)}</span>`
+        `<span class="wine-tag-pill">${getWineText(tag)}</span>`
     ).join('') || '';
 
     // Wine Type Label (e.g. Red, White...)
@@ -490,11 +503,11 @@ function getFilteredWines() {
 
         // Search filter
         if (search) {
-            const name = getLocalizedText(wine.name).toLowerCase();
-            const winery = getLocalizedText(wine.winery).toLowerCase();
+            const name = getWineText(wine.name).toLowerCase();
+            const winery = getWineText(wine.winery).toLowerCase();
             const region = getLocalizedText(wine.region).toLowerCase();
             const countryText = getLocalizedText(wine.country).toLowerCase();
-            const varietyText = getLocalizedText(wine.variety).toLowerCase();
+            const varietyText = getWineText(wine.variety).toLowerCase();
             const vintageText = (wine.vintage || '').toLowerCase();
 
             if (!name.includes(search) && !winery.includes(search) &&
@@ -726,16 +739,16 @@ function showWineDetail(id) {
     if (!wine) return;
 
     // Special Name Logic handled by fallback
-    let name = getLocalizedText(wine.name);
+    let name = getWineText(wine.name);
 
-    const winery = getLocalizedText(wine.winery);
+    const winery = getWineText(wine.winery);
     const country = getLocalizedText(wine.country);
     const region = getLocalizedText(wine.region);
-    const varieties = getLocalizedText(wine.variety)?.split(/[,\u3001]/).map(v => v.trim()).filter(v => v) || [];
+    const varieties = getWineText(wine.variety)?.split(/[,\u3001]/).map(v => v.trim()).filter(v => v) || [];
     const varietyPills = varieties.map(v => `<span class="variety-pill detail-pill">${v}</span>`).join('');
 
     const tagsHtml = wine.tags?.map(tag =>
-        `<span class="wine-detail-tag">${getLocalizedText(tag)}</span>`
+        `<span class="wine-detail-tag">${getWineText(tag)}</span>`
     ).join('') || '';
 
     elements.wineDetail.innerHTML = `
@@ -751,7 +764,7 @@ function showWineDetail(id) {
 
             ${wine.description?.ja ? `
             <div class="wine-description-container">
-                <p class="wine-description">${getLocalizedText(wine.description)}</p>
+                <p class="wine-description">${getWineText(wine.description)}</p>
             </div>` : ''}
 
             <div class="wine-detail-divider"></div>
@@ -840,7 +853,7 @@ function renderAdminWineList() {
 }
 
 function createAdminWineItem(wine) {
-    const name = getLocalizedText(wine.name);
+    const name = getWineText(wine.name);
     const country = getLocalizedText(wine.country);
 
     return `
@@ -879,7 +892,7 @@ async function toggleWineVisibility(id, is_visible) {
 
 async function confirmDeleteWine(id) {
     const wine = wines.find(w => w.id === id);
-    if (confirm(t('admin.deleteConfirm') + `\n\n${getLocalizedText(wine.name)} `)) {
+    if (confirm(t('admin.deleteConfirm') + `\n\n${getWineText(wine.name)} `)) {
         await deleteWine(id);
     }
 }
@@ -1413,12 +1426,33 @@ function debounce(func, wait) {
 const TYPE_MAP = {
     '赤': 'red', '赤ワイン': 'red',
     '白': 'white', '白ワイン': 'white',
+    '泡': 'sparkling', '発泡': 'sparkling', '発泡性': 'sparkling',
     'スパークリング': 'sparkling', 'スパークリングワイン': 'sparkling',
     'ロゼ': 'rose', 'ロゼワイン': 'rose',
     'オレンジ': 'orange', 'オレンジワイン': 'orange',
     'ロゼスパークリング': 'rose_sparkling', 'ロゼ スパークリング': 'rose_sparkling',
     'ロゼスパークリングワイン': 'rose_sparkling'
 };
+
+function normalizeWineType(value) {
+    const raw = String(value ?? '').trim();
+    if (!raw) return null;
+
+    const normalized = raw
+        .normalize('NFKC')
+        .toLowerCase()
+        .replace(/[\s\u3000・/()（）_-]/g, '');
+
+    if (TYPE_MAP[normalized]) return TYPE_MAP[normalized];
+    if (/(rose|rosé|ロゼ).*(sparkling|スパークリング|泡|発泡)/.test(normalized)) return 'rose_sparkling';
+    if (/(sparkling|spumante|champagne|prosecco|cava|スパークリング|シャンパン|シャンペーニュ|泡|発泡)/.test(normalized)) return 'sparkling';
+    if (/(orange|オレンジ)/.test(normalized)) return 'orange';
+    if (/(rose|rosé|ロゼ)/.test(normalized)) return 'rose';
+    if (/(white|白)/.test(normalized)) return 'white';
+    if (/(red|赤)/.test(normalized)) return 'red';
+
+    return null;
+}
 
 // ボディ（日本語 → 内部値）マッピング
 const BODY_MAP = {
@@ -1461,8 +1495,9 @@ function parseXLSXRow(row) {
     if (!nameJa) return null; // ワイン名が空の行はスキップ
 
     // 種類
-    const rawType = String(row['種類'] || '').trim();
-    const type = TYPE_MAP[rawType] || 'red'; // デフォルト: 赤
+    const rawType = String(row['種類'] || row['タイプ'] || row['ワインタイプ'] || row['色'] || '').trim();
+    const type = normalizeWineType(rawType);
+    if (!type) return null; // 不明な種類を赤ワインとして誤登録しない
 
     // 国・地域
     const countryJa = String(row['国'] || '').trim();
@@ -1568,7 +1603,8 @@ async function handleXLSXImport(e) {
         }
 
         // 翻訳処理: 追加するワインの各項目を英語に翻訳
-        const fieldsToTranslate = ['name', 'winery', 'country', 'region', 'variety', 'description'];
+        const wineFieldsToTranslate = ['name', 'winery', 'variety', 'description'];
+        const originFieldsToTranslate = ['country', 'region'];
         let currentCount = 0;
             
         for (const wine of toAdd) {
@@ -1578,9 +1614,20 @@ async function handleXLSXImport(e) {
             }
 
             // 各フィールドの翻訳 (日本語 -> 英語)
-            for (const field of fieldsToTranslate) {
+            for (const field of wineFieldsToTranslate) {
                 if (wine[field] && wine[field].ja) {
                     wine[field].en = await translateWithDictionaryFallback(wine[field].ja, 'en');
+                }
+            }
+
+            // 産地情報はUIと同じ4言語で保持する
+            for (const field of originFieldsToTranslate) {
+                if (!wine[field]?.ja) continue;
+                for (const targetLanguage of ['en', 'zh-TW', 'ko']) {
+                    wine[field][targetLanguage] = await translateWithDictionaryFallback(
+                        wine[field].ja,
+                        targetLanguage
+                    );
                 }
             }
 
