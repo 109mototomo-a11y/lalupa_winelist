@@ -584,6 +584,11 @@ function populateVarietyFilter() {
     const allVarieties = new Set();
     // To keep track of the "display" version
     const normToDisplay = {};
+    // 品種は日本語と英語のみ。繁体字・韓国語UIでも英語を使う。
+    const normToEnglish = {};
+    const excludedVarieties = new Set(
+        ['その他', '他'].map(normalizeVarietyTerm)
+    );
 
     wines.forEach(wine => {
         // Use JA value for uniqueness
@@ -593,14 +598,22 @@ function populateVarietyFilter() {
         // Split by common separators (comma, Japanese comma)
         const separators = /[,\u3001]/; // , or 、
         const varieties = varietyText.split(separators).map(v => v.trim());
+        const englishVarieties = (wine.variety?.en || '')
+            .split(separators)
+            .map(v => v.trim());
 
-        varieties.forEach(v => {
+        varieties.forEach((v, index) => {
             if (v) {
                 const normalized = normalizeVarietyTerm(v);
+                if (excludedVarieties.has(normalized)) return;
+
                 if (!normToDisplay[normalized]) {
                     // Use this occurrence (without percentages) as the representative display text
                     const display = v.replace(/[0-9７-９０-９]+[%％]/g, '').trim();
                     normToDisplay[normalized] = display;
+                }
+                if (!normToEnglish[normalized] && englishVarieties.length === varieties.length) {
+                    normToEnglish[normalized] = englishVarieties[index];
                 }
                 allVarieties.add(normalized);
             }
@@ -610,10 +623,12 @@ function populateVarietyFilter() {
     // Create options with translation FIRST
     const options = Array.from(allVarieties).map(normV => {
         const displayKey = normToDisplay[normV];
-        let translated = displayKey;
+        let translated = currentLanguage === 'ja'
+            ? displayKey
+            : (normToEnglish[normV] || displayKey);
 
         // Try exact match in dictionary first
-        if (termDictionary[displayKey]) {
+        if (translated === displayKey && termDictionary[displayKey]) {
             if (termDictionary[displayKey][currentLanguage]) {
                 translated = termDictionary[displayKey][currentLanguage];
             } else if (currentLanguage !== 'ja' && termDictionary[displayKey]['en']) {
