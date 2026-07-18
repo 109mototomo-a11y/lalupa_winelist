@@ -1520,12 +1520,15 @@ async function handleXLSXImport(e) {
         // パーサーを必要時のみロード (初期バンドルの軽量化)
         const { default: readXlsxFile } = await import('read-excel-file/browser');
 
-        // xlsxファイルをパース
-        const sheetRows = await readXlsxFile(file);
+        // read-excel-file v8以降の既定exportは全シートを
+        // [{ sheet, data }] 形式で返す。データのある最初のシートを使う。
+        const workbookSheets = await readXlsxFile(file);
+        const sourceSheet = workbookSheets.find(({ data }) => Array.isArray(data) && data.length >= 2);
+        const sheetRows = sourceSheet?.data || [];
         const rows = sheetRowsToObjects(sheetRows);
 
         if (rows.length === 0) {
-            alert('ファイルにデータが見つかりませんでした。');
+            alert('データ行のあるシートが見つかりませんでした。\n1行目を列名、2行目以降をワインデータにしてください。');
             return;
         }
 
