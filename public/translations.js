@@ -189,7 +189,7 @@ const translations = {
         "wine.type.white": "白葡萄酒",
         "wine.type.sparkling": "氣泡酒",
         "wine.type.rose": "粉紅酒",
-        "wine.type.orange": "橘星酒",
+        "wine.type.orange": "橘酒",
         "wine.type.rose_sparkling": "粉紅氣泡酒",
 
         // Wine Body
@@ -216,6 +216,7 @@ const translations = {
         "admin.addWine": "新增葡萄酒",
         "admin.editWine": "編輯葡萄酒",
         "admin.deleteConfirm": "確定要刪除這款葡萄酒嗎？",
+        "admin.importCSV": "匯入 Excel",
 
         // Form
         "form.basicInfo": "基本資訊",
@@ -298,6 +299,7 @@ const translations = {
         "admin.addWine": "와인 추가",
         "admin.editWine": "와인 편집",
         "admin.deleteConfirm": "이 와인을 삭제하시겠습니까?",
+        "admin.importCSV": "Excel 가져오기",
 
         // Form
         "form.basicInfo": "기본 정보",
@@ -489,7 +491,7 @@ const termDictionary = {
     "ネロ・ディ・トロイア": { en: "Nero di Troia" },
     "ボンビーノ・ネーロ": { en: "Bombino Nero" },
     "ボンビーノ・ビアンコ": { en: "Bombino Bianco" },
-    "グレラ": { en: "Glera" },
+    "グレーラ": { en: "Glera" },
     "ガルガネガ": { en: "Garganega" },
     "トレッビアーノ": { en: "Trebbiano" },
     "ピノ・グリージョ": { en: "Pinot Grigio" },
@@ -534,7 +536,7 @@ const termDictionary = {
     "ヴェルデカ": { en: "Verdeca" },
     "オッタヴィア・ネッロ": { en: "Ottavianello" },
     "ネレッロ・マスカレーゼ": { en: "Nerello Mascalese" },
-    "ペッリコ―ネ": { en: "Perricone" },
+    "ペッリコーネ": { en: "Perricone" },
     "フィアーノ": { en: "Fiano" },
     "マルヴァジア": { en: "Malvasia" },
     "ピノ・ドニス": { en: "Pineau d'Aunis" },
@@ -557,12 +559,12 @@ const termDictionary = {
     "カベルネ": { en: "Cabernet" },
     "シルヴァーナー": { en: "Silvaner" },
     "バッカス": { en: "Bacchus" },
+    "ショイレーベ": { en: "Scheurebe" },
     "グラウブルグンダー": { en: "Grauburgunder" },
     "ドルンフェルダー": { en: "Dornfelder" },
     "ポルトギーザー": { en: "Portugieser" },
     "デラウェア": { en: "Delaware" },
     "サペラヴィ": { en: "Saperavi" },
-    "ネロ・ダヴォラ": { en: "Nero d'Avola" },
     "カルメネール": { en: "Carménère" },
     "ピノタージュ": { en: "Pinotage" },
     "タナ": { en: "Tannat" },
