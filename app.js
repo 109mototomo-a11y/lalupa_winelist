@@ -22,21 +22,8 @@ function icon(name, cls = '') {
     return `<svg class="icon ${cls}"><use href="#i-${name}"/></svg>`;
 }
 
-// 言語ごとのGoogle Fonts遅延読み込み (初期ロードはJPのみ)
-const loadedFontLangs = new Set(['ja', 'en']);
-const FONT_URLS = {
-    'ko': 'https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap',
-    'zh-TW': 'https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap'
-};
-
-function ensureFontForLang(lang) {
-    if (loadedFontLangs.has(lang) || !FONT_URLS[lang]) return;
-    loadedFontLangs.add(lang);
-    const link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.href = FONT_URLS[lang];
-    document.head.appendChild(link);
-}
+// 低スペック端末での外部フォント通信を避け、OS標準フォントを使用する。
+function ensureFontForLang() {}
 
 // Term Dictionary for fallback translations is in translations.js
 

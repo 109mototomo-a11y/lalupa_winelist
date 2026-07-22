@@ -41,8 +41,8 @@
     --radius-lg: 16px;
 
     /* Typography */
-    --font-serif: 'Cormorant Garamond', 'Noto Serif JP', serif;
-    --font-sans: 'Noto Sans JP', 'Noto Sans KR', 'Noto Sans TC', sans-serif;
+    --font-serif: Georgia, 'Times New Roman', 'Yu Mincho', 'Hiragino Mincho ProN', serif;
+    --font-sans: system-ui, -apple-system, 'Segoe UI', 'Yu Gothic UI', 'Hiragino Sans', sans-serif;
 
     /* Spacing */
     --header-height: 108px;
@@ -81,12 +81,10 @@ body::before {
     position: fixed;
     inset: 0;
     z-index: -1;
-    background-image:
-        radial-gradient(ellipse at 50% 0%, rgba(114, 47, 55, 0.28), transparent 60%),
-        linear-gradient(rgba(8, 8, 8, 0.78), rgba(8, 8, 8, 0.82)),
-        url('bg.jpg');
-    background-size: cover;
-    background-position: center;
+    background:
+        radial-gradient(ellipse at 18% 0%, rgba(125, 22, 31, 0.18), transparent 38%),
+        radial-gradient(ellipse at 82% 14%, rgba(181, 139, 59, 0.08), transparent 32%),
+        #0b0908;
     transform: translateZ(0);
 }
 
@@ -1726,5 +1724,420 @@ input:checked+.slider:before {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
+    }
+}
+
+/* ===================================
+   LA LUPA Editorial Redesign
+   Solid materials and restrained motion keep kiosk rendering light.
+   =================================== */
+:root {
+    --color-bg: #0b0908;
+    --color-surface: #14100e;
+    --color-surface-raised: #1a1512;
+    --color-border: #342820;
+    --color-text: #f2ede5;
+    --color-text-light: #c9bfb2;
+    --color-text-muted: #94887b;
+    --color-gold: #d3aa55;
+    --color-gold-light: #f0d692;
+    --color-gold-dark: #9e7532;
+    --color-gold-border: rgba(211, 170, 85, 0.34);
+    --color-wine-red: #8f1723;
+    --color-wine-red-light: #b82b38;
+    --shadow-sm: 0 8px 22px rgba(0, 0, 0, 0.22);
+    --shadow-md: 0 14px 36px rgba(0, 0, 0, 0.28);
+    --shadow-lg: 0 24px 64px rgba(0, 0, 0, 0.42);
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 18px;
+    --header-height: 94px;
+    --footer-height: 58px;
+}
+
+body {
+    letter-spacing: 0.01em;
+}
+
+.header {
+    height: var(--header-height);
+    background: #0c0908;
+    border-bottom: 1px solid rgba(211, 170, 85, 0.24);
+    box-shadow: none;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 5px;
+    background: var(--color-wine-red);
+}
+
+.header::after {
+    background: linear-gradient(90deg, #8f1723 0 15%, #d3aa55 44% 56%, #8f1723 85% 100%);
+    opacity: 0.76;
+}
+
+.header-content {
+    padding-inline: clamp(18px, 4vw, 52px);
+}
+
+.logo-image {
+    width: 78px;
+    height: 78px;
+    object-fit: contain;
+}
+
+.header-title {
+    left: 50%;
+    width: auto;
+    font-family: var(--font-serif);
+    font-size: clamp(1.25rem, 2.6vw, 2rem);
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 0.42em;
+    color: var(--color-gold-light);
+    background: none;
+    -webkit-text-fill-color: currentColor;
+}
+
+.lang-toggle-btn {
+    width: 46px;
+    height: 46px;
+    background: #171210;
+    border-color: #443327;
+    color: var(--color-gold-light);
+}
+
+.lang-toggle-btn:hover,
+.lang-toggle-btn.active {
+    background: #211813;
+    border-color: var(--color-gold);
+}
+
+.lang-toggle-btn:active,
+.lang-option:active,
+.btn:active,
+.admin-trigger:active,
+.back-to-top:active {
+    transform: scale(0.97);
+}
+
+.lang-dropdown {
+    background: #15100e;
+    border-color: #4a3728;
+}
+
+.lang-option.active {
+    background: #2a1715;
+    color: var(--color-gold-light);
+}
+
+.main-content {
+    max-width: 1460px;
+    padding: 32px clamp(18px, 3vw, 42px) 48px;
+}
+
+.filter-bar {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 18px;
+    margin-bottom: 28px;
+    background: #12100e;
+    border: 1px solid #38291f;
+    border-top-color: rgba(211, 170, 85, 0.58);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.filter-bar::before {
+    content: 'LA LUPA SELECTION';
+    color: var(--color-gold);
+    font-family: var(--font-serif);
+    font-size: 0.68rem;
+    letter-spacing: 0.24em;
+    line-height: 1;
+}
+
+.search-box {
+    min-width: 0;
+}
+
+.search-input,
+.filter-select {
+    min-height: 50px;
+    background-color: #090807;
+    border-color: #352a23;
+    border-radius: 10px;
+    color: var(--color-text);
+}
+
+.search-input {
+    padding-block: 13px;
+}
+
+.search-input:focus,
+.filter-select:focus {
+    border-color: var(--color-gold);
+    background-color: #0d0b09;
+    box-shadow: 0 0 0 2px rgba(211, 170, 85, 0.12);
+}
+
+.filter-group {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.filter-select {
+    width: 100%;
+    min-width: 0;
+    padding: 12px 34px 12px 13px;
+    background-position: right 10px center;
+}
+
+.wine-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.wine-card {
+    min-height: 250px;
+    background: #151210;
+    border: 1px solid #32271f;
+    border-radius: 16px;
+    box-shadow: var(--shadow-sm);
+    isolation: isolate;
+}
+
+.wine-card::before {
+    content: '';
+    position: absolute;
+    inset: 0 0 auto;
+    height: 3px;
+    background: var(--card-accent, var(--color-wine-red));
+}
+
+.wine-card[data-type="red"] { --card-accent: #9d2632; }
+.wine-card[data-type="white"] { --card-accent: #d9c884; }
+.wine-card[data-type="sparkling"] { --card-accent: #d3aa55; }
+.wine-card[data-type="rose"] { --card-accent: #c86e78; }
+.wine-card[data-type="rose_sparkling"] { --card-accent: #d58c8f; }
+.wine-card[data-type="orange"] { --card-accent: #c8782a; }
+
+.wine-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(211, 170, 85, 0.5);
+}
+
+.wine-card-sidebar,
+.wine-card[data-type] .wine-card-sidebar {
+    width: 48px;
+    background: #100d0c;
+    color: var(--color-gold);
+    border-right: 1px solid #2b211b;
+}
+
+.wine-card-number {
+    font-size: 1.45rem;
+    font-weight: 500;
+}
+
+.wine-card-content {
+    padding: 20px 20px 18px;
+}
+
+.wine-name {
+    font-size: clamp(1.18rem, 1.7vw, 1.45rem);
+    font-weight: 600;
+    line-height: 1.28;
+    letter-spacing: 0.01em;
+}
+
+.wine-vintage-badge {
+    color: var(--color-gold-light);
+    font-size: 0.88rem;
+    letter-spacing: 0.08em;
+}
+
+.wine-winery {
+    margin-bottom: 13px;
+    padding-bottom: 11px;
+    color: var(--color-text-muted);
+    border-color: #30251e;
+    font-style: normal;
+}
+
+.wine-details-block {
+    gap: 7px;
+    margin-bottom: 13px;
+}
+
+.wine-detail-row .label {
+    color: #887a6e;
+}
+
+.wine-detail-row .value {
+    color: #ded6cb;
+}
+
+.variety-pill,
+.wine-tag-pill {
+    background: #1d1815;
+    border-color: #3b3028;
+    color: #cfc5b9;
+}
+
+.wine-tags-container {
+    padding-bottom: 12px;
+}
+
+.wine-footer-flex {
+    border-color: rgba(211, 170, 85, 0.2);
+}
+
+.wine-price {
+    color: var(--color-gold-light);
+    font-size: 1.48rem;
+}
+
+.wine-type-label,
+.wine-card[data-type] .wine-type-label {
+    color: var(--card-accent);
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+}
+
+.footer {
+    background: #0c0908;
+    border-color: #2b211b;
+}
+
+.footer-content {
+    padding-inline: clamp(18px, 4vw, 52px);
+}
+
+.admin-trigger,
+.back-to-top {
+    background: #171210;
+    border-color: #3c2e25;
+    color: var(--color-gold-light);
+}
+
+.modal-backdrop {
+    background: rgba(4, 3, 3, 0.88);
+}
+
+.modal-content {
+    background: #15110f;
+    border-color: rgba(211, 170, 85, 0.45);
+}
+
+.wine-detail-title h2,
+.admin-header h2,
+.admin-wine-name {
+    color: var(--color-gold-light);
+}
+
+:focus-visible {
+    outline: 2px solid var(--color-gold-light);
+    outline-offset: 3px;
+}
+
+@media (max-width: 1180px) {
+    .filter-group {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .wine-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --header-height: 78px;
+        --footer-height: 54px;
+    }
+
+    .header-content {
+        padding-inline: 14px;
+    }
+
+    .logo-image {
+        width: 62px;
+        height: 62px;
+    }
+
+    .header-title {
+        font-size: 1rem;
+        letter-spacing: 0.24em;
+    }
+
+    .lang-toggle-btn {
+        width: 42px;
+        height: 42px;
+    }
+
+    .main-content {
+        padding: 18px 14px 28px;
+    }
+
+    .filter-bar {
+        display: grid;
+        padding: 13px;
+    }
+
+    .filter-group {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .wine-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .wine-card {
+        min-height: 238px;
+    }
+
+    .wine-card-content {
+        padding: 17px 16px 16px;
+    }
+}
+
+@media (max-width: 520px) {
+    .filter-group {
+        grid-template-columns: 1fr;
+    }
+
+    .wine-card-sidebar,
+    .wine-card[data-type] .wine-card-sidebar {
+        width: 42px;
+    }
+
+    .footer-content > span {
+        font-size: 0.72rem;
+    }
+
+    .admin-trigger span {
+        display: none;
+    }
+}
+
+@media (prefers-reduced-transparency: reduce), (prefers-contrast: more) {
+    .header,
+    .footer,
+    .filter-bar,
+    .modal-content {
+        background: #0b0908;
+    }
+
+    .wine-card,
+    .search-input,
+    .filter-select {
+        border-color: #806b4a;
     }
 }
