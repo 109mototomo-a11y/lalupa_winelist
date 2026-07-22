@@ -10,43 +10,43 @@
 /* CSS Variables */
 :root {
     /* Colors - Luxury Dark Theme */
-    --color-bg: #121212;
-    --color-surface: #191919;
-    --color-surface-raised: #1e1e1e;
-    --color-border: rgba(255, 255, 255, 0.1);
+    --color-bg: #0b0908;
+    --color-surface: #14100e;
+    --color-surface-raised: #1a1512;
+    --color-border: #342820;
 
     --color-white: #FFFFFF;
-    --color-text: #EAEAEA;
-    --color-text-light: #B0B0B0;
-    --color-text-muted: #8a8a8a;
+    --color-text: #f2ede5;
+    --color-text-light: #c9bfb2;
+    --color-text-muted: #94887b;
 
     /* Luxury Accents */
-    --color-gold: #D4AF37;
-    --color-gold-light: #F3E5AB;
-    --color-gold-dark: #AA8C2C;
-    --color-gold-border: rgba(212, 175, 55, 0.3);
+    --color-gold: #d3aa55;
+    --color-gold-light: #f0d692;
+    --color-gold-dark: #9e7532;
+    --color-gold-border: rgba(211, 170, 85, 0.34);
     --color-gold-gradient: linear-gradient(135deg, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
 
-    --color-wine-red: #722F37;
-    --color-wine-red-light: #9E424E;
+    --color-wine-red: #8f1723;
+    --color-wine-red-light: #b82b38;
 
     /* Shadows (static only — never transitioned) */
-    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
-    --shadow-md: 0 8px 16px rgba(0, 0, 0, 0.4);
-    --shadow-lg: 0 16px 32px rgba(0, 0, 0, 0.5);
+    --shadow-sm: 0 8px 22px rgba(0, 0, 0, 0.22);
+    --shadow-md: 0 14px 36px rgba(0, 0, 0, 0.28);
+    --shadow-lg: 0 24px 64px rgba(0, 0, 0, 0.42);
 
     /* Border Radius */
-    --radius-sm: 6px;
+    --radius-sm: 8px;
     --radius-md: 12px;
-    --radius-lg: 16px;
+    --radius-lg: 18px;
 
     /* Typography */
     --font-serif: Georgia, 'Times New Roman', 'Yu Mincho', 'Hiragino Mincho ProN', serif;
-    --font-sans: system-ui, -apple-system, 'Segoe UI', 'Yu Gothic UI', 'Hiragino Sans', sans-serif;
+    --font-sans: system-ui, -apple-system, 'Segoe UI', 'Yu Gothic UI', 'Hiragino Sans', 'Microsoft JhengHei', 'Malgun Gothic', sans-serif;
 
     /* Spacing */
-    --header-height: 108px;
-    --footer-height: 70px;
+    --header-height: 94px;
+    --footer-height: 58px;
 }
 
 /* Reset & Base */
@@ -73,9 +73,7 @@ body {
     position: relative;
 }
 
-/* Background photo + dark overlay:
-   固定配置の擬似要素に画像とグラデーションを重ねて一度だけ描画させる。
-   (background-attachment: fixed と全画面 blur の代替 — 合成レイヤーに乗るのでスクロールしても再描画されない) */
+/* Lightweight fixed background: gradients only, without a forced GPU layer. */
 body::before {
     content: '';
     position: fixed;
@@ -85,7 +83,6 @@ body::before {
         radial-gradient(ellipse at 18% 0%, rgba(125, 22, 31, 0.18), transparent 38%),
         radial-gradient(ellipse at 82% 14%, rgba(181, 139, 59, 0.08), transparent 32%),
         #0b0908;
-    transform: translateZ(0);
 }
 
 /* Inline SVG icons (replaces Lucide runtime) */
@@ -409,69 +406,6 @@ body::before {
     line-height: 1;
     z-index: 2;
 }
-
-/* === Color Themes for Sidebar & Accents === */
-
-/* Red Wine: Deep Red Sidebar */
-.wine-card[data-type="red"] .wine-card-sidebar {
-    background: linear-gradient(to bottom, #722f37, #4a0e16);
-    color: #ffd700;
-}
-
-.wine-card[data-type="red"] .wine-type-label {
-    color: #ff9999;
-}
-
-/* White Wine: Very Light Blue Sidebar */
-.wine-card[data-type="white"] .wine-card-sidebar {
-    background: linear-gradient(to bottom, #e0f2fe, #bae6fd);
-    color: #0c4a6e;
-}
-
-.wine-card[data-type="white"] .wine-type-label {
-    color: #bae6fd;
-}
-
-/* Sparkling: Gold Sidebar */
-.wine-card[data-type="sparkling"] .wine-card-sidebar {
-    background: linear-gradient(to bottom, #fcd34d, #d97706);
-    color: #451a03;
-}
-
-.wine-card[data-type="sparkling"] .wine-type-label {
-    color: #fcd34d;
-}
-
-/* Rosé: Salmon Pink Sidebar */
-.wine-card[data-type="rose"] .wine-card-sidebar {
-    background: linear-gradient(to bottom, #fda4af, #e11d48);
-    color: #881337;
-}
-
-.wine-card[data-type="rose"] .wine-type-label {
-    color: #fda4af;
-}
-
-/* Rose Sparkling */
-.wine-card[data-type="rose_sparkling"] .wine-card-sidebar {
-    background: linear-gradient(to bottom, #fda4af, #e11d48);
-    color: #881337;
-}
-
-.wine-card[data-type="rose_sparkling"] .wine-type-label {
-    color: #fda4af;
-}
-
-/* Orange Wine: Amber styling */
-.wine-card[data-type="orange"] .wine-card-sidebar {
-    background: linear-gradient(to bottom, #fbbf24, #d97706);
-    color: #78350f;
-}
-
-.wine-card[data-type="orange"] .wine-type-label {
-    color: #fbbf24;
-}
-
 
 /* Main Content Styles */
 .wine-card-content {
@@ -1731,30 +1665,6 @@ input:checked+.slider:before {
    LA LUPA Editorial Redesign
    Solid materials and restrained motion keep kiosk rendering light.
    =================================== */
-:root {
-    --color-bg: #0b0908;
-    --color-surface: #14100e;
-    --color-surface-raised: #1a1512;
-    --color-border: #342820;
-    --color-text: #f2ede5;
-    --color-text-light: #c9bfb2;
-    --color-text-muted: #94887b;
-    --color-gold: #d3aa55;
-    --color-gold-light: #f0d692;
-    --color-gold-dark: #9e7532;
-    --color-gold-border: rgba(211, 170, 85, 0.34);
-    --color-wine-red: #8f1723;
-    --color-wine-red-light: #b82b38;
-    --shadow-sm: 0 8px 22px rgba(0, 0, 0, 0.22);
-    --shadow-md: 0 14px 36px rgba(0, 0, 0, 0.28);
-    --shadow-lg: 0 24px 64px rgba(0, 0, 0, 0.42);
-    --radius-sm: 8px;
-    --radius-md: 12px;
-    --radius-lg: 18px;
-    --header-height: 94px;
-    --footer-height: 58px;
-}
-
 body {
     letter-spacing: 0.01em;
 }
@@ -1852,15 +1762,6 @@ body {
     box-shadow: var(--shadow-sm);
 }
 
-.filter-bar::before {
-    content: 'LA LUPA SELECTION';
-    color: var(--color-gold);
-    font-family: var(--font-serif);
-    font-size: 0.68rem;
-    letter-spacing: 0.24em;
-    line-height: 1;
-}
-
 .search-box {
     min-width: 0;
 }
@@ -1887,7 +1788,7 @@ body {
 
 .filter-group {
     display: grid;
-    grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-template-columns: repeat(6, minmax(120px, 1fr));
     gap: 10px;
 }
 
@@ -1932,8 +1833,7 @@ body {
     border-color: rgba(211, 170, 85, 0.5);
 }
 
-.wine-card-sidebar,
-.wine-card[data-type] .wine-card-sidebar {
+.wine-card-sidebar {
     width: 48px;
     background: #100d0c;
     color: var(--color-gold);
@@ -1976,7 +1876,7 @@ body {
 }
 
 .wine-detail-row .label {
-    color: #887a6e;
+    color: #a29589;
 }
 
 .wine-detail-row .value {
@@ -2003,10 +1903,9 @@ body {
     font-size: 1.48rem;
 }
 
-.wine-type-label,
-.wine-card[data-type] .wine-type-label {
+.wine-type-label {
     color: var(--card-accent);
-    font-size: 0.68rem;
+    font-size: 0.78rem;
     letter-spacing: 0.1em;
 }
 
@@ -2048,7 +1947,7 @@ body {
 
 @media (max-width: 1180px) {
     .filter-group {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(3, minmax(120px, 1fr));
     }
 
     .wine-grid {
@@ -2113,8 +2012,7 @@ body {
         grid-template-columns: 1fr;
     }
 
-    .wine-card-sidebar,
-    .wine-card[data-type] .wine-card-sidebar {
+    .wine-card-sidebar {
         width: 42px;
     }
 
